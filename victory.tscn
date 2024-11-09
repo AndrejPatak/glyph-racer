@@ -1,0 +1,100 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4dhkurg2octb"]
+
+[ext_resource type="Script" path="res://victory.gd" id="1_60kmv"]
+[ext_resource type="Theme" uid="uid://cx8v3o7umtucr" path="res://assets/themes/secondary_menu_buttons.tres" id="3_tjlbp"]
+[ext_resource type="LabelSettings" uid="uid://b2tnpbg4unqoy" path="res://assets/themes/button_highlight.tres" id="4_wyxuo"]
+
+[node name="victory" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_60kmv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.5
+offset_top = -103.0
+offset_right = 63.5
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "FINISHED"
+label_settings = ExtResource("4_wyxuo")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Improve" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer" groups=["button"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 2
+theme = ExtResource("3_tjlbp")
+text = "IMPROVE"
+flat = true
+alignment = 0
+
+[node name="Highlight" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "<"
+label_settings = ExtResource("4_wyxuo")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Play_another" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer2" groups=["button"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 2
+theme = ExtResource("3_tjlbp")
+text = "PLAY ANOTHER"
+flat = true
+alignment = 0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Play_next" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer3" groups=["button"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 2
+theme = ExtResource("3_tjlbp")
+text = "PLAY NEXT"
+flat = true
+alignment = 0
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Save_game" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer4" groups=["button"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 2
+theme = ExtResource("3_tjlbp")
+text = "SAVE GAME"
+flat = true
+alignment = 0
+
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer/Improve" to="." method="_on_improve_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer2/Play_another" to="." method="_on_play_another_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer3/Play_next" to="." method="_on_play_next_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer4/Save_game" to="." method="_on_save_game_pressed"]

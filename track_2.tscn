@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://cucmjh27hqbk0"]
+
+[ext_resource type="PackedScene" uid="uid://cn56ji7fpcno2" path="res://sprite.tscn" id="1_a1re3"]
+[ext_resource type="Texture2D" uid="uid://bqiml61mnlvm4" path="res://assets/tutorial track2.svg" id="2_pl5a1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t52xx"]
+size = Vector2(1483, 340)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dupm6"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xckcy"]
+normal = Vector2(1, -2.38419e-07)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e4slr"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_aa6je"]
+normal = Vector2(-1, 1.86083e-07)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_e1xhu"]
+polygon = PackedVector2Array(1823, -167, 1823, 863, -49, 863, -48, 530, -595, 1125, 2097, 1169, 2132, -363, -331, -312, -50, 177, -52, -166)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rlbw4"]
+polygon = PackedVector2Array(1619, -153, 139, -153, 139, 202, 1619, 203)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjw8d"]
+size = Vector2(108, 332)
+
+[node name="track2" type="Node2D"]
+
+[node name="sprite" parent="." instance=ExtResource("1_a1re3")]
+spriteName = "track"
+
+[node name="Sprite2D" parent="sprite" index="0"]
+position = Vector2(884, 348)
+rotation = 0.0
+scale = Vector2(1, 1)
+texture = ExtResource("2_pl5a1")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(0, -0.000274658)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(676.5, 355)
+shape = SubResource("RectangleShape2D_t52xx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(750, 878)
+shape = SubResource("WorldBoundaryShape2D_dupm6")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(-64, 76.0003)
+shape = SubResource("WorldBoundaryShape2D_xckcy")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(529, -173)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_e4slr")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(1826, 119)
+shape = SubResource("WorldBoundaryShape2D_aa6je")
+
+[node name="LightOccluders" type="Node2D" parent="."]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="LightOccluders"]
+occluder = SubResource("OccluderPolygon2D_e1xhu")
+
+[node name="LightOccluder2D6" type="LightOccluder2D" parent="LightOccluders"]
+position = Vector2(-197, 328)
+occluder = SubResource("OccluderPolygon2D_rlbw4")
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+
+[node name="Finsih" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(8, 678)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finsih"]
+position = Vector2(-2, 20)
+shape = SubResource("RectangleShape2D_mjw8d")
+
+[editable path="sprite"]

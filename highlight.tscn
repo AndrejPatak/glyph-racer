@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0qtowtusfaqh"]
+
+[ext_resource type="LabelSettings" uid="uid://b2tnpbg4unqoy" path="res://assets/themes/button_highlight.tres" id="1_1shxg"]
+[ext_resource type="Script" path="res://highlight.gd" id="2_eyr10"]
+
+[node name="Highlight" type="Label"]
+text = "  <"
+label_settings = ExtResource("1_1shxg")
+script = ExtResource("2_eyr10")

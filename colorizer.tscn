@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2q8vcvuih812"]
+
+[ext_resource type="Script" path="res://colorizer.gd" id="1_1tgjd"]
+
+[node name="Colorizer" type="Node"]
+script = ExtResource("1_1tgjd")
+playerColor = Color(0.54902, 0.882353, 0.0431373, 1)
+wallsColor = Color(0, 0.847059, 0.921569, 1)
+dangerColor = Color(1, 0, 0.0588235, 1)
+backgroundColor = Color(0.137255, 0.137255, 0.137255, 1)

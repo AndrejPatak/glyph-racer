@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwi4lyo63i21m"]
+
+[ext_resource type="PackedScene" uid="uid://cn56ji7fpcno2" path="res://sprite.tscn" id="1_uemcf"]
+[ext_resource type="Texture2D" uid="uid://bmh5w4b5cpiqy" path="res://assets/tutorial track1.svg" id="2_6t1lv"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vwbht"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qiymr"]
+size = Vector2(94, 472)
+
+[node name="Track" type="Node2D"]
+
+[node name="Sprite" parent="." instance=ExtResource("1_uemcf")]
+position = Vector2(119, 0)
+spriteName = "track"
+
+[node name="Sprite2D" parent="Sprite" index="0"]
+position = Vector2(440, 1.00003)
+rotation = 0.0
+scale = Vector2(1, 1)
+texture = ExtResource("2_6t1lv")
+
+[node name="Colliders" type="Node2D" parent="."]
+position = Vector2(119, 0)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Colliders"]
+position = Vector2(497, -224)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D2"]
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_vwbht")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Colliders"]
+position = Vector2(500, 251)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_vwbht")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Colliders"]
+position = Vector2(1139, -27)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D3"]
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_vwbht")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Colliders"]
+position = Vector2(-177, 1)
+rotation = -1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D4"]
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_vwbht")
+
+[node name="Finsih" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1216, -78)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finsih"]
+position = Vector2(-9, 90)
+shape = SubResource("RectangleShape2D_qiymr")
+
+[editable path="Sprite"]

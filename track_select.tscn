@@ -1,0 +1,105 @@
+[gd_scene load_steps=5 format=3 uid="uid://bp6lwki78jakn"]
+
+[ext_resource type="LabelSettings" uid="uid://b2tnpbg4unqoy" path="res://assets/themes/button_highlight.tres" id="1_b1j7f"]
+[ext_resource type="Script" path="res://track_select.gd" id="1_t6gqo"]
+[ext_resource type="PackedScene" uid="uid://cm3p2y64gjteu" path="res://time_tracker.tscn" id="2_lxdbp"]
+
+[sub_resource type="Theme" id="Theme_rrxlp"]
+
+[node name="TrackSelect" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t6gqo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "TRACKS:"
+label_settings = ExtResource("1_b1j7f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme = SubResource("Theme_rrxlp")
+columns = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="track_1_button" type="Button" parent="VBoxContainer/GridContainer/VBoxContainer" groups=["track_button"]]
+layout_mode = 2
+text = "Tutorial_track_1"
+
+[node name="track_1" type="Label" parent="VBoxContainer/GridContainer/VBoxContainer" groups=["track_label"]]
+layout_mode = 2
+text = "Time: ??:??"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="track_2_button" type="Button" parent="VBoxContainer/GridContainer/VBoxContainer2" groups=["track_button"]]
+layout_mode = 2
+text = "Tutorial_track_2"
+
+[node name="track_2" type="Label" parent="VBoxContainer/GridContainer/VBoxContainer2" groups=["track_label"]]
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="track_3_button" type="Button" parent="VBoxContainer/GridContainer/VBoxContainer3" groups=["track_button"]]
+layout_mode = 2
+text = "Race_track_1"
+
+[node name="track_3" type="Label" parent="VBoxContainer/GridContainer/VBoxContainer3" groups=["track_label"]]
+layout_mode = 2
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="track_4_button" type="Button" parent="VBoxContainer/GridContainer/VBoxContainer4" groups=["track_button"]]
+layout_mode = 2
+text = "Tutorial_track_2"
+
+[node name="track_4" type="Label" parent="VBoxContainer/GridContainer/VBoxContainer4" groups=["track_label"]]
+layout_mode = 2
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="track_5_button" type="Button" parent="VBoxContainer/GridContainer/VBoxContainer5" groups=["track_button"]]
+layout_mode = 2
+text = "Tutorial_track_3"
+
+[node name="track_5" type="Label" parent="VBoxContainer/GridContainer/VBoxContainer5" groups=["track_label"]]
+layout_mode = 2
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="track_6_button" type="Button" parent="VBoxContainer/GridContainer/VBoxContainer6" groups=["track_button"]]
+layout_mode = 2
+text = "Tutorial_track_4"
+
+[node name="track_6" type="Label" parent="VBoxContainer/GridContainer/VBoxContainer6" groups=["track_label"]]
+layout_mode = 2
+
+[node name="TimeFiller" parent="." instance=ExtResource("2_lxdbp")]

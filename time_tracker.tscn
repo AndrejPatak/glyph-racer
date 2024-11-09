@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm3p2y64gjteu"]
+
+[ext_resource type="Script" path="res://time_filler.gd" id="1_emwy5"]
+
+[node name="TimeTracker" type="Node"]
+process_mode = 3
+script = ExtResource("1_emwy5")

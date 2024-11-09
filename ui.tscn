@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4lkeqc08fnsn"]
+
+[ext_resource type="Script" path="res://timer_handler.gd" id="1_6p6ge"]
+[ext_resource type="FontFile" uid="uid://cmtvsgmf6d3jb" path="res://assets/fonts/Kode_Mono/static/KodeMono-Regular.ttf" id="2_e7w7r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6ynqt"]
+font = ExtResource("2_e7w7r")
+font_size = 60
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TimerHandler" type="Node" parent="."]
+script = ExtResource("1_6p6ge")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -77.0
+offset_right = 77.0
+offset_bottom = 83.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Timer" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(330, 0)
+layout_mode = 2
+text = "00:00.00"
+label_settings = SubResource("LabelSettings_6ynqt")
+horizontal_alignment = 1
+vertical_alignment = 1

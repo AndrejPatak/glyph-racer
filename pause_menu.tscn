@@ -1,0 +1,124 @@
+[gd_scene load_steps=5 format=3 uid="uid://bna2n5pcf4a8o"]
+
+[ext_resource type="Script" path="res://pause_menu.gd" id="1_g85tm"]
+[ext_resource type="LabelSettings" uid="uid://b7qt8cpyeutjv" path="res://assets/themes/menu_title.tres" id="2_recgj"]
+[ext_resource type="Theme" uid="uid://c3t7fy1jsu6ik" path="res://assets/themes/main_menu_buttons.tres" id="2_smqif"]
+[ext_resource type="LabelSettings" uid="uid://b2tnpbg4unqoy" path="res://assets/themes/button_highlight.tres" id="3_uno0r"]
+
+[node name="pauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g85tm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.533333)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(475, 0)
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "PAUSED"
+label_settings = ExtResource("2_recgj")
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Continue" type="Button" parent="HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer4" groups=["button"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(350, 80)
+layout_mode = 2
+theme = ExtResource("2_smqif")
+text = "Continue race"
+flat = true
+alignment = 0
+
+[node name="Highlight" type="Label" parent="HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "  <"
+label_settings = ExtResource("3_uno0r")
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Restart" type="Button" parent="HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer2" groups=["button"]]
+custom_minimum_size = Vector2(350, 80)
+layout_mode = 2
+theme = ExtResource("2_smqif")
+text = "Restart race"
+flat = true
+alignment = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Save" type="Button" parent="HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer" groups=["button"]]
+custom_minimum_size = Vector2(350, 80)
+layout_mode = 2
+theme = ExtResource("2_smqif")
+text = "Save game"
+flat = true
+alignment = 0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="ExitRace" type="Button" parent="HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer3" groups=["button"]]
+custom_minimum_size = Vector2(350, 80)
+layout_mode = 2
+theme = ExtResource("2_smqif")
+text = "Exit race"
+flat = true
+alignment = 0
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Quit" type="Button" parent="HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer5" groups=["button"]]
+custom_minimum_size = Vector2(350, 80)
+layout_mode = 2
+theme = ExtResource("2_smqif")
+text = "Quit"
+flat = true
+alignment = 0
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer4/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer2/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer3/ExitRace" to="." method="_on_exit_race_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer5/Quit" to="." method="_on_quit_pressed"]

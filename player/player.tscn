@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=3 uid="uid://btlv6hnynahk0"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_mtrrm"]
+[ext_resource type="PackedScene" uid="uid://cn56ji7fpcno2" path="res://sprite.tscn" id="2_aw4q7"]
+[ext_resource type="AudioStream" uid="uid://c84dfiy20py7" path="res://assets/sounds/startEngine.wav" id="3_g74bu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a03hf"]
+radius = 30.0167
+
+[sub_resource type="Gradient" id="Gradient_qlvxx"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 0, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jbyp4"]
+gradient = SubResource("Gradient_qlvxx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uchif"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(-27, 0, 0)
+emission_shape_scale = Vector3(1, 50, 1)
+angle_min = -720.0
+angle_max = -641.6
+direction = Vector3(-1, 0, 0)
+initial_velocity_min = 59.17
+initial_velocity_max = 121.3
+gravity = Vector3(0, 0, 0)
+scale_min = 11.84
+scale_max = 17.76
+color_ramp = SubResource("GradientTexture1D_jbyp4")
+turbulence_enabled = true
+turbulence_noise_strength = 0.42
+turbulence_noise_scale = 6.953
+turbulence_influence_max = 0.14
+turbulence_initial_displacement_min = 77.7
+turbulence_initial_displacement_max = 100.0
+collision_mode = 2
+collision_use_scale = true
+
+[sub_resource type="Animation" id="Animation_1gffx"]
+resource_name = "engine"
+length = 6.1
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 1.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_g74bu")
+}, {
+"end_offset": 1.0,
+"start_offset": 1.0,
+"stream": ExtResource("3_g74bu")
+}],
+"times": PackedFloat32Array(0, 3.53333)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b4td6"]
+_data = {
+"engine": SubResource("Animation_1gffx")
+}
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_mtrrm")
+
+[node name="Sprite" parent="." instance=ExtResource("2_aw4q7")]
+position = Vector2(0, -1)
+spriteName = "player"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_a03hf")
+
+[node name="exhaust" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
+physics_interpolation_mode = 2
+auto_translate_mode = 2
+show_behind_parent = true
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_uchif")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = 9.248
+playback_type = 1
+
+[node name="engineSound" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_b4td6")
+}
+
+[connection signal="animation_finished" from="engineSound" to="." method="loop_engine_sound"]

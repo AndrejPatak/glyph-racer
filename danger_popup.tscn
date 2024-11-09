@@ -1,0 +1,143 @@
+[gd_scene load_steps=10 format=3 uid="uid://cvtnm7p6wo08h"]
+
+[ext_resource type="Script" path="res://danger_popup.gd" id="1_voqdr"]
+[ext_resource type="LabelSettings" uid="uid://b2tnpbg4unqoy" path="res://assets/themes/button_highlight.tres" id="2_qbv6o"]
+[ext_resource type="FontFile" uid="uid://epkkuh4ygf40" path="res://assets/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Regular.ttf" id="3_5hxlr"]
+[ext_resource type="PackedScene" uid="uid://d0qtowtusfaqh" path="res://highlight.tscn" id="3_ktwcb"]
+[ext_resource type="FontFile" uid="uid://dvdc01i1ernmo" path="res://assets/fonts/Orbitron/static/Orbitron-Regular.ttf" id="4_lt6bi"]
+[ext_resource type="Theme" uid="uid://cx8v3o7umtucr" path="res://assets/themes/secondary_menu_buttons.tres" id="4_ox5r8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n54lt"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.137255, 0.145098, 0.14902, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_x0phj"]
+font = ExtResource("3_5hxlr")
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_yjvyq"]
+font = ExtResource("4_lt6bi")
+font_size = 30
+
+[node name="danger_popup" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_voqdr")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -102.0
+offset_right = 100.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_n54lt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "WARNING:"
+label_settings = ExtResource("2_qbv6o")
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="message" type="Label" parent="PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+text = "Message"
+label_settings = SubResource("LabelSettings_x0phj")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HSeparator4" type="HSeparator" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="no" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer2" groups=["button"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 35)
+layout_mode = 2
+theme = ExtResource("4_ox5r8")
+theme_override_font_sizes/font_size = 25
+text = "Close"
+flat = true
+alignment = 0
+
+[node name="Highlight" parent="PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer2" instance=ExtResource("3_ktwcb")]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_yjvyq")
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="save_exit" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer3" groups=["button"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 35)
+layout_mode = 2
+theme = ExtResource("4_ox5r8")
+theme_override_font_sizes/font_size = 25
+text = "Save and exit"
+flat = true
+alignment = 0
+
+[node name="HSeparator3" type="HSeparator" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="exit" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer" groups=["button"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 35)
+layout_mode = 2
+theme = ExtResource("4_ox5r8")
+theme_override_font_sizes/font_size = 25
+text = "Exit without saving"
+flat = true
+alignment = 0
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer2/no" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer3/save_exit" to="." method="_on_save_exit"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer/exit" to="." method="_on_yes_pressed"]

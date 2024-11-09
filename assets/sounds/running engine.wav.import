@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cg2uarp10b24b"
+path="res://.godot/imported/running engine.wav-5f3f9ce8ec64013eec62ee1113d272f9.sample"
+
+[deps]
+
+source_file="res://assets/sounds/running engine.wav"
+dest_files=["res://.godot/imported/running engine.wav-5f3f9ce8ec64013eec62ee1113d272f9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
