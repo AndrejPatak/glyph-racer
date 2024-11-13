@@ -63,7 +63,7 @@ _data = {
 "engine": SubResource("Animation_1gffx")
 }
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_mtrrm")
 
 [node name="Sprite" parent="." instance=ExtResource("2_aw4q7")]

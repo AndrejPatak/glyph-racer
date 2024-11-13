@@ -6,9 +6,14 @@ func _ready() -> void:
 		button.connect("focus_entered", shiftHighlight.bind(button))
 		
 	if TimeTracker.get_track_time() > TimeTracker.currentTime:
-		print("New record!")
+		TimeTracker.memorize_track_time(TimeTracker.currentTrack, TimeTracker.currentTime)
+		TimeTracker.save_times()
+		TimeTracker.memorize_times()
+		TimeTracker.notify("New record!")
 	else:
 		print("Close one.")
+	
+	
 	
 
 func _on_save_pressed() -> void:

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cv7y81hakmgp1"
+path="res://.godot/imported/Krayzius & Brainstorm - Virtual Boy.mp3-a2867dd32b5e2c5c7d8214513ae87382.mp3str"
+
+[deps]
+
+source_file="res://assets/music/background/Krayzius & Brainstorm - Virtual Boy.mp3"
+dest_files=["res://.godot/imported/Krayzius & Brainstorm - Virtual Boy.mp3-a2867dd32b5e2c5c7d8214513ae87382.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

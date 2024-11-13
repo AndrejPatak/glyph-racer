@@ -33,8 +33,12 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_pressed("boost"):
 		boost = nitrusStrength * int(Input.is_action_pressed("boost"))
+		%Camera2D.zoom.x = move_toward(%Camera2D.zoom.x, 0.6, 0.1 * delta)
+		%Camera2D.zoom.y = move_toward(%Camera2D.zoom.y, 0.6, 0.1 * delta)
 	else:
 		boost = move_toward(boost, 1, delta * (accel / maxSpeed))
+		%Camera2D.zoom.x = move_toward(%Camera2D.zoom.x, 0.8, 0.2 * delta)
+		%Camera2D.zoom.y = move_toward(%Camera2D.zoom.y, 0.8, 0.2 * delta)
 	if Input.is_action_just_pressed("forward"):
 		%engineSound.play("engine")
 	if Input.is_action_just_released("forward"):
@@ -56,7 +60,6 @@ func _physics_process(delta: float) -> void:
 	#print("Mouse position: ", get_global_mouse_position())
 	#print("Mouse position normalized: ", get_global_mouse_position().normalized())
 	#print("Mouse position angle: ", get_angle_to(get_global_mouse_position()))
-	%debug.text = str(velocity)
 	
 	look_at(get_global_mouse_position())
 	

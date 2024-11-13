@@ -1,0 +1,343 @@
+[gd_scene load_steps=7 format=3 uid="uid://cq6h21u8nd0fc"]
+
+[ext_resource type="Script" path="res://settings.gd" id="1_080o1"]
+[ext_resource type="LabelSettings" uid="uid://b2tnpbg4unqoy" path="res://assets/themes/button_highlight.tres" id="1_870xy"]
+[ext_resource type="Theme" uid="uid://cx8v3o7umtucr" path="res://assets/themes/secondary_menu_buttons.tres" id="3_vjprf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lrwjq"]
+content_margin_left = 50.0
+content_margin_top = 50.0
+content_margin_right = 50.0
+content_margin_bottom = 50.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gyuut"]
+content_margin_right = 20.0
+draw_center = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5m1d5"]
+content_margin_left = 20.0
+
+[node name="settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_080o1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(1250, 900)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = -78.0
+offset_right = 174.0
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "[SETTINGS]"
+label_settings = ExtResource("1_870xy")
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_lrwjq")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "(audio):"
+label_settings = ExtResource("1_870xy")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_gyuut")
+text = "music"
+label_settings = ExtResource("1_870xy")
+
+[node name="music" type="HSlider" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+value = 0.8
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = " ->"
+label_settings = ExtResource("1_870xy")
+
+[node name="music_label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 76)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5m1d5")
+text = "8"
+label_settings = ExtResource("1_870xy")
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_gyuut")
+text = "effects"
+label_settings = ExtResource("1_870xy")
+
+[node name="effects" type="HSlider" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+value = 0.8
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = " ->"
+label_settings = ExtResource("1_870xy")
+
+[node name="effects_label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 76)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5m1d5")
+text = "8"
+label_settings = ExtResource("1_870xy")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "(video)"
+label_settings = ExtResource("1_870xy")
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_gyuut")
+text = "graphcis"
+label_settings = ExtResource("1_870xy")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = " ->"
+label_settings = ExtResource("1_870xy")
+
+[node name="graphics_button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(76, 76)
+layout_mode = 2
+theme = ExtResource("3_vjprf")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5m1d5")
+text = "MID     "
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_gyuut")
+text = "target fps"
+label_settings = ExtResource("1_870xy")
+
+[node name="fps" type="HSlider" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+value = 0.8
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = " ->"
+label_settings = ExtResource("1_870xy")
+
+[node name="fps_value" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(200, 76)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5m1d5")
+text = "999"
+label_settings = ExtResource("1_870xy")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "(controls  list)"
+label_settings = ExtResource("1_870xy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_gyuut")
+text = "Forward
+"
+label_settings = ExtResource("1_870xy")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer5"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label4" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_gyuut")
+text = "left mouse button
+"
+label_settings = ExtResource("1_870xy")
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_gyuut")
+text = "Boost
+"
+label_settings = ExtResource("1_870xy")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label4" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_gyuut")
+text = "right mouse button
+"
+label_settings = ExtResource("1_870xy")
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_gyuut")
+text = "Play/Pause
+"
+label_settings = ExtResource("1_870xy")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label4" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_gyuut")
+text = "middle mouse button
+"
+label_settings = ExtResource("1_870xy")
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_gyuut")
+text = "Next Song
+"
+label_settings = ExtResource("1_870xy")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label4" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_gyuut")
+text = "scroll up
+"
+label_settings = ExtResource("1_870xy")
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_gyuut")
+text = "Previous Song
+"
+label_settings = ExtResource("1_870xy")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer8"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label4" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_gyuut")
+text = "scroll down"
+label_settings = ExtResource("1_870xy")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="back" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 2
+theme = ExtResource("3_vjprf")
+text = "BACK TO MENU"
+
+[node name="save" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 2
+theme = ExtResource("3_vjprf")
+text = "SAVE SETTINGS"
+
+[connection signal="value_changed" from="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2/effects" to="." method="_on_effects_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer4/fps" to="." method="_on_fps_value_changed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/save" to="." method="_on_save_pressed"]

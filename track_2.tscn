@@ -71,11 +71,11 @@ occluder = SubResource("OccluderPolygon2D_rlbw4")
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
 
-[node name="Finsih" type="Area2D" parent="."]
+[node name="Finish" type="Area2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(8, 678)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Finsih"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
 position = Vector2(-2, 20)
 shape = SubResource("RectangleShape2D_mjw8d")
 

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dh4ethcxp6xsm"
+path="res://.godot/imported/Monplaisir - Soundtrack .mp3-b1784ac61dd086336a6c68306337e2f2.mp3str"
+
+[deps]
+
+source_file="res://assets/music/background/Monplaisir - Soundtrack .mp3"
+dest_files=["res://.godot/imported/Monplaisir - Soundtrack .mp3-b1784ac61dd086336a6c68306337e2f2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

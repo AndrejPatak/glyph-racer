@@ -1,0 +1,92 @@
+[gd_scene load_steps=9 format=3 uid="uid://dtoff4d070guu"]
+
+[ext_resource type="PackedScene" uid="uid://cn56ji7fpcno2" path="res://sprite.tscn" id="1_rvxxx"]
+[ext_resource type="Texture2D" uid="uid://cj0btnap2s30a" path="res://assets/race_1.svg" id="2_j5v6l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3e3cc"]
+size = Vector2(234, 75.9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxjmf"]
+size = Vector2(49.7, 287)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0q16"]
+size = Vector2(104, 116)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vlbr2"]
+size = Vector2(49.9, 373.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1hcif"]
+size = Vector2(36.375, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpvh8"]
+size = Vector2(93, 13)
+
+[node name="track3" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1812, -1086)
+scale = Vector2(10, 10)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(26, -69)
+shape = SubResource("RectangleShape2D_3e3cc")
+debug_color = Color(0.952477, 8.66354e-07, 0.558445, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-122, 172)
+shape = SubResource("RectangleShape2D_3e3cc")
+debug_color = Color(0.952477, 8.66354e-07, 0.558445, 0.42)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(19.85, 199.5)
+shape = SubResource("RectangleShape2D_qxjmf")
+debug_color = Color(0.95865, 1.92523e-07, 0.525973, 0.42)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-137, 28)
+shape = SubResource("RectangleShape2D_w0q16")
+debug_color = Color(0.952477, 8.66354e-07, 0.558445, 0.42)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(164.05, 156.375)
+shape = SubResource("RectangleShape2D_vlbr2")
+debug_color = Color(0.95865, 1.92523e-07, 0.525973, 0.42)
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-205, 109)
+shape = SubResource("RectangleShape2D_1hcif")
+debug_color = Color(0.95865, 1.92523e-07, 0.525973, 0.42)
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(94, 382.05)
+shape = SubResource("RectangleShape2D_3e3cc")
+debug_color = Color(0.952477, 8.66354e-07, 0.558445, 0.42)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(57.4, 220.5)
+polygon = PackedVector2Array(-12.7, -53.1, 21.9, 10, -12.8, 33.5)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(125.9, 220.5)
+scale = Vector2(-1, 1)
+polygon = PackedVector2Array(-13.3, -52.9, 23.1, 10, -13.1, 33.5)
+
+[node name="sprite" parent="." instance=ExtResource("1_rvxxx")]
+position = Vector2(1661, 472)
+spriteName = "track"
+
+[node name="Sprite2D" parent="sprite" index="0"]
+rotation = 0.0
+scale = Vector2(1, 1)
+texture = ExtResource("2_j5v6l")
+
+[node name="Finish" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(2362, 2304)
+scale = Vector2(10, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
+position = Vector2(36.8, -3.5)
+shape = SubResource("RectangleShape2D_mpvh8")
+
+[editable path="sprite"]

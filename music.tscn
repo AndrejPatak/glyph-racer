@@ -1,6 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://b18th5ru8sjky"]
+[gd_scene load_steps=3 format=3 uid="uid://b18th5ru8sjky"]
 
 [ext_resource type="Script" path="res://music.gd" id="1_53hvr"]
 
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_j4kkk"]
+shuffle = true
+
 [node name="musicManager" type="Node"]
+process_mode = 3
 script = ExtResource("1_53hvr")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="audioStream" type="AudioStreamPlayer2D" parent="CanvasLayer"]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamPlaylist_j4kkk")
+volume_db = -80.0
+max_distance = 1e+16
+attenuation = 9.13376e-05
+panning_strength = 0.0

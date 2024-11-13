@@ -13,15 +13,21 @@ func _ready() -> void:
 			track_node = preload("res://tutorialTrack.tscn")
 		"track_2":
 			track_node = preload("res://track_2.tscn")
+		"track_3":
+			track_node = preload("res://track_3.tscn")
+		"track_4":
+			track_node = preload("res://track_4.tscn")
 		_:
-			print("PANIKK!!!1!1")
+			track_node = preload("res://tutorialTrack.tscn")
+			TimeTracker.notify("WARNING: " + TimeTracker.currentTrack + " not found!!")
 	var trackInstance = track_node.instantiate()
 	
 	add_child(trackInstance)
-	if(trackInstance.get_node("Finsih")):
-		trackInstance.get_node("Finsih").connect("body_entered", finishRace)
+	if(trackInstance.get_node("Finish")):
+		trackInstance.get_node("Finish").connect("body_entered", finishRace)
 	else:
-		print("Nodes in trackInstance", trackInstance.get_children(), "\ntrackInstance.get_node('Finish'): ", trackInstance.get_node("Finsih"))
+		print("Nodes in trackInstance: ", trackInstance.get_children(), "\ntrackInstance.get_node('Finish'): ", trackInstance.get_node("Finsih"))
+		pass
 	startRace()
 
 func startRace():
@@ -36,6 +42,6 @@ func finishRace(_body):
 	print(TimeTracker.times)
 	
 	TimeTracker.finish()
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("pause"):
 		TimeTracker.pause()

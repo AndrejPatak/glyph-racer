@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cwg67hgmgcfgt"
+path="res://.godot/imported/Joshua McLean - Mountain Trials.mp3-477a30aa9e83759c9d0c99e9b8f904f7.mp3str"
+
+[deps]
+
+source_file="res://assets/music/background/Joshua McLean - Mountain Trials.mp3"
+dest_files=["res://.godot/imported/Joshua McLean - Mountain Trials.mp3-477a30aa9e83759c9d0c99e9b8f904f7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

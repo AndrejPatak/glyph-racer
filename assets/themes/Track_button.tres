@@ -1,0 +1,61 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://b8c237wj3n2h6"]
+
+[ext_resource type="FontFile" uid="uid://dvdc01i1ernmo" path="res://assets/fonts/Orbitron/static/Orbitron-Regular.ttf" id="1_ti1x0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ygoau"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_suxjk"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.101961, 0.101961, 0.101961, 0)
+draw_center = false
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4npk"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.101961, 0.101961, 0.101961, 0)
+draw_center = false
+border_color = Color(1, 1, 1, 1)
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4n1w"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.101961, 0.101961, 0.101961, 0)
+draw_center = false
+border_color = Color(1, 1, 1, 1)
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ikd6"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.101961, 0.101961, 0.101961, 0)
+draw_center = false
+border_color = Color(1, 1, 1, 1)
+corner_detail = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rak35"]
+
+[resource]
+default_font = ExtResource("1_ti1x0")
+default_font_size = 18
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 0.482353)
+Button/font_sizes/font_size = 40
+Button/styles/focus = SubResource("StyleBoxEmpty_ygoau")
+Button/styles/hover = SubResource("StyleBoxFlat_suxjk")
+Button/styles/hover_mirrored = SubResource("StyleBoxFlat_f4npk")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_o4n1w")
+Button/styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_2ikd6")
+Button/styles/normal = SubResource("StyleBoxEmpty_rak35")

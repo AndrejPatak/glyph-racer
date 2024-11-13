@@ -52,11 +52,11 @@ rotation = -1.5708
 rotation = 3.14159
 shape = SubResource("WorldBoundaryShape2D_vwbht")
 
-[node name="Finsih" type="Area2D" parent="."]
+[node name="Finish" type="Area2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(1216, -78)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Finsih"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
 position = Vector2(-9, 90)
 shape = SubResource("RectangleShape2D_qiymr")
 

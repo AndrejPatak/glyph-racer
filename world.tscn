@@ -1,8 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://jduxdeebiby7"]
+[gd_scene load_steps=6 format=3 uid="uid://jduxdeebiby7"]
 
 [ext_resource type="PackedScene" uid="uid://btlv6hnynahk0" path="res://player/player.tscn" id="1_dfuub"]
 [ext_resource type="Script" path="res://world.gd" id="1_qoebp"]
+[ext_resource type="Script" path="res://cameraShake.gd" id="3_lb1ei"]
 [ext_resource type="PackedScene" uid="uid://c4lkeqc08fnsn" path="res://ui.tscn" id="3_r806t"]
+
+[sub_resource type="Environment" id="Environment_kbm4l"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.3
+glow_strength = 0.79
+glow_bloom = 1.0
+glow_blend_mode = 0
+glow_hdr_threshold = 0.2
+glow_hdr_scale = 4.0
+glow_hdr_luminance_cap = 256.0
+glow_map_strength = 1.0
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_qoebp")
@@ -16,6 +29,8 @@ offset_bottom = 23.0
 z_index = 1
 
 [node name="Camera2D" type="Camera2D" parent="player"]
+unique_name_in_owner = true
+zoom = Vector2(0.8, 0.8)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 drag_horizontal_enabled = true
@@ -24,6 +39,7 @@ drag_horizontal_offset = 0.5
 drag_vertical_offset = 0.5
 editor_draw_limits = true
 editor_draw_drag_margin = true
+script = ExtResource("3_lb1ei")
 
 [node name="ui_layer" type="CanvasLayer" parent="player/Camera2D"]
 unique_name_in_owner = true
@@ -33,3 +49,6 @@ unique_name_in_owner = true
 rotation = 0.0
 mouse_filter = 2
 metadata/_edit_pinned_properties_ = [&"rotation"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kbm4l")

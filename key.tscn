@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://tsc4jwqt4j1t"]
+
+[ext_resource type="Texture2D" uid="uid://cbxtqnqrjnfnb" path="res://assets/KEY.svg" id="1_156nr"]
+[ext_resource type="Script" path="res://key.gd" id="1_tctd1"]
+[ext_resource type="AudioStream" uid="uid://b27uo0mpfxmdt" path="res://assets/sounds/pickup.wav" id="3_e51nm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3o4e0"]
+radius = 104.12
+
+[sub_resource type="Gradient" id="Gradient_s234e"]
+interpolation_mode = 2
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0, 0.321622, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.248113, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xhdk5"]
+gradient = SubResource("Gradient_s234e")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_eg5g8"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(5.59, 3.565, 1)
+emission_shape = 3
+emission_box_extents = Vector3(10.615, 15.91, 1)
+radial_velocity_min = 360.0
+radial_velocity_max = 360.0
+gravity = Vector3(0, 0, 0)
+scale_min = 18.24
+scale_max = 18.24
+color_ramp = SubResource("GradientTexture1D_xhdk5")
+
+[node name="key" type="Area2D"]
+script = ExtResource("1_tctd1")
+keyID = "track_5"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_156nr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-9, 8)
+shape = SubResource("CircleShape2D_3o4e0")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 25
+process_material = SubResource("ParticleProcessMaterial_eg5g8")
+one_shot = true
+explosiveness = 1.0
+
+[node name="sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_e51nm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered" flags=6]
+[connection signal="finished" from="GPUParticles2D" to="." method="_on_gpu_particles_2d_finished"]

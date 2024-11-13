@@ -1,0 +1,125 @@
+[gd_scene load_steps=11 format=3 uid="uid://h2unij4vwkl5"]
+
+[ext_resource type="Script" path="res://smasher.gd" id="1_nmc82"]
+[ext_resource type="PackedScene" uid="uid://cn56ji7fpcno2" path="res://sprite.tscn" id="2_u1qc2"]
+[ext_resource type="Texture2D" uid="uid://dnrjl2244byq" path="res://assets/warning.svg" id="3_fhs5b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ct2cp"]
+size = Vector2(100, 20)
+
+[sub_resource type="Animation" id="Animation_8l81x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tgm0b"]
+resource_name = "oscilate"
+loop_mode = 2
+step = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.87),
+"transitions": PackedFloat32Array(1.7411, 1),
+"update": 0,
+"values": [Vector2(10, 0), Vector2(2000, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jarwj"]
+_data = {
+"RESET": SubResource("Animation_8l81x"),
+"oscilate": SubResource("Animation_tgm0b")
+}
+
+[sub_resource type="Animation" id="Animation_0ywf7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("warning2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tj1dd"]
+resource_name = "warning"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("warning2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 0.5),
+"transitions": PackedFloat32Array(0.63728, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.0352941)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_is6t6"]
+_data = {
+"RESET": SubResource("Animation_0ywf7"),
+"warning": SubResource("Animation_tj1dd")
+}
+
+[node name="smasher" type="Node2D" groups=["Smasher"]]
+script = ExtResource("1_nmc82")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(10, 0)
+scale = Vector2(10, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_ct2cp")
+
+[node name="ColorRect" type="ColorRect" parent="CharacterBody2D"]
+unique_name_in_owner = true
+offset_left = -50.0
+offset_top = -10.0
+offset_right = 50.0
+offset_bottom = 10.0
+
+[node name="anim" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_jarwj")
+}
+
+[node name="warning2" parent="." instance=ExtResource("2_u1qc2")]
+position = Vector2(1100, 0)
+spriteName = "danger"
+
+[node name="Sprite2D" parent="warning2" index="0"]
+position = Vector2(68, 0)
+rotation = 0.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_fhs5b")
+
+[node name="warning" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_is6t6")
+}
+
+[editable path="warning2"]

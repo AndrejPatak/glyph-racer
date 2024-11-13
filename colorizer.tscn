@@ -4,7 +4,7 @@
 
 [node name="Colorizer" type="Node"]
 script = ExtResource("1_1tgjd")
-playerColor = Color(0.54902, 0.882353, 0.0431373, 1)
-wallsColor = Color(0, 0.847059, 0.921569, 1)
+playerColor = Color(0, 0.905882, 0.329412, 1)
+wallsColor = Color(0.818444, 0.000755653, 0.857843, 1)
 dangerColor = Color(1, 0, 0.0588235, 1)
 backgroundColor = Color(0.137255, 0.137255, 0.137255, 1)
