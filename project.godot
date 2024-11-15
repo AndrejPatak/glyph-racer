@@ -38,6 +38,7 @@ track_label="This group tracks buttons to assign a string for the time achieved 
 track_button="Group to track all buttons that should open a track"
 player="The group to detect player collisions"
 Smasher="Group to keep track of smashers in a track"
+sound_effect="Group used to set the volume for sound effects"
 
 [input]
 

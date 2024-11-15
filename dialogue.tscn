@@ -71,5 +71,5 @@ layout_mode = 2
 theme = ExtResource("4_h3al1")
 text = ">"
 
-[connection signal="dialogue_ended" from="." to="." method="_on_dialogue_ended"]
+[connection signal="show_arrow" from="." to="." method="_on_show_arrow"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/next" to="." method="_on_next_pressed"]

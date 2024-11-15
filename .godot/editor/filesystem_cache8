@@ -1,68 +1,74 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1731667856
+::res://::1731710667
 beginning.tres::Resource/DialogueData::5022744718265908133::1731602843::0::1::::<><>::res://addons/dialogue_nodes/objects/DialogueData.gd
-BLOOM.gdshader::Shader::-1::1731625948::0::1::::<><>::
+BLOOM.gdshader::Shader::-1::1731709903::0::1::::<><>::
+boost.gd::GDScript::-1::1731708865::0::1::::<>Area2D<>::
+boost_pickup.tscn::PackedScene::8315061211558412221::1731709761::0::1::::<><>::res://boost.gd<>uid://45siu5jx63ic::::res://assets/boost-icon.svg<>uid://bns2xmyb48j52::::res://assets/sounds/boost_pickup.wav
 colorizer.gd::GDScript::-1::1731091064::0::1::::<>Node<>::
-colorizer.tscn::PackedScene::9089432174211736459::1731625819::0::1::::<><>::res://colorizer.gd
+colorizer.tscn::PackedScene::9089432174211736459::1731709760::0::1::::<><>::res://colorizer.gd
 colors_demo.gd::GDScript::-1::1731439480::0::1::::<>Node<>::
 colors_demo.gdshader::Shader::-1::1731439480::0::1::::<><>::
 danger_popup.gd::GDScript::-1::1731100729::0::1::::<>Control<>::
-danger_popup.tscn::PackedScene::6286842716902589373::1731625819::0::1::::<><>::res://danger_popup.gd<>uid://b2tnpbg4unqoy::::res://assets/themes/button_highlight.tres<>uid://epkkuh4ygf40::::res://assets/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Regular.ttf<>uid://d0qtowtusfaqh::::res://highlight.tscn<>uid://dvdc01i1ernmo::::res://assets/fonts/Orbitron/static/Orbitron-Regular.ttf<>uid://cx8v3o7umtucr::::res://assets/themes/secondary_menu_buttons.tres
-dialogue.gd::GDScript::-1::1731625706::0::1::::<>Control<>::
-dialogue.tscn::PackedScene::834943024350481996::1731625819::0::1::::<><>::res://dialogue.gd<>uid://dmejnegdnrn06::::res://assets/fonts/Orbitron/static/Orbitron-SemiBold.ttf<>uid://dvdc01i1ernmo::::res://assets/fonts/Orbitron/static/Orbitron-Regular.ttf<>uid://cx8v3o7umtucr::::res://assets/themes/secondary_menu_buttons.tres
+danger_popup.tscn::PackedScene::6286842716902589373::1731709760::0::1::::<><>::res://danger_popup.gd<>uid://b2tnpbg4unqoy::::res://assets/themes/button_highlight.tres<>uid://epkkuh4ygf40::::res://assets/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Regular.ttf<>uid://d0qtowtusfaqh::::res://highlight.tscn<>uid://dvdc01i1ernmo::::res://assets/fonts/Orbitron/static/Orbitron-Regular.ttf<>uid://cx8v3o7umtucr::::res://assets/themes/secondary_menu_buttons.tres
+dialogue.gd::GDScript::-1::1731709317::0::1::::<>Control<>::
+dialogue.tscn::PackedScene::834943024350481996::1731709761::0::1::::<><>::res://dialogue.gd<>uid://dmejnegdnrn06::::res://assets/fonts/Orbitron/static/Orbitron-SemiBold.ttf<>uid://dvdc01i1ernmo::::res://assets/fonts/Orbitron/static/Orbitron-Regular.ttf<>uid://cx8v3o7umtucr::::res://assets/themes/secondary_menu_buttons.tres
 export_presets.cfg::TextFile::-1::1730285466::0::1::::<><>::
-general_settings.gd::GDScript::-1::1731589334::0::1::::<>Node2D<>::
-general_settings.tscn::PackedScene::1438309403319243794::1731625819::0::1::::<><>::res://general_settings.gd
+general_settings.gd::GDScript::-1::1731707092::0::1::::<>Node2D<>::
+general_settings.tscn::PackedScene::1438309403319243794::1731709761::0::1::::<><>::res://general_settings.gd
 hidden_area.gd::GDScript::-1::1731448811::0::1::::<>ColorRect<>::
 highlight.gd::GDScript::-1::1731241400::0::1::::<>Label<>::
-highlight.tscn::PackedScene::8948192995870247215::1731625819::0::1::::<><>::uid://b2tnpbg4unqoy::::res://assets/themes/button_highlight.tres<>res://highlight.gd
+highlight.tscn::PackedScene::8948192995870247215::1731709760::0::1::::<><>::uid://b2tnpbg4unqoy::::res://assets/themes/button_highlight.tres<>res://highlight.gd
 icon.svg::CompressedTexture2D::1106646732083403000::1729944943::1729944955::1::::<><>::
 key.gd::GDScript::-1::1731531454::0::1::::<>Area2D<>::
-key.tscn::PackedScene::1370920558153822915::1731625819::0::1::::<><>::uid://cbxtqnqrjnfnb::::res://assets/KEY.svg<>res://key.gd<>uid://b27uo0mpfxmdt::::res://assets/sounds/pickup.wav
-main_menu.tscn::PackedScene::3853072144754097079::1731625819::0::1::::<><>::res://main_menu_button_handler.gd<>uid://c3t7fy1jsu6ik::::res://assets/themes/main_menu_buttons.tres<>uid://d2k441xoyms78::::res://assets/fonts/Orbitron/static/Orbitron-ExtraBold.ttf<>uid://d0qtowtusfaqh::::res://highlight.tscn
+key.tscn::PackedScene::1370920558153822915::1731709761::0::1::::<><>::uid://cbxtqnqrjnfnb::::res://assets/KEY.svg<>res://key.gd<>uid://b27uo0mpfxmdt::::res://assets/sounds/pickup.wav
+main_menu.tscn::PackedScene::3853072144754097079::1731709760::0::1::::<><>::res://main_menu_button_handler.gd<>uid://c3t7fy1jsu6ik::::res://assets/themes/main_menu_buttons.tres<>uid://d2k441xoyms78::::res://assets/fonts/Orbitron/static/Orbitron-ExtraBold.ttf<>uid://d0qtowtusfaqh::::res://highlight.tscn
 main_menu_button_handler.gd::GDScript::-1::1731588676::0::1::::<>Control<>::
 music.gd::GDScript::-1::1731533087::0::1::::<>Node<>::
-music.tscn::PackedScene::4280622810501517936::1731625819::0::1::::<><>::res://music.gd
+music.tscn::PackedScene::4280622810501517936::1731709760::0::1::::<><>::res://music.gd
 notification.gd::GDScript::-1::1731241050::0::1::::<>Control<>::
-notification.tscn::PackedScene::8914739235612178953::1731625819::0::1::::<><>::res://notification.gd
+notification.tscn::PackedScene::8914739235612178953::1731709760::0::1::::<><>::res://notification.gd
 pause_menu.gd::GDScript::-1::1731595312::0::1::::<>Control<>::
-pause_menu.tscn::PackedScene::3300539824084244264::1731625818::0::1::::<><>::res://pause_menu.gd<>uid://cx8v3o7umtucr::::res://assets/themes/secondary_menu_buttons.tres<>uid://b2tnpbg4unqoy::::res://assets/themes/button_highlight.tres
+pause_menu.tscn::PackedScene::3300539824084244264::1731709760::0::1::::<><>::res://pause_menu.gd<>uid://cx8v3o7umtucr::::res://assets/themes/secondary_menu_buttons.tres<>uid://b2tnpbg4unqoy::::res://assets/themes/button_highlight.tres
 pointer.gd::GDScript::-1::1731625567::0::1::::<>Node2D<>::
 progress_bar.gd::GDScript::-1::1731623067::0::1::::<>ProgressBar<>::
 settings.gd::GDScript::-1::1731588706::0::1::::<>Control<>::
-settings.tscn::PackedScene::5960333209375451160::1731625819::0::1::::<><>::res://settings.gd<>uid://b2tnpbg4unqoy::::res://assets/themes/button_highlight.tres<>uid://cx8v3o7umtucr::::res://assets/themes/secondary_menu_buttons.tres
+settings.tscn::PackedScene::5960333209375451160::1731709761::0::1::::<><>::res://settings.gd<>uid://b2tnpbg4unqoy::::res://assets/themes/button_highlight.tres<>uid://cx8v3o7umtucr::::res://assets/themes/secondary_menu_buttons.tres
 smasher.gd::GDScript::-1::1731442269::0::1::::<>Node2D<>::
-smasher.tscn::PackedScene::548298095438541468::1731625819::0::1::::<><>::res://smasher.gd<>uid://cn56ji7fpcno2::::res://sprite.tscn<>uid://dnrjl2244byq::::res://assets/warning.svg
+smasher.tscn::PackedScene::548298095438541468::1731709760::0::1::::<><>::res://smasher.gd<>uid://cn56ji7fpcno2::::res://sprite.tscn<>uid://dnrjl2244byq::::res://assets/warning.svg
 smasher_trigger.tscn::PackedScene::8957187573897768350::1731439823::0::1::::<><>::
+spike.gd::GDScript::-1::1731668328::0::1::::<>Area2D<>::
+spike.tscn::PackedScene::1697067661818211889::1731709761::0::1::::<><>::res://spike.gd
 sprite.tscn::PackedScene::5749126436091179595::1730047505::0::1::::<><>::res://player/sprite.gd<>uid://deylra00k7kfm::::res://assets/racer.png
 timer_handler.gd::GDScript::-1::1731144892::0::1::::<>Node<>::
 time_filler.gd::GDScript::-1::1731535204::0::1::::<>Node<>::
-time_tracker.tscn::PackedScene::5673870349258555120::1731625818::0::1::::<><>::res://time_filler.gd
-track_2.tscn::PackedScene::6181492082550399521::1731625819::0::1::::<><>::uid://cn56ji7fpcno2::::res://sprite.tscn<>uid://bqiml61mnlvm4::::res://assets/tutorial track2.svg
-track_3.tscn::PackedScene::8522065411683318140::1731625819::0::1::::<><>::uid://cn56ji7fpcno2::::res://sprite.tscn<>uid://cj0btnap2s30a::::res://assets/race_1.svg
-track_4.tscn::PackedScene::7589139765345943513::1731625819::0::1::::<><>::uid://cn56ji7fpcno2::::res://sprite.tscn<>res://hidden_area.gd<>uid://dcfsf8kc42tgo::::res://assets/race_2.svg.svg<>uid://tsc4jwqt4j1t::::res://key.tscn
+time_tracker.tscn::PackedScene::5673870349258555120::1731709760::0::1::::<><>::res://time_filler.gd
+track_2.tscn::PackedScene::6181492082550399521::1731709760::0::1::::<><>::uid://cn56ji7fpcno2::::res://sprite.tscn<>uid://bqiml61mnlvm4::::res://assets/tutorial track2.svg
+track_3.tscn::PackedScene::8522065411683318140::1731709760::0::1::::<><>::uid://cn56ji7fpcno2::::res://sprite.tscn<>uid://cj0btnap2s30a::::res://assets/race_1.svg
+track_4.tscn::PackedScene::7589139765345943513::1731709760::0::1::::<><>::uid://cn56ji7fpcno2::::res://sprite.tscn<>res://hidden_area.gd<>uid://dcfsf8kc42tgo::::res://assets/race_2.svg.svg<>uid://tsc4jwqt4j1t::::res://key.tscn
 track_select.gd::GDScript::-1::1731588764::0::1::::<>Control<>::
-track_select.tscn::PackedScene::3503956762116102201::1731625818::0::1::::<><>::res://track_select.gd<>uid://b7qt8cpyeutjv::::res://assets/themes/menu_title.tres<>uid://cm3p2y64gjteu::::res://time_tracker.tscn<>uid://buv88ph3qdiwe::::res://assets/themes/track_box.tres<>uid://b8c237wj3n2h6::::res://assets/themes/Track_button.tres<>uid://cnonj37wvdwwj::::res://assets/fonts/Kode_Mono/KodeMono-VariableFont_wght.ttf<>uid://d0qtowtusfaqh::::res://highlight.tscn<>uid://cx8v3o7umtucr::::res://assets/themes/secondary_menu_buttons.tres
-tutorialTrack.tscn::PackedScene::3948871985919400396::1731625819::0::1::::<><>::res://tutorial_track.gd
-tutorial_track.gd::GDScript::-1::1731625782::0::1::::<>Node2D<>::
-ui.tscn::PackedScene::6831641145930491005::1731625818::0::1::::<><>::res://timer_handler.gd<>uid://cmtvsgmf6d3jb::::res://assets/fonts/Kode_Mono/static/KodeMono-Regular.ttf<>res://progress_bar.gd
+track_select.tscn::PackedScene::3503956762116102201::1731709759::0::1::::<><>::res://track_select.gd<>uid://b7qt8cpyeutjv::::res://assets/themes/menu_title.tres<>uid://cm3p2y64gjteu::::res://time_tracker.tscn<>uid://buv88ph3qdiwe::::res://assets/themes/track_box.tres<>uid://b8c237wj3n2h6::::res://assets/themes/Track_button.tres<>uid://cnonj37wvdwwj::::res://assets/fonts/Kode_Mono/KodeMono-VariableFont_wght.ttf<>uid://d0qtowtusfaqh::::res://highlight.tscn<>uid://cx8v3o7umtucr::::res://assets/themes/secondary_menu_buttons.tres
+tutorialTrack.tscn::PackedScene::3948871985919400396::1731709868::0::1::::<><>::res://tutorial_track.gd<>uid://dqp43w4n2jc0l::::res://boost_pickup.tscn
+tutorial_track.gd::GDScript::-1::1731709758::0::1::::<>Node2D<>::
+ui.tscn::PackedScene::6831641145930491005::1731709760::0::1::::<><>::res://timer_handler.gd<>uid://cmtvsgmf6d3jb::::res://assets/fonts/Kode_Mono/static/KodeMono-Regular.ttf<>res://progress_bar.gd
 victory.gd::GDScript::-1::1731595353::0::1::::<>Control<>::
-victory.tscn::PackedScene::4428534236384558511::1731625818::0::1::::<><>::res://victory.gd<>uid://cx8v3o7umtucr::::res://assets/themes/secondary_menu_buttons.tres<>uid://b2tnpbg4unqoy::::res://assets/themes/button_highlight.tres
-world.gd::GDScript::-1::1731625469::0::1::::<>Node2D<>::
-world.tscn::PackedScene::639148303052275236::1731625818::0::1::::<><>::uid://btlv6hnynahk0::::res://player/player.tscn<>res://world.gd<>uid://c4lkeqc08fnsn::::res://ui.tscn<>uid://b2tnpbg4unqoy::::res://assets/themes/button_highlight.tres
+victory.tscn::PackedScene::4428534236384558511::1731709760::0::1::::<><>::res://victory.gd<>uid://cx8v3o7umtucr::::res://assets/themes/secondary_menu_buttons.tres<>uid://b2tnpbg4unqoy::::res://assets/themes/button_highlight.tres
+world.gd::GDScript::-1::1731707137::0::1::::<>Node2D<>::
+world.tscn::PackedScene::639148303052275236::1731709760::0::1::::<><>::uid://btlv6hnynahk0::::res://player/player.tscn<>res://world.gd<>uid://c4lkeqc08fnsn::::res://ui.tscn<>uid://b2tnpbg4unqoy::::res://assets/themes/button_highlight.tres
 ::res://addons/::1731619594
 ::res://addons/ColorPreview/::1731439480
 ColorHelper.gd::GDScript::-1::1731439479::0::1::::ColorHelper<>RefCounted<>::
 ColorPreview.gd::GDScript::-1::1731439479::0::1::::<>EditorPlugin<>::
 Picker.tscn::PackedScene::7946079549344240257::1731439479::0::1::::<><>::
 plugin.cfg::TextFile::-1::1731439480::0::1::::<><>::
-::res://assets/::1731448523
+::res://assets/::1731675261
+boost-icon.svg::CompressedTexture2D::2098516087597808906::1731670256::1731670257::1::::<><>::
 KEY.svg::CompressedTexture2D::4891693803238019431::1731448521::1731448523::1::::<><>::
 racer1.png::CompressedTexture2D::489554758781054564::1729946447::1729946450::1::::<><>::
 racer.png::CompressedTexture2D::7490260776916310494::1730047418::1730047420::1::::<><>::
 racer.svg::CompressedTexture2D::1183451009406903278::1730047406::1730047420::1::::<><>::
 race_1.svg::CompressedTexture2D::5456245734578852450::1731418464::1731418467::1::::<><>::
 race_2.svg.svg::CompressedTexture2D::7311065210814294542::1731446345::1731446346::1::::<><>::
+track_5.svg::CompressedTexture2D::4034691010645411425::1731675258::1731675261::1::::<><>::
 tutorial track1.svg::CompressedTexture2D::3244999774965103088::1730049146::1730049153::1::::<><>::
 tutorial track2.svg::CompressedTexture2D::3526707120532072625::1730052219::1730052220::1::::<><>::
 warning.svg::CompressedTexture2D::238452323472271004::1731441558::1731441559::1::::<><>::
@@ -100,9 +106,9 @@ SixtyfourConvergence-Regular-VariableFont_BLED,SCAN,XELA,YELA.ttf::FontFile::109
 ::res://assets/fonts/Sixtyfour_Convergence/static/::1731098611
 SixtyfourConvergence-Regular.ttf::FontFile::1348312993797453661::1727709108::1731098611::1::::<><>::
 ::res://assets/music/::1731158353
-::res://assets/music/background/::1731619618
- Jeremy Blake - Powerup!.mp3::AudioStreamMP3::5695160533199187124::1731160195::1731667857::1::::<><>::
- Jorge Hernandez - Chopsticks.mp3::AudioStreamMP3::8582371901123876829::1731160210::1731667857::1::::<><>::
+::res://assets/music/background/::1731696213
+ Jeremy Blake - Powerup!.mp3::AudioStreamMP3::5695160533199187124::1731160195::1731710669::1::::<><>::
+ Jorge Hernandez - Chopsticks.mp3::AudioStreamMP3::8582371901123876829::1731160210::1731710669::1::::<><>::
 AdhesiveWombat - Night Shade.mp3::AudioStreamMP3::7696037779361085546::1731160171::1731161367::1::::<><>::
 Density & Time - MAZE.mp3::AudioStreamMP3::8425687295844879591::1731160183::1731161367::1::::<><>::
 Eric Skiff - A Night Of Dizzy Spells.mp3::AudioStreamMP3::815271413923394183::1731160187::1731161367::1::::<><>::
@@ -121,24 +127,25 @@ The Grand Affair - Coupe.mp3::AudioStreamMP3::1246207776176844885::1731160271::1
 The Whole Other - 8-Bit Dreamscape.mp3::AudioStreamMP3::5827966976177040643::1731160275::1731161367::1::::<><>::
 Vibe Mountain - Operatic 3.mp3::AudioStreamMP3::4178294639757270788::1731160289::1731161367::1::::<><>::
 William Rosati - Floating Also.mp3::AudioStreamMP3::3981752799898413249::1731160295::1731161367::1::::<><>::
-::res://assets/sounds/::1731531513
+::res://assets/sounds/::1731697721
+boost_pickup.wav::AudioStreamWAV::3337715550066110515::1731697698::1731697721::1::::<><>::
 pickup.wav::AudioStreamWAV::4348820223330423697::1731531364::1731531513::1::::<><>::
 running engine.wav::AudioStreamWAV::5250927885713159263::1730232275::1730232306::1::::<><>::
 startEngine.wav::AudioStreamWAV::210268579434697604::1730232132::1730232306::1::::<><>::
-::res://assets/themes/::1731624433
-button_highlight.tres::LabelSettings::4321558810198709244::1731624433::0::1::::<><>::uid://dvdc01i1ernmo::::res://assets/fonts/Orbitron/static/Orbitron-Regular.ttf
-main_menu_buttons.tres::Theme::6779305340475409270::1731619812::0::1::::<><>::uid://bu4vbgi18t13h::::res://assets/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Bold.ttf
-menu_title.tres::LabelSettings::4666706407551888563::1731619812::0::1::::<><>::
-secondary_menu_buttons.tres::Theme::6456635081708510205::1731619812::0::1::::<><>::uid://dvdc01i1ernmo::::res://assets/fonts/Orbitron/static/Orbitron-Regular.ttf
-track_box.tres::Theme::3835612881206743144::1731619812::0::1::::<><>::
-Track_button.tres::Theme::4708472355470101313::1731619812::0::1::::<><>::uid://dvdc01i1ernmo::::res://assets/fonts/Orbitron/static/Orbitron-Regular.ttf
+::res://assets/themes/::1731697780
+button_highlight.tres::LabelSettings::4321558810198709244::1731697780::0::1::::<><>::uid://dvdc01i1ernmo::::res://assets/fonts/Orbitron/static/Orbitron-Regular.ttf
+main_menu_buttons.tres::Theme::6779305340475409270::1731697780::0::1::::<><>::uid://bu4vbgi18t13h::::res://assets/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Bold.ttf
+menu_title.tres::LabelSettings::4666706407551888563::1731697780::0::1::::<><>::
+secondary_menu_buttons.tres::Theme::6456635081708510205::1731697780::0::1::::<><>::uid://dvdc01i1ernmo::::res://assets/fonts/Orbitron/static/Orbitron-Regular.ttf
+track_box.tres::Theme::3835612881206743144::1731697780::0::1::::<><>::
+Track_button.tres::Theme::4708472355470101313::1731697780::0::1::::<><>::uid://dvdc01i1ernmo::::res://assets/fonts/Orbitron/static/Orbitron-Regular.ttf
 ::res://build/::1730285121
 ::res://build/web/::1730376338
 game.apple-touch-icon.png::CompressedTexture2D::4446042252931138091::1730285465::1730376338::1::::<><>::
 game.icon.png::CompressedTexture2D::6045912975178261512::1730285465::1730376338::1::::<><>::
 game.png::CompressedTexture2D::178434793832611153::1730285465::1730376338::1::::<><>::
-::res://player/::1731625947
-player.gd::GDScript::-1::1731625818::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::3744047673423260825::1731625947::0::1::::<><>::res://player/player.gd<>uid://cn56ji7fpcno2::::res://sprite.tscn<>uid://c84dfiy20py7::::res://assets/sounds/startEngine.wav<>res://pointer.gd<>uid://b2tnpbg4unqoy::::res://assets/themes/button_highlight.tres
+::res://player/::1731709760
+player.gd::GDScript::-1::1731675270::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::3744047673423260825::1731709760::0::1::::<><>::res://player/player.gd<>uid://cn56ji7fpcno2::::res://sprite.tscn<>uid://c84dfiy20py7::::res://assets/sounds/startEngine.wav<>res://pointer.gd<>uid://b2tnpbg4unqoy::::res://assets/themes/button_highlight.tres
 sprite.gd::GDScript::-1::1731446188::0::1::::<>Node2D<>::
 ::res://saves/::1731584082

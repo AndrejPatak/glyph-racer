@@ -46,7 +46,7 @@ process_material = SubResource("ParticleProcessMaterial_eg5g8")
 one_shot = true
 explosiveness = 1.0
 
-[node name="sound" type="AudioStreamPlayer2D" parent="."]
+[node name="sound" type="AudioStreamPlayer2D" parent="." groups=["sound_effect"]]
 stream = ExtResource("3_e51nm")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered" flags=6]

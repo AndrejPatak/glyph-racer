@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 		boost = nitrusStrength * int(Input.is_action_pressed("boost"))
 		%Camera2D.zoom.x = move_toward(%Camera2D.zoom.x, 0.6, 0.1 * delta)
 		%Camera2D.zoom.y = move_toward(%Camera2D.zoom.y, 0.6, 0.1 * delta)
-		boostAmount = move_toward(boostAmount, 0, 2.5)
+		boostAmount = move_toward(boostAmount, 0, .5	)
 	else:
 		boost = move_toward(boost, 1, delta * (accel / maxSpeed))
 		%Camera2D.zoom.x = move_toward(%Camera2D.zoom.x, 0.8, 0.2 * delta)
@@ -83,3 +83,7 @@ func _physics_process(delta: float) -> void:
 
 func stop_exhaust() -> void:
 	%exhaust.emitting = false
+
+func add_boost(amount : float) -> void:
+	if boostAmount != 100:
+		boostAmount += amount

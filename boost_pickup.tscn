@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqp43w4n2jc0l"]
+
+[ext_resource type="Script" path="res://boost.gd" id="1_d0ux4"]
+[ext_resource type="Texture2D" uid="uid://45siu5jx63ic" path="res://assets/boost-icon.svg" id="3_8iw7g"]
+[ext_resource type="AudioStream" uid="uid://bns2xmyb48j52" path="res://assets/sounds/boost_pickup.wav" id="3_awnnl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r3lsy"]
+radius = 31.1448
+
+[sub_resource type="Gradient" id="Gradient_7jxkb"]
+interpolation_mode = 2
+interpolation_color_space = 2
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kjo04"]
+gradient = SubResource("Gradient_7jxkb")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jhhh5"]
+lifetime_randomness = 0.4
+particle_flag_disable_z = true
+particle_flag_damping_as_friction = true
+emission_shape = 2
+emission_sphere_radius = 1.0
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+direction = Vector3(1, 1, 0)
+spread = 180.0
+initial_velocity_min = 74.48
+initial_velocity_max = 171.92
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 100.0
+linear_accel_max = 100.0
+scale_min = 5.0
+scale_max = 10.26
+color_ramp = SubResource("GradientTexture1D_kjo04")
+
+[node name="boost" type="Area2D"]
+script = ExtResource("1_d0ux4")
+boost_amount = 25.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_r3lsy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_8iw7g")
+
+[node name="explode" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_jhhh5")
+lifetime = 0.5
+one_shot = true
+preprocess = 2.69
+explosiveness = 1.0
+
+[node name="sound" type="AudioStreamPlayer2D" parent="." groups=["sound_effect"]]
+unique_name_in_owner = true
+stream = ExtResource("3_awnnl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="explode" to="." method="_on_explode_finished"]
+[connection signal="finished" from="sound" to="." method="_on_sound"]

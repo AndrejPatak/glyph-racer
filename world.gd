@@ -43,6 +43,7 @@ func _ready() -> void:
 		pass
 	%startTimer.start()
 	%player.track = trackInstance
+	Settings.set_volume("effects", Settings.effects_volume)
 
 func startRace():
 	started = true

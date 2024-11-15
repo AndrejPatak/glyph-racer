@@ -8,6 +8,7 @@ var dialogs : Array[String]
 var finished : bool = false
 
 signal dialogue_ended
+signal show_arrow
 
 var tween : Tween
 var duration : float = 1.5
@@ -40,7 +41,7 @@ func displayNext() -> void:
 	if currentText < dialogs.size() - 1:
 		currentText += 1
 	else:
-		dialogue_ended.emit()
+		show_arrow.emit()
 
 func _on_next_pressed() -> void:
 	
@@ -51,8 +52,10 @@ func _on_next_pressed() -> void:
 			displayNext()
 		else:
 			modulate = Color.TRANSPARENT
+			dialogue_ended.emit()
+			queue_free()
 			pass
 
-func _on_dialogue_ended() -> void:
+func _on_show_arrow() -> void:
 	%next.text = "X"
 	finished = true

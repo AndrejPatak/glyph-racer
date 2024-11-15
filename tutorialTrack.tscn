@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwi4lyo63i21m"]
+[gd_scene load_steps=5 format=3 uid="uid://bwi4lyo63i21m"]
 
 [ext_resource type="Script" path="res://tutorial_track.gd" id="1_fhc32"]
+[ext_resource type="PackedScene" uid="uid://dqp43w4n2jc0l" path="res://boost_pickup.tscn" id="2_137px"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qiymr"]
 size = Vector2(94, 472)
@@ -16,6 +17,27 @@ border_color = Color(1, 1, 1, 1)
 [node name="Track" type="Node2D"]
 script = ExtResource("1_fhc32")
 
+[node name="boost3" parent="." instance=ExtResource("2_137px")]
+position = Vector2(2811, 2486)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="boost3"]
+position = Vector2(-0.500073, -0.500129)
+scale = Vector2(1.05001, 1.05001)
+
+[node name="boost2" parent="." instance=ExtResource("2_137px")]
+position = Vector2(3940, 2962)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="boost2"]
+position = Vector2(-0.500073, -0.500129)
+scale = Vector2(1.05001, 1.05001)
+
+[node name="boost" parent="." instance=ExtResource("2_137px")]
+position = Vector2(5324, 3744)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="boost"]
+position = Vector2(-0.500073, -0.500129)
+scale = Vector2(1.05001, 1.05001)
+
 [node name="Finish" type="Area2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(5913, 3642)
@@ -30,3 +52,7 @@ offset_top = -151.0
 offset_right = 44.0
 offset_bottom = 332.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_gh3df")
+
+[connection signal="screen_entered" from="boost3/VisibleOnScreenNotifier2D" to="." method="_on_boost_trigger_explenation"]
+[connection signal="screen_entered" from="boost2/VisibleOnScreenNotifier2D" to="." method="_on_boost_trigger_explenation"]
+[connection signal="screen_entered" from="boost/VisibleOnScreenNotifier2D" to="." method="_on_boost_trigger_explenation"]

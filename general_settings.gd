@@ -40,6 +40,8 @@ func load_settings() -> void:
 				_:
 					printerr("Setting not recognized: ", lines[0])
 	settings.close()
+	for effect in get_tree().get_nodes_in_group("sound_effect"):
+		effect.volume_db = -50 / (Settings.effects_volume * 5) + 10
 
 func set_volume(forWhat : String, toWhat : float = 0.7) -> void:
 	match forWhat:
@@ -48,6 +50,9 @@ func set_volume(forWhat : String, toWhat : float = 0.7) -> void:
 			Music.setVolume(music_volume)
 		"effects":
 			effects_volume = toWhat
+			for effect in get_tree().get_nodes_in_group("sound_effect"):
+				print("Setting the volume for ", effect.name, " to: ", toWhat)
+				effect.volume_db = -50 / (toWhat * 5) + 10
 		_:
 			printerr("Unknown sound type: ", forWhat, "; Recieved value: ", toWhat)
 
