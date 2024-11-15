@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cq6h21u8nd0fc"]
+[gd_scene load_steps=8 format=3 uid="uid://cq6h21u8nd0fc"]
 
 [ext_resource type="Script" path="res://settings.gd" id="1_080o1"]
 [ext_resource type="LabelSettings" uid="uid://b2tnpbg4unqoy" path="res://assets/themes/button_highlight.tres" id="1_870xy"]
@@ -16,7 +16,18 @@ content_margin_right = 20.0
 draw_center = false
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5m1d5"]
-content_margin_left = 20.0
+
+[sub_resource type="Environment" id="Environment_xrqmi"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.3
+glow_strength = 0.79
+glow_bloom = 1.0
+glow_blend_mode = 0
+glow_hdr_threshold = 0.2
+glow_hdr_scale = 4.0
+glow_hdr_luminance_cap = 256.0
+glow_map_strength = 1.0
 
 [node name="settings" type="Control"]
 layout_mode = 3
@@ -168,11 +179,12 @@ text = " ->"
 label_settings = ExtResource("1_870xy")
 
 [node name="graphics_button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(76, 76)
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 76)
 layout_mode = 2
 theme = ExtResource("3_vjprf")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_5m1d5")
-text = "MID     "
+text = "GOOD"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -188,16 +200,16 @@ label_settings = ExtResource("1_870xy")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-max_value = 1.0
-step = 0.1
-value = 0.8
+max_value = 4.0
+value = 3.0
 
 [node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
 text = " ->"
 label_settings = ExtResource("1_870xy")
 
-[node name="fps_value" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+[node name="fps_label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 76)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_5m1d5")
@@ -336,8 +348,13 @@ layout_mode = 2
 theme = ExtResource("3_vjprf")
 text = "SAVE SETTINGS"
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+unique_name_in_owner = true
+environment = SubResource("Environment_xrqmi")
+
 [connection signal="value_changed" from="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer/music" to="." method="_on_music_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2/effects" to="." method="_on_effects_value_changed"]
+[connection signal="pressed" from="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3/graphics_button" to="." method="_on_graphics_button_pressed"]
 [connection signal="value_changed" from="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer4/fps" to="." method="_on_fps_value_changed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/save" to="." method="_on_save_pressed"]

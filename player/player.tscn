@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://btlv6hnynahk0"]
+[gd_scene load_steps=12 format=3 uid="uid://btlv6hnynahk0"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_mtrrm"]
 [ext_resource type="PackedScene" uid="uid://cn56ji7fpcno2" path="res://sprite.tscn" id="2_aw4q7"]
 [ext_resource type="AudioStream" uid="uid://c84dfiy20py7" path="res://assets/sounds/startEngine.wav" id="3_g74bu"]
+[ext_resource type="Script" path="res://pointer.gd" id="4_l762p"]
+[ext_resource type="LabelSettings" uid="uid://b2tnpbg4unqoy" path="res://assets/themes/button_highlight.tres" id="5_xcdjw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a03hf"]
 radius = 30.0167
@@ -90,5 +92,30 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_b4td6")
 }
+
+[node name="Pointer" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+script = ExtResource("4_l762p")
+
+[node name="Label" type="Label" parent="Pointer"]
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 131.0
+offset_top = -50.0
+offset_right = 231.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "
+>"
+label_settings = ExtResource("5_xcdjw")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="animation_finished" from="engineSound" to="." method="loop_engine_sound"]

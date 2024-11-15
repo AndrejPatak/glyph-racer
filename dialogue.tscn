@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://l5pnin2bslkm"]
+
+[ext_resource type="Script" path="res://dialogue.gd" id="1_v1qji"]
+[ext_resource type="FontFile" uid="uid://dmejnegdnrn06" path="res://assets/fonts/Orbitron/static/Orbitron-SemiBold.ttf" id="2_eq1hp"]
+[ext_resource type="FontFile" uid="uid://dvdc01i1ernmo" path="res://assets/fonts/Orbitron/static/Orbitron-Regular.ttf" id="3_cg0pc"]
+[ext_resource type="Theme" uid="uid://cx8v3o7umtucr" path="res://assets/themes/secondary_menu_buttons.tres" id="4_h3al1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8bhv"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+bg_color = Color(0.184314, 0.184314, 0.184314, 1)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.899258, 0.899258, 0.899258, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fjoi8"]
+font = ExtResource("2_eq1hp")
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_4enwy"]
+font = ExtResource("3_cg0pc")
+font_size = 25
+
+[node name="dialogueBox" type="PanelContainer"]
+custom_minimum_size = Vector2(500, 100)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -417.0
+offset_top = -273.0
+offset_right = 417.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_q8bhv")
+script = ExtResource("1_v1qji")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="speaker" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Talker:"
+label_settings = SubResource("LabelSettings_fjoi8")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(700, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Lorem ipsum dolor sit amet. "
+label_settings = SubResource("LabelSettings_4enwy")
+autowrap_mode = 3
+
+[node name="next" type="Button" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("4_h3al1")
+text = ">"
+
+[connection signal="dialogue_ended" from="." to="." method="_on_dialogue_ended"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/next" to="." method="_on_next_pressed"]

@@ -3,11 +3,24 @@ extends Node2D
 @onready var TimerHandler := %UI.get_node("TimerHandler")
 var victoryFile = preload("res://victory.tscn")
 
+var started : bool = false
+var startCounter : int = 0
+
+var track_node : PackedScene
+var trackInstance
+
+@onready var player = %player
 
 func _ready() -> void:
+	%RaceStart.modulate = Colorizer.get_color("player")
+	match Settings.graphics_quality:
+		"mid":
+			%WorldEnvironment.environment.glow_enabled = false
+		"good":
+			%WorldEnvironment.environment.glow_enabled = true
 	var ui := %ui_layer
 	TimeTracker.load_ui_layer(ui)
-	var track_node : PackedScene
+	
 	match TimeTracker.currentTrack:
 		"track_1":
 			track_node = preload("res://tutorialTrack.tscn")
@@ -20,7 +33,7 @@ func _ready() -> void:
 		_:
 			track_node = preload("res://tutorialTrack.tscn")
 			TimeTracker.notify("WARNING: " + TimeTracker.currentTrack + " not found!!")
-	var trackInstance = track_node.instantiate()
+	trackInstance = track_node.instantiate()
 	
 	add_child(trackInstance)
 	if(trackInstance.get_node("Finish")):
@@ -28,10 +41,14 @@ func _ready() -> void:
 	else:
 		print("Nodes in trackInstance: ", trackInstance.get_children(), "\ntrackInstance.get_node('Finish'): ", trackInstance.get_node("Finsih"))
 		pass
-	startRace()
+	%startTimer.start()
+	%player.track = trackInstance
 
 func startRace():
+	started = true
 	TimerHandler.paused = false
+	if TimeTracker.currentTrack == "track_1":
+		trackInstance.displayDialogue()
 
 func finishRace(_body):
 	var victoryScreen = victoryFile.instantiate()
@@ -45,3 +62,23 @@ func finishRace(_body):
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("pause"):
 		TimeTracker.pause()
+
+
+func _on_start_timer_timeout() -> void:
+	if startCounter < 3:
+		%startTimer.start()
+		%time.text = str(3 - startCounter)
+		
+		match startCounter:
+			0:
+				%text.text = "[READY?]"
+			1:
+				%text.text = "[SET!]"
+			2:
+				%text.text = "[GO!!]"
+			_:
+				printerr("Erm... what the sigma?")
+		startCounter += 1
+	else:
+		%RaceStart.queue_free()
+		startRace()

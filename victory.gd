@@ -12,6 +12,7 @@ func _ready() -> void:
 		TimeTracker.notify("New record!")
 	else:
 		print("Close one.")
+	modulate = Colorizer.get_color("player")
 	
 	
 	

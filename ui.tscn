@@ -1,11 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4lkeqc08fnsn"]
+[gd_scene load_steps=7 format=3 uid="uid://c4lkeqc08fnsn"]
 
 [ext_resource type="Script" path="res://timer_handler.gd" id="1_6p6ge"]
 [ext_resource type="FontFile" uid="uid://cmtvsgmf6d3jb" path="res://assets/fonts/Kode_Mono/static/KodeMono-Regular.ttf" id="2_e7w7r"]
+[ext_resource type="Script" path="res://progress_bar.gd" id="3_ngrij"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6ynqt"]
 font = ExtResource("2_e7w7r")
 font_size = 60
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p2xw5"]
+bg_color = Color(1, 1, 1, 0.109804)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gyl25"]
+bg_color = Color(1, 1, 1, 0.643137)
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -37,3 +44,16 @@ text = "00:00.00"
 label_settings = SubResource("LabelSettings_6ynqt")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="boostMeter" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(500, 45)
+layout_mode = 0
+offset_left = 40.0
+offset_top = 991.0
+offset_right = 540.0
+offset_bottom = 1036.0
+theme_override_styles/background = SubResource("StyleBoxFlat_p2xw5")
+theme_override_styles/fill = SubResource("StyleBoxFlat_gyl25")
+value = 50.0
+show_percentage = false
+script = ExtResource("3_ngrij")

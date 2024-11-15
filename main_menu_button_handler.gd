@@ -10,7 +10,7 @@ func _ready() -> void:
 	else:
 		%Continue.grab_focus()
 		%Highlight.setup(%Continue)
-		
+	modulate = Colorizer.get_color("track")
 	#print("co: ", %Continue.disabled)
 	
 	

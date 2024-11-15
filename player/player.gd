@@ -4,12 +4,20 @@ extends CharacterBody2D
 @export var maxSpeed : float = 900.0
 @export var friction : float = 0.5
 
+@onready var world : Node2D = get_parent()
+@onready var arrow := %Pointer
+
 var isMoving : bool = false # used to check for mouse input.
 var boost : float # used to track if nitrus boost should be applied
+
+var boostAmount : float = 0
+
+var track : Node = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	%exhaust.modulate = Colorizer.get_color("player")
+	%Pointer.modulate = Colorizer.get_color("track")
 
 func get_angle_to_mouse() -> float:
 	var x := get_global_mouse_position().x - self.global_position.x
@@ -31,10 +39,14 @@ func loop_engine_sound(anim):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	
-	if Input.is_action_pressed("boost"):
+	
+	%UI.get_node("boostMeter").value = boostAmount
+	
+	if Input.is_action_pressed("boost") and boostAmount > 0:
 		boost = nitrusStrength * int(Input.is_action_pressed("boost"))
 		%Camera2D.zoom.x = move_toward(%Camera2D.zoom.x, 0.6, 0.1 * delta)
 		%Camera2D.zoom.y = move_toward(%Camera2D.zoom.y, 0.6, 0.1 * delta)
+		boostAmount = move_toward(boostAmount, 0, 2.5)
 	else:
 		boost = move_toward(boost, 1, delta * (accel / maxSpeed))
 		%Camera2D.zoom.x = move_toward(%Camera2D.zoom.x, 0.8, 0.2 * delta)
@@ -45,12 +57,14 @@ func _physics_process(delta: float) -> void:
 		%engineSound.stop()
 	if Input.is_action_pressed("forward"):
 		isMoving = true
-		velocity.x = move_toward(velocity.x, get_relative_mouse_position().normalized().x * (maxSpeed * distance_amplifier() / 2) * boost, boost * accel * distance_amplifier() * delta)
-		velocity.y = move_toward(velocity.y, get_relative_mouse_position().normalized().y * (maxSpeed * distance_amplifier() / 2)  * boost, boost * accel * distance_amplifier() * delta)
+		if world.started:
+			velocity.x = move_toward(velocity.x, get_relative_mouse_position().normalized().x * (maxSpeed * distance_amplifier() / 2) * boost, boost * accel * distance_amplifier() * delta)
+			velocity.y = move_toward(velocity.y, get_relative_mouse_position().normalized().y * (maxSpeed * distance_amplifier() / 2)  * boost, boost * accel * distance_amplifier() * delta)
 	else:
 		isMoving = false
-		velocity.x = move_toward(velocity.x, 0, friction * maxSpeed * delta)
-		velocity.y = move_toward(velocity.y, 0, friction * maxSpeed * delta)
+		if world.started:
+			velocity.x = move_toward(velocity.x, 0, friction * maxSpeed * delta)
+			velocity.y = move_toward(velocity.y, 0, friction * maxSpeed * delta)
 	
 	if isMoving:
 		%exhaust.emitting = true
@@ -64,8 +78,8 @@ func _physics_process(delta: float) -> void:
 	look_at(get_global_mouse_position())
 	
 	
-	
-	move_and_slide()
+	if world.started:
+		move_and_slide()
 
 func stop_exhaust() -> void:
 	%exhaust.emitting = false

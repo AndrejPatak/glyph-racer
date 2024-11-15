@@ -10,6 +10,8 @@ func _ready() -> void:
 	#print("Loaded")
 	TimeTracker.unpause()
 	%track_1_button.grab_focus()
+	
+	modulate = Colorizer.get_color("player")
 
 func handle_button(button) -> void:
 	match button:

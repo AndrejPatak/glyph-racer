@@ -1,63 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwi4lyo63i21m"]
+[gd_scene load_steps=4 format=3 uid="uid://bwi4lyo63i21m"]
 
-[ext_resource type="PackedScene" uid="uid://cn56ji7fpcno2" path="res://sprite.tscn" id="1_uemcf"]
-[ext_resource type="Texture2D" uid="uid://bmh5w4b5cpiqy" path="res://assets/tutorial track1.svg" id="2_6t1lv"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vwbht"]
+[ext_resource type="Script" path="res://tutorial_track.gd" id="1_fhc32"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qiymr"]
 size = Vector2(94, 472)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gh3df"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+
 [node name="Track" type="Node2D"]
-
-[node name="Sprite" parent="." instance=ExtResource("1_uemcf")]
-position = Vector2(119, 0)
-spriteName = "track"
-
-[node name="Sprite2D" parent="Sprite" index="0"]
-position = Vector2(440, 1.00003)
-rotation = 0.0
-scale = Vector2(1, 1)
-texture = ExtResource("2_6t1lv")
-
-[node name="Colliders" type="Node2D" parent="."]
-position = Vector2(119, 0)
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="Colliders"]
-position = Vector2(497, -224)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D2"]
-rotation = 3.14159
-shape = SubResource("WorldBoundaryShape2D_vwbht")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Colliders"]
-position = Vector2(500, 251)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D"]
-shape = SubResource("WorldBoundaryShape2D_vwbht")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="Colliders"]
-position = Vector2(1139, -27)
-rotation = 1.5708
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D3"]
-rotation = 3.14159
-shape = SubResource("WorldBoundaryShape2D_vwbht")
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="Colliders"]
-position = Vector2(-177, 1)
-rotation = -1.5708
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/StaticBody2D4"]
-rotation = 3.14159
-shape = SubResource("WorldBoundaryShape2D_vwbht")
+script = ExtResource("1_fhc32")
 
 [node name="Finish" type="Area2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(1216, -78)
+position = Vector2(5913, 3642)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
 position = Vector2(-9, 90)
 shape = SubResource("RectangleShape2D_qiymr")
 
-[editable path="Sprite"]
+[node name="Panel" type="Panel" parent="Finish"]
+offset_left = -60.0
+offset_top = -151.0
+offset_right = 44.0
+offset_bottom = 332.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gh3df")

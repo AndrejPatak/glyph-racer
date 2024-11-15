@@ -2,11 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://btlv6hnynahk0" path="res://player/player.tscn" id="1_dfuub"]
 [ext_resource type="Script" path="res://world.gd" id="1_qoebp"]
-[ext_resource type="Script" path="res://cameraShake.gd" id="3_lb1ei"]
 [ext_resource type="PackedScene" uid="uid://c4lkeqc08fnsn" path="res://ui.tscn" id="3_r806t"]
+[ext_resource type="LabelSettings" uid="uid://b2tnpbg4unqoy" path="res://assets/themes/button_highlight.tres" id="4_uy3dw"]
 
 [sub_resource type="Environment" id="Environment_kbm4l"]
 background_mode = 3
+background_canvas_max_layer = 10
 glow_enabled = true
 glow_intensity = 0.3
 glow_strength = 0.79
@@ -26,6 +27,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="player" parent="." instance=ExtResource("1_dfuub")]
+unique_name_in_owner = true
 z_index = 1
 
 [node name="Camera2D" type="Camera2D" parent="player"]
@@ -39,7 +41,6 @@ drag_horizontal_offset = 0.5
 drag_vertical_offset = 0.5
 editor_draw_limits = true
 editor_draw_drag_margin = true
-script = ExtResource("3_lb1ei")
 
 [node name="ui_layer" type="CanvasLayer" parent="player/Camera2D"]
 unique_name_in_owner = true
@@ -50,5 +51,57 @@ rotation = 0.0
 mouse_filter = 2
 metadata/_edit_pinned_properties_ = [&"rotation"]
 
+[node name="RaceStart" type="Control" parent="player/Camera2D/ui_layer"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="player/Camera2D/ui_layer/RaceStart"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.709804)
+
+[node name="startTimer" type="Timer" parent="player/Camera2D/ui_layer/RaceStart"]
+unique_name_in_owner = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="player/Camera2D/ui_layer/RaceStart"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.5
+offset_top = -25.0
+offset_right = 34.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="text" type="Label" parent="player/Camera2D/ui_layer/RaceStart/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "[READY?]"
+label_settings = ExtResource("4_uy3dw")
+horizontal_alignment = 1
+
+[node name="time" type="Label" parent="player/Camera2D/ui_layer/RaceStart/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "3"
+label_settings = ExtResource("4_uy3dw")
+horizontal_alignment = 1
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+unique_name_in_owner = true
 environment = SubResource("Environment_kbm4l")
+
+[connection signal="timeout" from="player/Camera2D/ui_layer/RaceStart/startTimer" to="." method="_on_start_timer_timeout"]

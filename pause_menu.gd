@@ -4,6 +4,7 @@ func _ready() -> void:
 	%Continue.grab_focus()
 	for button in get_tree().get_nodes_in_group("button"):
 		button.connect("focus_entered", shiftHighlight.bind(button))
+	modulate = Colorizer.get_color("player")
 
 func _on_save_pressed() -> void:
 	TimeTracker.save_times()

@@ -1,0 +1,81 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://cdtb4vwohysdh"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_pudvr"]
+
+[resource]
+script = ExtResource("1_pudvr")
+starts = {
+"0": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(-440, -200),
+"start_id": "0"
+},
+"1_1": {
+"dialogue": "Hey! You shouldn't be here.",
+"offset": Vector2(-205.5, -153),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "~Mysterious voice:"
+},
+"1_2": {
+"dialogue": "You know what happens to foreign processes right? ",
+"offset": Vector2(176.52, -78.1638),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "~Mysterious voice:"
+},
+"1_3": {
+"dialogue": "Quick, use [LEFT CLICK] to move forward. I can guide you out of this place.",
+"offset": Vector2(629.998, -23.6768),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "~Mysterious voice:"
+},
+"1_4": {
+"dialogue": "",
+"offset": Vector2(1000, 40),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "END"
+},
+"3_1": {
+"link": &"3_2",
+"offset": Vector2(1380, 80),
+"signalValue": "endpls"
+},
+"3_2": {
+"link": "END",
+"offset": Vector2(1600, 220),
+"signalValue": "END"
+}
+}
+variables = {}
+strays = Array[String](["3_2", "3_1"])
+characters = "END "
