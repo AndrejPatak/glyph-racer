@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4lkeqc08fnsn"]
+[gd_scene load_steps=8 format=3 uid="uid://c4lkeqc08fnsn"]
 
 [ext_resource type="Script" path="res://timer_handler.gd" id="1_6p6ge"]
-[ext_resource type="FontFile" uid="uid://cmtvsgmf6d3jb" path="res://assets/fonts/Kode_Mono/static/KodeMono-Regular.ttf" id="2_e7w7r"]
+[ext_resource type="FontFile" uid="uid://cmtvsgmf6d3jb" path="res://build/windows/assets/fonts/Kode_Mono/static/KodeMono-Regular.ttf" id="2_e7w7r"]
 [ext_resource type="Script" path="res://progress_bar.gd" id="3_ngrij"]
+[ext_resource type="LabelSettings" uid="uid://b2tnpbg4unqoy" path="res://build/windows/assets/themes/button_highlight.tres" id="4_yerdw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6ynqt"]
 font = ExtResource("2_e7w7r")
@@ -54,6 +55,16 @@ offset_right = 540.0
 offset_bottom = 1036.0
 theme_override_styles/background = SubResource("StyleBoxFlat_p2xw5")
 theme_override_styles/fill = SubResource("StyleBoxFlat_gyl25")
-value = 50.0
 show_percentage = false
 script = ExtResource("3_ngrij")
+
+[node name="loop_counter" type="Label" parent="."]
+custom_minimum_size = Vector2(140, 80)
+layout_mode = 0
+offset_left = 1749.0
+offset_top = 974.0
+offset_right = 1889.0
+offset_bottom = 1054.0
+label_settings = ExtResource("4_yerdw")
+horizontal_alignment = 1
+vertical_alignment = 1

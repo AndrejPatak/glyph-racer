@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var keyID : String = "track_1"
+var keyID : String = TimeTracker.currentTrack
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	modulate = Colorizer.get_color("player")
@@ -9,7 +9,7 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		$sound.play(0.0)
-		TimeTracker.collectedKeys.append(keyID)
+		TimeTracker.collectedKeys.append("track_" + str(TimeTracker.curTrackID + 1))
 		$GPUParticles2D.emitting = true
 		$Sprite2D.modulate = Color.TRANSPARENT
 		pass

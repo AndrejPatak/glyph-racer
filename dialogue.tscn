@@ -1,17 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://l5pnin2bslkm"]
+[gd_scene load_steps=9 format=3 uid="uid://l5pnin2bslkm"]
 
+[ext_resource type="Theme" uid="uid://mcvp8aaoeu18" path="res://popup.tres" id="1_dama4"]
 [ext_resource type="Script" path="res://dialogue.gd" id="1_v1qji"]
-[ext_resource type="FontFile" uid="uid://dmejnegdnrn06" path="res://assets/fonts/Orbitron/static/Orbitron-SemiBold.ttf" id="2_eq1hp"]
-[ext_resource type="FontFile" uid="uid://dvdc01i1ernmo" path="res://assets/fonts/Orbitron/static/Orbitron-Regular.ttf" id="3_cg0pc"]
-[ext_resource type="Theme" uid="uid://cx8v3o7umtucr" path="res://assets/themes/secondary_menu_buttons.tres" id="4_h3al1"]
+[ext_resource type="FontFile" uid="uid://dmejnegdnrn06" path="res://build/windows/assets/fonts/Orbitron/static/Orbitron-SemiBold.ttf" id="2_eq1hp"]
+[ext_resource type="FontFile" uid="uid://dvdc01i1ernmo" path="res://build/windows/assets/fonts/Orbitron/static/Orbitron-Regular.ttf" id="3_cg0pc"]
+[ext_resource type="Theme" uid="uid://cx8v3o7umtucr" path="res://build/windows/assets/themes/secondary_menu_buttons.tres" id="4_h3al1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8bhv"]
 content_margin_left = 15.0
 content_margin_top = 10.0
 content_margin_right = 15.0
 content_margin_bottom = 10.0
-bg_color = Color(0.184314, 0.184314, 0.184314, 1)
-draw_center = false
+bg_color = Color(0, 0, 0, 0.8)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -39,6 +39,7 @@ offset_right = 417.0
 offset_bottom = -60.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("1_dama4")
 theme_override_styles/panel = SubResource("StyleBoxFlat_q8bhv")
 script = ExtResource("1_v1qji")
 

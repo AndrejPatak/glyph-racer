@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <mask id="mask-0">
+      <ellipse style="fill: none; stroke: rgb(255, 255, 255); stroke-width: 50px;" cx="250" cy="250" rx="109.656" ry="109.656" transform="matrix(0, 1, 1, 0, -211.093594, -377.018182)"/>
+    </mask>
+    <mask id="mask-1">
+      <ellipse style="fill: none; stroke: rgb(255, 255, 255); stroke-width: 50px;" cx="250" cy="250" rx="109.656" ry="109.656" transform="matrix(0, 1, 1, 0, -211.093594, -377.018182)"/>
+    </mask>
+    <mask id="mask-2">
+      <ellipse style="fill: none; stroke: rgb(255, 255, 255); stroke-width: 50px;" cx="250" cy="250" rx="109.656" ry="109.656" transform="matrix(0, 1, 1, 0, -211.093594, -377.018182)"/>
+    </mask>
+  </defs>
+  <ellipse style="fill: none; stroke: rgb(255, 255, 255); stroke-width: 20px;" cx="250" cy="250" rx="76.587" ry="76.587" transform="matrix(0.500001, 0.866025, -0.866026, 0.499999, 341.506215, -91.505712)"/>
+  <rect style="stroke-width: 20px; fill: rgb(255, 255, 255); mask: url(&quot;#mask-0&quot;);" transform="matrix(-0.866026, 0.499999, 0.500001, 0.866025, 347.203177, 340.547846)" x="-77.817" y="-141.72" width="233.45" height="29.408"/>
+  <ellipse style="fill: none; stroke: rgb(255, 255, 255); stroke-width: 20px;" cx="250" cy="250" rx="76.587" ry="76.587" transform="matrix(-0.500001, 0.866025, -0.866026, -0.499999, 591.506795, 158.493506)"/>
+  <rect style="stroke-width: 20px; fill: rgb(255, 255, 255); mask: url(&quot;#mask-1&quot;);" transform="matrix(-0.866026, -0.499999, -0.500001, 0.866025, 220.184754, 379.454163)" x="-77.817" y="-141.72" width="233.45" height="29.408"/>
+  <ellipse style="fill: none; stroke: rgb(255, 255, 255); stroke-width: 20px;" cx="-250" cy="-250" rx="76.587" ry="76.587" transform="matrix(-1, 0, 0, -1, 0, 0)"/>
+  <rect style="stroke-width: 20px; fill: rgb(255, 255, 255); mask: url(&quot;#mask-2&quot;);" transform="matrix(0, -1, -1, 0, 122.981689, 288.906135)" x="-77.817" y="-141.72" width="233.45" height="29.408"/>
+</svg>

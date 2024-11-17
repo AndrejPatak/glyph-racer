@@ -1,12 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwi4lyo63i21m"]
+[gd_scene load_steps=10 format=3 uid="uid://bwi4lyo63i21m"]
 
 [ext_resource type="Script" path="res://tutorial_track.gd" id="1_fhc32"]
 [ext_resource type="PackedScene" uid="uid://dqp43w4n2jc0l" path="res://boost_pickup.tscn" id="2_137px"]
+[ext_resource type="PackedScene" uid="uid://deyrgwkrds8vg" path="res://finish.tscn" id="3_7plev"]
+[ext_resource type="PackedScene" uid="uid://ygcprweq5pph" path="res://spike.tscn" id="3_27tgl"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qiymr"]
-size = Vector2(94, 472)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_m35jt"]
+normal = Vector2(-0.999996, 0.00285713)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gh3df"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jwqak"]
+normal = Vector2(0.00452484, -0.99999)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bgxrl"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6l64s"]
+normal = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7qg7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 draw_center = false
 border_width_left = 5
 border_width_top = 5
@@ -16,16 +28,84 @@ border_color = Color(1, 1, 1, 1)
 
 [node name="Track" type="Node2D"]
 script = ExtResource("1_fhc32")
+metadata/_edit_vertical_guides_ = [13961.0, -1100.0]
+metadata/_edit_horizontal_guides_ = [9180.0, -1385.0]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(13961, 4503)
+shape = SubResource("WorldBoundaryShape2D_m35jt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(8451, 9180)
+shape = SubResource("WorldBoundaryShape2D_jwqak")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1100, 4249)
+shape = SubResource("WorldBoundaryShape2D_bgxrl")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(5961, -1385)
+shape = SubResource("WorldBoundaryShape2D_6l64s")
+
+[node name="Control" type="Control" parent="StaticBody2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="border" type="PanelContainer" parent="StaticBody2D/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1100.0
+offset_top = -1333.0
+offset_right = 13921.0
+offset_bottom = 9192.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e7qg7")
+
+[node name="boost7" parent="." instance=ExtResource("2_137px")]
+position = Vector2(4364, 1624)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="boost7"]
+position = Vector2(-0.500073, -0.500129)
+scale = Vector2(1.05001, 1.05001)
+
+[node name="boost6" parent="." instance=ExtResource("2_137px")]
+position = Vector2(4864, 2562)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="boost6"]
+position = Vector2(-0.500073, -0.500129)
+scale = Vector2(1.05001, 1.05001)
+
+[node name="boost5" parent="." instance=ExtResource("2_137px")]
+position = Vector2(5343, 807)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="boost5"]
+position = Vector2(-0.500073, -0.500129)
+scale = Vector2(1.05001, 1.05001)
+
+[node name="boost4" parent="." instance=ExtResource("2_137px")]
+position = Vector2(6187, 3000)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="boost4"]
+position = Vector2(-0.500073, -0.500129)
+scale = Vector2(1.05001, 1.05001)
 
 [node name="boost3" parent="." instance=ExtResource("2_137px")]
-position = Vector2(2811, 2486)
+position = Vector2(2792, 2524)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="boost3"]
 position = Vector2(-0.500073, -0.500129)
 scale = Vector2(1.05001, 1.05001)
 
 [node name="boost2" parent="." instance=ExtResource("2_137px")]
-position = Vector2(3940, 2962)
+position = Vector2(3353, 3489)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="boost2"]
 position = Vector2(-0.500073, -0.500129)
@@ -38,21 +118,63 @@ position = Vector2(5324, 3744)
 position = Vector2(-0.500073, -0.500129)
 scale = Vector2(1.05001, 1.05001)
 
-[node name="Finish" type="Area2D" parent="."]
+[node name="Finish" parent="." instance=ExtResource("3_7plev")]
 unique_name_in_owner = true
-position = Vector2(5913, 3642)
+position = Vector2(11116, 6844)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
-position = Vector2(-9, 90)
-shape = SubResource("RectangleShape2D_qiymr")
+[node name="spike" parent="." instance=ExtResource("3_27tgl")]
+position = Vector2(8628, 6739)
+rotation = -1.03513
 
-[node name="Panel" type="Panel" parent="Finish"]
-offset_left = -60.0
-offset_top = -151.0
-offset_right = 44.0
-offset_bottom = 332.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_gh3df")
+[node name="spike" type="VisibleOnScreenNotifier2D" parent="spike"]
 
+[node name="spike2" parent="." instance=ExtResource("3_27tgl")]
+position = Vector2(10779, 5314)
+rotation = 1.72385
+
+[node name="spike" type="VisibleOnScreenNotifier2D" parent="spike2"]
+
+[node name="spike3" parent="." instance=ExtResource("3_27tgl")]
+position = Vector2(8226, 2517)
+rotation = 1.6133
+
+[node name="spike" type="VisibleOnScreenNotifier2D" parent="spike3"]
+
+[node name="spike4" parent="." instance=ExtResource("3_27tgl")]
+position = Vector2(10708, 7914)
+rotation = -0.818831
+
+[node name="spike" type="VisibleOnScreenNotifier2D" parent="spike4"]
+
+[node name="spike5" parent="." instance=ExtResource("3_27tgl")]
+position = Vector2(11010, 6330)
+rotation = 1.87778
+
+[node name="spike" type="VisibleOnScreenNotifier2D" parent="spike5"]
+
+[node name="spike6" parent="." instance=ExtResource("3_27tgl")]
+position = Vector2(9255, 7673)
+rotation = -0.945965
+
+[node name="spike" type="VisibleOnScreenNotifier2D" parent="spike6"]
+
+[node name="spike7" parent="." instance=ExtResource("3_27tgl")]
+position = Vector2(9273, 2749)
+rotation = 1.76777
+
+[node name="spike" type="VisibleOnScreenNotifier2D" parent="spike7"]
+
+[connection signal="screen_entered" from="boost7/VisibleOnScreenNotifier2D" to="." method="_on_boost_trigger_explenation"]
+[connection signal="screen_entered" from="boost6/VisibleOnScreenNotifier2D" to="." method="_on_boost_trigger_explenation"]
+[connection signal="screen_entered" from="boost5/VisibleOnScreenNotifier2D" to="." method="_on_boost_trigger_explenation"]
+[connection signal="screen_entered" from="boost4/VisibleOnScreenNotifier2D" to="." method="_on_boost_trigger_explenation"]
 [connection signal="screen_entered" from="boost3/VisibleOnScreenNotifier2D" to="." method="_on_boost_trigger_explenation"]
 [connection signal="screen_entered" from="boost2/VisibleOnScreenNotifier2D" to="." method="_on_boost_trigger_explenation"]
 [connection signal="screen_entered" from="boost/VisibleOnScreenNotifier2D" to="." method="_on_boost_trigger_explenation"]
+[connection signal="screen_entered" from="spike/spike" to="." method="_on_spike_screen_entered"]
+[connection signal="screen_entered" from="spike2/spike" to="." method="_on_spike_screen_entered"]
+[connection signal="screen_entered" from="spike3/spike" to="." method="_on_spike_screen_entered"]
+[connection signal="screen_entered" from="spike4/spike" to="." method="_on_spike_screen_entered"]
+[connection signal="screen_entered" from="spike5/spike" to="." method="_on_spike_screen_entered"]
+[connection signal="screen_entered" from="spike6/spike" to="." method="_on_spike_screen_entered"]
+[connection signal="screen_entered" from="spike7/spike" to="." method="_on_spike_screen_entered"]

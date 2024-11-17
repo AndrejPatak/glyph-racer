@@ -1,18 +1,21 @@
-[gd_scene load_steps=11 format=3 uid="uid://h2unij4vwkl5"]
+[gd_scene load_steps=12 format=3 uid="uid://h2unij4vwkl5"]
 
 [ext_resource type="Script" path="res://smasher.gd" id="1_nmc82"]
 [ext_resource type="PackedScene" uid="uid://cn56ji7fpcno2" path="res://sprite.tscn" id="2_u1qc2"]
-[ext_resource type="Texture2D" uid="uid://dnrjl2244byq" path="res://assets/warning.svg" id="3_fhs5b"]
+[ext_resource type="Texture2D" uid="uid://dnrjl2244byq" path="res://build/windows/assets/warning.svg" id="3_fhs5b"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ct2cp"]
-size = Vector2(100, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2g6o8"]
+size = Vector2(355, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spxvn"]
+size = Vector2(355, 53)
 
 [sub_resource type="Animation" id="Animation_8l81x"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D:position")
+tracks/0/path = NodePath("smasher:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -29,14 +32,14 @@ step = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D:position")
+tracks/0/path = NodePath("smasher:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0.2, 0.87),
 "transitions": PackedFloat32Array(1.7411, 1),
 "update": 0,
-"values": [Vector2(10, 0), Vector2(2000, 0)]
+"values": [Vector2(10, 0), Vector2(400, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jarwj"]
@@ -84,21 +87,38 @@ _data = {
 }
 
 [node name="smasher" type="Node2D" groups=["Smasher"]]
+position = Vector2(834, 542)
 script = ExtResource("1_nmc82")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="smasher" type="CharacterBody2D" parent="."]
 position = Vector2(10, 0)
-scale = Vector2(10, 10)
+scale = Vector2(5, 5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("RectangleShape2D_ct2cp")
-
-[node name="ColorRect" type="ColorRect" parent="CharacterBody2D"]
+[node name="danger_collider" type="Area2D" parent="smasher"]
 unique_name_in_owner = true
-offset_left = -50.0
-offset_top = -10.0
-offset_right = 50.0
-offset_bottom = 10.0
+position = Vector2(-2, 0)
+scale = Vector2(0.2, 0.2)
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="smasher/danger_collider"]
+position = Vector2(8, -4)
+shape = SubResource("RectangleShape2D_2g6o8")
+
+[node name="smasher_collider" type="CollisionShape2D" parent="smasher"]
+unique_name_in_owner = true
+position = Vector2(-0.324997, -0.349998)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_spxvn")
+one_way_collision = true
+
+[node name="ColorRect" type="ColorRect" parent="smasher"]
+unique_name_in_owner = true
+offset_left = -37.0
+offset_top = -7.0
+offset_right = 28.0
+offset_bottom = 5.0
+scale = Vector2(1.13383, 1.0836)
+metadata/_edit_use_anchors_ = true
 
 [node name="anim" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
@@ -107,7 +127,8 @@ libraries = {
 }
 
 [node name="warning2" parent="." instance=ExtResource("2_u1qc2")]
-position = Vector2(1100, 0)
+position = Vector2(225, 0)
+scale = Vector2(0.5, 0.5)
 spriteName = "danger"
 
 [node name="Sprite2D" parent="warning2" index="0"]
@@ -121,5 +142,7 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_is6t6")
 }
+
+[connection signal="body_entered" from="smasher/danger_collider" to="." method="_on_danger_collider_body_entered"]
 
 [editable path="warning2"]

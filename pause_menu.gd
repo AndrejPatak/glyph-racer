@@ -1,10 +1,21 @@
 extends Control
 
+var canHide : bool = false
+
 func _ready() -> void:
 	%Continue.grab_focus()
 	for button in get_tree().get_nodes_in_group("button"):
 		button.connect("focus_entered", shiftHighlight.bind(button))
 	modulate = Colorizer.get_color("player")
+
+func _process(_delta) -> void:
+	if !Input.is_action_pressed("pause") and not canHide:
+		canHide = true
+	if Input.is_action_just_pressed("pause") and canHide:
+		TimeTracker.unpause()
+		self.queue_free()
+	
+	
 
 func _on_save_pressed() -> void:
 	TimeTracker.save_times()

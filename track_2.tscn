@@ -1,7 +1,18 @@
-[gd_scene load_steps=11 format=3 uid="uid://cucmjh27hqbk0"]
+[gd_scene load_steps=20 format=3 uid="uid://cucmjh27hqbk0"]
 
 [ext_resource type="PackedScene" uid="uid://cn56ji7fpcno2" path="res://sprite.tscn" id="1_a1re3"]
-[ext_resource type="Texture2D" uid="uid://bqiml61mnlvm4" path="res://assets/tutorial track2.svg" id="2_pl5a1"]
+[ext_resource type="Script" path="res://track_2.gd" id="1_d7i58"]
+[ext_resource type="Texture2D" uid="uid://bqiml61mnlvm4" path="res://build/windows/assets/tutorial track2.svg" id="2_pl5a1"]
+[ext_resource type="PackedScene" uid="uid://deyrgwkrds8vg" path="res://finish.tscn" id="3_msahu"]
+
+[sub_resource type="Gradient" id="Gradient_tscbs"]
+colors = PackedColorArray(0.0745098, 0, 0, 1, 0.00325321, 0, 0.0899944, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_i0803"]
+gradient = SubResource("Gradient_tscbs")
+width = 128
+height = 128
+fill_to = Vector2(1, 0.217949)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t52xx"]
 size = Vector2(1483, 340)
@@ -16,16 +27,95 @@ normal = Vector2(1, -2.38419e-07)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_aa6je"]
 normal = Vector2(-1, 1.86083e-07)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_e1xhu"]
-polygon = PackedVector2Array(1823, -167, 1823, 863, -49, 863, -48, 530, -595, 1125, 2097, 1169, 2132, -363, -331, -312, -50, 177, -52, -166)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r1m"]
+size = Vector2(56, 336)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rlbw4"]
-polygon = PackedVector2Array(1619, -153, 139, -153, 139, 202, 1619, 203)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3tov4"]
+load_path = "res://.godot/imported/fin_patern.svg-372e1c44a2b571a6f0602798233b46f8.ctex"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjw8d"]
-size = Vector2(108, 332)
+[sub_resource type="Animation" id="Animation_y365n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1312, 328)]
+}
+
+[sub_resource type="Animation" id="Animation_aty03"]
+resource_name = "slide"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1312, 300), Vector2(1000, 300)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m6j1o"]
+_data = {
+"RESET": SubResource("Animation_y365n"),
+"slide": SubResource("Animation_aty03")
+}
+
+[sub_resource type="Animation" id="Animation_83lbs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1312, 328)]
+}
+
+[sub_resource type="Animation" id="Animation_4k7ye"]
+resource_name = "slide"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1012, 300), Vector2(1312, 300)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_303rx"]
+_data = {
+"RESET": SubResource("Animation_83lbs"),
+"slide": SubResource("Animation_4k7ye")
+}
 
 [node name="track2" type="Node2D"]
+script = ExtResource("1_d7i58")
+
+[node name="ColorRect" type="TextureRect" parent="."]
+offset_left = -3148.0
+offset_top = -2277.0
+offset_right = 4571.0
+offset_bottom = 2710.0
+texture = SubResource("GradientTexture2D_i0803")
 
 [node name="sprite" parent="." instance=ExtResource("1_a1re3")]
 spriteName = "track"
@@ -60,23 +150,50 @@ shape = SubResource("WorldBoundaryShape2D_e4slr")
 position = Vector2(1826, 119)
 shape = SubResource("WorldBoundaryShape2D_aa6je")
 
-[node name="LightOccluders" type="Node2D" parent="."]
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="LightOccluders"]
-occluder = SubResource("OccluderPolygon2D_e1xhu")
-
-[node name="LightOccluder2D6" type="LightOccluder2D" parent="LightOccluders"]
-position = Vector2(-197, 328)
-occluder = SubResource("OccluderPolygon2D_rlbw4")
-
 [node name="SpawnPoint" type="Marker2D" parent="."]
 
-[node name="Finish" type="Area2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(8, 678)
+[node name="Finish" parent="." instance=ExtResource("3_msahu")]
+position = Vector2(-51, 523)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
-position = Vector2(-2, 20)
-shape = SubResource("RectangleShape2D_mjw8d")
+[node name="CollisionShape2D" parent="Finish" index="0"]
+position = Vector2(89, 174)
+shape = SubResource("RectangleShape2D_q6r1m")
+
+[node name="Panel" parent="Finish" index="1"]
+modulate = Color(0.830334, 0.830336, 0.830334, 1)
+offset_left = 2.0
+offset_top = 8.0
+offset_right = 112.0
+offset_bottom = 341.0
+
+[node name="TextureRect" parent="Finish/Panel" index="0"]
+texture = SubResource("CompressedTexture2D_3tov4")
+
+[node name="decoration" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-141, 0)
+
+[node name="dec1" type="AnimationPlayer" parent="decoration" groups=["anims"]]
+libraries = {
+"": SubResource("AnimationLibrary_m6j1o")
+}
+
+[node name="ColorRect" type="ColorRect" parent="decoration" groups=["decor"]]
+offset_left = 1312.0
+offset_top = 328.0
+offset_right = 1412.0
+offset_bottom = 428.0
+
+[node name="ColorRect2" type="ColorRect" parent="decoration" groups=["decor"]]
+offset_left = 1312.0
+offset_top = 328.0
+offset_right = 1412.0
+offset_bottom = 428.0
+
+[node name="dec2" type="AnimationPlayer" parent="decoration" groups=["anims"]]
+libraries = {
+"": SubResource("AnimationLibrary_303rx")
+}
 
 [editable path="sprite"]
+[editable path="Finish"]

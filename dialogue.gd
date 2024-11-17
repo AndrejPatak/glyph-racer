@@ -7,7 +7,7 @@ var dialogs : Array[String]
 
 var finished : bool = false
 
-signal dialogue_ended
+signal dialog_ended
 signal show_arrow
 
 var tween : Tween
@@ -52,7 +52,7 @@ func _on_next_pressed() -> void:
 			displayNext()
 		else:
 			modulate = Color.TRANSPARENT
-			dialogue_ended.emit()
+			dialog_ended.emit()
 			queue_free()
 			pass
 

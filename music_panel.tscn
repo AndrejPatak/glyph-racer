@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5fwts0rfoyru"]
+
+[ext_resource type="Script" path="res://music_panel.gd" id="1_ytaad"]
+[ext_resource type="Theme" uid="uid://mcvp8aaoeu18" path="res://popup.tres" id="2_brton"]
+[ext_resource type="FontFile" uid="uid://dvdc01i1ernmo" path="res://build/windows/assets/fonts/Orbitron/static/Orbitron-Regular.ttf" id="3_8fewh"]
+[ext_resource type="Theme" uid="uid://cx8v3o7umtucr" path="res://build/windows/assets/themes/secondary_menu_buttons.tres" id="4_2qmaf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c8alj"]
+font = ExtResource("3_8fewh")
+font_size = 45
+
+[node name="MusicPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ytaad")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 530.0
+offset_bottom = 450.0
+theme = ExtResource("2_brton")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "SongTitle"
+label_settings = SubResource("LabelSettings_c8alj")
+autowrap_mode = 3
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="previous" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+theme = ExtResource("4_2qmaf")
+text = "<<"
+
+[node name="pause_play" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+theme = ExtResource("4_2qmaf")
+theme_override_font_sizes/font_size = 40
+text = "| |"
+
+[node name="next" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+theme = ExtResource("4_2qmaf")
+text = ">>"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/pause_play" to="." method="_on_pause_play_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/next" to="." method="_on_next_pressed"]

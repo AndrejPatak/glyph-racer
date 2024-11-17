@@ -6,22 +6,31 @@ extends Control
 func _ready() -> void:
 	load_settings()
 	modulate = Colorizer.get_color("track")
+	
 
 
 func load_settings() -> void:
-	%music_label.text = str(Settings.music_volume)
-	%effects_label.text = str(Settings.effects_volume)
+	update_music()
+	update_effects()
 	%fps_label.text = str(Engine.max_fps)
 	%graphics_button.text = Settings.graphics_quality.to_upper()
 
 func _on_music_value_changed(value: float) -> void:
 	Settings.set_volume("music", value)
-	%music_label.text = str(value * 10)
+	update_music()
 
 func _on_effects_value_changed(value: float) -> void:
 	Settings.set_volume("effects", value)
-	%effects_label.text = str(value * 10)
+	update_effects()
 
+func update_music() -> void:
+	%music_label.text = str(Settings.music_volume * 10)
+	%music_slider.value = Settings.music_volume
+	
+func update_effects() -> void:
+	%effects_label.text = str(Settings.effects_volume * 10)
+	%effects_slider.value = Settings.effects_volume
+	
 
 func _on_fps_value_changed(value: float) -> void:
 	match value:
@@ -56,10 +65,11 @@ func _on_save_pressed() -> void:
 func _on_graphics_button_pressed() -> void:
 	match Settings.graphics_quality:
 		"good":
-			Settings.graphics_quality = "mid"
+			Settings.set_graphics("mid")
 		"mid":
-			Settings.graphics_quality = "good"
+			Settings.set_graphics("good")
 		_:
 			printerr("Graphics button error in settings.gd")
+	
 	%graphics_button.text = Settings.graphics_quality.to_upper()
 		

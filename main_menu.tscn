@@ -1,25 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bu5psg11h2pk6"]
+[gd_scene load_steps=6 format=3 uid="uid://bu5psg11h2pk6"]
 
 [ext_resource type="Script" path="res://main_menu_button_handler.gd" id="1_2pbvu"]
-[ext_resource type="Theme" uid="uid://c3t7fy1jsu6ik" path="res://assets/themes/main_menu_buttons.tres" id="1_aysbv"]
-[ext_resource type="FontFile" uid="uid://d2k441xoyms78" path="res://assets/fonts/Orbitron/static/Orbitron-ExtraBold.ttf" id="2_n4ooc"]
+[ext_resource type="FontFile" uid="uid://d2k441xoyms78" path="res://build/windows/assets/fonts/Orbitron/static/Orbitron-ExtraBold.ttf" id="2_n4ooc"]
+[ext_resource type="Theme" uid="uid://cx8v3o7umtucr" path="res://build/windows/assets/themes/secondary_menu_buttons.tres" id="3_hsdm2"]
 [ext_resource type="PackedScene" uid="uid://d0qtowtusfaqh" path="res://highlight.tscn" id="4_npom1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wpmcc"]
 font = ExtResource("2_n4ooc")
 font_size = 100
-
-[sub_resource type="Environment" id="Environment_x2keb"]
-background_mode = 3
-glow_enabled = true
-glow_intensity = 0.3
-glow_strength = 0.61
-glow_bloom = 0.8
-glow_blend_mode = 0
-glow_hdr_threshold = 0.2
-glow_hdr_scale = 4.0
-glow_hdr_luminance_cap = 256.0
-glow_map_strength = 1.0
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -61,7 +49,7 @@ layout_mode = 2
 
 [node name="NewGame" type="Button" parent="VBoxContainer2/VBoxContainer/HBoxContainer" groups=["button"]]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 80)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 focus_neighbor_left = NodePath("../../HBoxContainer3/Quit")
 focus_neighbor_top = NodePath("../../HBoxContainer3/Quit")
@@ -69,7 +57,7 @@ focus_neighbor_right = NodePath("../../HBoxContainer2/Continue")
 focus_neighbor_bottom = NodePath("../../HBoxContainer2/Continue")
 focus_next = NodePath("../../HBoxContainer2/Continue")
 focus_previous = NodePath("../../HBoxContainer2/Continue")
-theme = ExtResource("1_aysbv")
+theme = ExtResource("3_hsdm2")
 text = "New Game"
 alignment = 0
 
@@ -82,7 +70,7 @@ layout_mode = 2
 
 [node name="Continue" type="Button" parent="VBoxContainer2/VBoxContainer/HBoxContainer2" groups=["button"]]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 80)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 focus_neighbor_left = NodePath("../../HBoxContainer/NewGame")
 focus_neighbor_top = NodePath("../../HBoxContainer/NewGame")
@@ -90,7 +78,7 @@ focus_neighbor_right = NodePath("../../HBoxContainer4/Settings")
 focus_neighbor_bottom = NodePath("../../HBoxContainer4/Settings")
 focus_next = NodePath("../../HBoxContainer3/Quit")
 focus_previous = NodePath("../../HBoxContainer/NewGame")
-theme = ExtResource("1_aysbv")
+theme = ExtResource("3_hsdm2")
 disabled = true
 text = "Continue"
 alignment = 0
@@ -99,7 +87,7 @@ alignment = 0
 layout_mode = 2
 
 [node name="Settings" type="Button" parent="VBoxContainer2/VBoxContainer/HBoxContainer4" groups=["button"]]
-custom_minimum_size = Vector2(300, 80)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 focus_neighbor_left = NodePath("../../HBoxContainer2/Continue")
 focus_neighbor_top = NodePath("../../HBoxContainer2/Continue")
@@ -107,7 +95,7 @@ focus_neighbor_right = NodePath("../../HBoxContainer3/Quit")
 focus_neighbor_bottom = NodePath("../../HBoxContainer3/Quit")
 focus_next = NodePath("../../HBoxContainer3/Quit")
 focus_previous = NodePath("../../HBoxContainer2/Continue")
-theme = ExtResource("1_aysbv")
+theme = ExtResource("3_hsdm2")
 text = "Settings"
 alignment = 0
 
@@ -115,7 +103,7 @@ alignment = 0
 layout_mode = 2
 
 [node name="Quit" type="Button" parent="VBoxContainer2/VBoxContainer/HBoxContainer3" groups=["button"]]
-custom_minimum_size = Vector2(300, 80)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 focus_neighbor_left = NodePath("../../HBoxContainer4/Settings")
 focus_neighbor_top = NodePath("../../HBoxContainer4/Settings")
@@ -123,13 +111,9 @@ focus_neighbor_right = NodePath("../../HBoxContainer/NewGame")
 focus_neighbor_bottom = NodePath("../../HBoxContainer/NewGame")
 focus_next = NodePath("../../HBoxContainer/NewGame")
 focus_previous = NodePath("../../HBoxContainer4/Settings")
-theme = ExtResource("1_aysbv")
+theme = ExtResource("3_hsdm2")
 text = "Quit"
 alignment = 0
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-unique_name_in_owner = true
-environment = SubResource("Environment_x2keb")
 
 [connection signal="pressed" from="VBoxContainer2/VBoxContainer/HBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="VBoxContainer2/VBoxContainer/HBoxContainer2/Continue" to="." method="_on_continue_pressed"]

@@ -10,6 +10,9 @@ var settings : FileAccess
 
 func _ready() -> void:
 	load_settings()
+	update_graphics()
+
+
 
 func save_settings() -> void:
 	settings = FileAccess.open(settingsFile, FileAccess.WRITE)
@@ -34,9 +37,9 @@ func load_settings() -> void:
 				"effects":
 					Settings.set_volume("effects", float(lines[1]))
 				"fps":
-					pass
+					Engine.set("max_fps", 144)
 				"graphics":
-					pass
+					Settings.set_graphics("good")
 				_:
 					printerr("Setting not recognized: ", lines[0])
 	settings.close()
@@ -65,6 +68,19 @@ func get_volume(forWhat : String) -> float:
 		_:
 			printerr("Unknown sound type: ", forWhat)
 			return -1
+
+func set_graphics(toWhat) -> void:
+	graphics_quality = toWhat
+	update_graphics()
+
+func update_graphics() -> void:
+	
+	if graphics_quality == "mid":
+		%env.environment.glow_enabled = false
+		print("mid: ", %env.environment.glow_enabled)
+	else:
+		%env.environment.glow_enabled = true
+
 
 func _input(event):
 	if event.is_action_pressed("menu_back"):

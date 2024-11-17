@@ -1,48 +1,26 @@
-[gd_scene load_steps=20 format=3 uid="uid://dgeia102tsf4l"]
+[gd_scene load_steps=26 format=3 uid="uid://dgeia102tsf4l"]
 
 [ext_resource type="PackedScene" uid="uid://cn56ji7fpcno2" path="res://sprite.tscn" id="1_4qo4g"]
 [ext_resource type="Script" path="res://hidden_area.gd" id="1_mah6y"]
-[ext_resource type="Texture2D" uid="uid://dcfsf8kc42tgo" path="res://assets/race_2.svg.svg" id="2_ui8xu"]
+[ext_resource type="Texture2D" uid="uid://djeg5aqia68ao" path="res://assets/race_2.svg" id="2_ht8ne"]
 [ext_resource type="PackedScene" uid="uid://tsc4jwqt4j1t" path="res://key.tscn" id="4_42og0"]
+[ext_resource type="Texture2D" uid="uid://c4blxggtueynl" path="res://assets/hiding.png" id="4_fkh44"]
+[ext_resource type="PackedScene" uid="uid://ygcprweq5pph" path="res://spike.tscn" id="5_0gurc"]
+[ext_resource type="PackedScene" uid="uid://c38cekxbgvkpb" path="res://launch_pad.tscn" id="6_uyd50"]
+[ext_resource type="PackedScene" uid="uid://deyrgwkrds8vg" path="res://finish.tscn" id="7_sh47l"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tk1cr"]
-size = Vector2(65, 477.5)
+[sub_resource type="Gradient" id="Gradient_51vxu"]
+interpolation_mode = 2
+interpolation_color_space = 2
+colors = PackedColorArray(0.0867374, 1.33864e-05, 0.0993253, 1, 0.0358688, 0.0487624, 0.124193, 1)
 
-[sub_resource type="Animation" id="Animation_1yqqf"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_cemta"]
-resource_name = "reveal"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ooyci"]
-_data = {
-"RESET": SubResource("Animation_1yqqf"),
-"reveal": SubResource("Animation_cemta")
-}
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ituvq"]
+gradient = SubResource("Gradient_51vxu")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0, 0.837607)
+fill_to = Vector2(0.602564, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dnqsv"]
 size = Vector2(164, 483)
@@ -74,32 +52,57 @@ size = Vector2(110, 460)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_028kk"]
 size = Vector2(391, 55.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_72250"]
-size = Vector2(694, 113)
+[sub_resource type="Animation" id="Animation_vmo5a"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7p0uk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h3q0l"]
+_data = {
+"RESET": SubResource("Animation_7p0uk"),
+"show": SubResource("Animation_vmo5a")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pijwi"]
+size = Vector2(59, 449)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2j80"]
+size = Vector2(693, 107)
 
 [node name="track_4" type="Node2D"]
+metadata/_edit_vertical_guides_ = [2068.0]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-z_index = 1
-offset_left = 2067.0
-offset_top = -416.0
-offset_right = 2567.0
-offset_bottom = 74.0
-color = Color(0, 0, 0, 1)
-script = ExtResource("1_mah6y")
-
-[node name="Area2D" type="Area2D" parent="ColorRect"]
-position = Vector2(56, 125)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/Area2D"]
-position = Vector2(-20.5, 113.25)
-shape = SubResource("RectangleShape2D_tk1cr")
-
-[node name="anim" type="AnimationPlayer" parent="ColorRect"]
-unique_name_in_owner = true
-libraries = {
-"": SubResource("AnimationLibrary_ooyci")
-}
+[node name="ColorRect2" type="TextureRect" parent="."]
+offset_left = -2393.0
+offset_top = -1520.0
+offset_right = 5326.0
+offset_bottom = 3467.0
+texture = SubResource("GradientTexture2D_ituvq")
 
 [node name="Node2D" parent="." instance=ExtResource("1_4qo4g")]
 spriteName = "track"
@@ -108,7 +111,7 @@ spriteName = "track"
 position = Vector2(1259, 1105)
 rotation = 0.0
 scale = Vector2(2, 2)
-texture = ExtResource("2_ui8xu")
+texture = ExtResource("2_ht8ne")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -191,18 +194,67 @@ position = Vector2(2368.5, 63.75)
 shape = SubResource("RectangleShape2D_028kk")
 debug_color = Color(0.815288, 0.00196508, 0.976103, 0.42)
 
-[node name="Finish" type="Area2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(1809, 2001)
+[node name="cover" type="TextureRect" parent="."]
+offset_left = 2068.0
+offset_top = -414.0
+offset_right = 2554.0
+offset_bottom = 42.0
+texture = ExtResource("4_fkh44")
+expand_mode = 1
+script = ExtResource("1_mah6y")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
-position = Vector2(7, 3.5)
-shape = SubResource("RectangleShape2D_72250")
+[node name="cover_an" type="AnimationPlayer" parent="cover"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_h3q0l")
+}
+
+[node name="trigger" type="Area2D" parent="cover"]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cover/trigger"]
+position = Vector2(-30.5, 231.5)
+shape = SubResource("RectangleShape2D_pijwi")
 
 [node name="key" parent="." instance=ExtResource("4_42og0")]
 position = Vector2(2331, -203)
 scale = Vector2(0.5, 0.5)
 
-[connection signal="body_entered" from="ColorRect/Area2D" to="ColorRect" method="_on_triggered"]
+[node name="spike" parent="." instance=ExtResource("5_0gurc")]
+position = Vector2(1059, 1322)
+
+[node name="spike2" parent="." instance=ExtResource("5_0gurc")]
+position = Vector2(1059, 1560)
+
+[node name="spike3" parent="." instance=ExtResource("5_0gurc")]
+position = Vector2(1464, 1728)
+scale = Vector2(-1, 1)
+
+[node name="spike4" parent="." instance=ExtResource("5_0gurc")]
+position = Vector2(1465, 1479)
+scale = Vector2(-1, 1)
+
+[node name="launcher" parent="." instance=ExtResource("6_uyd50")]
+position = Vector2(1258, 1147)
+
+[node name="Finish" parent="." instance=ExtResource("7_sh47l")]
+position = Vector2(1637, 2057)
+
+[node name="CollisionShape2D" parent="Finish" index="0"]
+position = Vector2(178.5, -50.5)
+shape = SubResource("RectangleShape2D_h2j80")
+
+[node name="Panel" parent="Finish" index="1"]
+offset_left = -171.0
+offset_top = -105.0
+offset_right = 528.0
+offset_bottom = 8.0
+
+[node name="TextureRect" parent="Finish/Panel" index="0"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+
+[connection signal="body_entered" from="cover/trigger" to="cover" method="_on_triggered"]
 
 [editable path="Node2D"]
+[editable path="Finish"]

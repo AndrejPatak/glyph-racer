@@ -1,0 +1,101 @@
+[gd_scene load_steps=5 format=3 uid="uid://crq3rtht2e4wf"]
+
+[ext_resource type="Script" path="res://death_screen.gd" id="1_e1jrk"]
+[ext_resource type="LabelSettings" uid="uid://b2tnpbg4unqoy" path="res://build/windows/assets/themes/button_highlight.tres" id="2_0gu0g"]
+[ext_resource type="Theme" uid="uid://mcvp8aaoeu18" path="res://popup.tres" id="2_ix78r"]
+[ext_resource type="Theme" uid="uid://cx8v3o7umtucr" path="res://build/windows/assets/themes/secondary_menu_buttons.tres" id="3_vabpl"]
+
+[node name="deathScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e1jrk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.443137)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -266.0
+offset_top = -210.0
+offset_right = 266.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ix78r")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="title" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "[YOU DIED]"
+label_settings = ExtResource("2_0gu0g")
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="tryAgain" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer" groups=["button"]]
+unique_name_in_owner = true
+process_mode = 3
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 2
+theme = ExtResource("3_vabpl")
+text = "TRY AGAIN"
+flat = true
+alignment = 0
+
+[node name="Highlight" type="Label" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "<"
+label_settings = ExtResource("2_0gu0g")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Play_another" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer2" groups=["button"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 2
+theme = ExtResource("3_vabpl")
+text = "TRACK SELECT"
+flat = true
+alignment = 0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Play_next" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer3" groups=["button"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 2
+theme = ExtResource("3_vabpl")
+text = "NEXT TRACK"
+flat = true
+alignment = 0
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/tryAgain" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer2/Play_another" to="." method="_on_play_another_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer3/Play_next" to="." method="_on_play_next_pressed"]

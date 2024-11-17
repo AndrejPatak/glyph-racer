@@ -1,16 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://btlv6hnynahk0"]
+[gd_scene load_steps=21 format=3 uid="uid://btlv6hnynahk0"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_mtrrm"]
 [ext_resource type="PackedScene" uid="uid://cn56ji7fpcno2" path="res://sprite.tscn" id="2_aw4q7"]
-[ext_resource type="AudioStream" uid="uid://c84dfiy20py7" path="res://assets/sounds/startEngine.wav" id="3_g74bu"]
+[ext_resource type="AudioStream" uid="uid://c84dfiy20py7" path="res://build/windows/assets/sounds/startEngine.wav" id="3_g74bu"]
 [ext_resource type="Script" path="res://pointer.gd" id="4_l762p"]
-[ext_resource type="LabelSettings" uid="uid://b2tnpbg4unqoy" path="res://assets/themes/button_highlight.tres" id="5_xcdjw"]
+[ext_resource type="LabelSettings" uid="uid://b2tnpbg4unqoy" path="res://build/windows/assets/themes/button_highlight.tres" id="5_xcdjw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a03hf"]
 radius = 30.0167
 
 [sub_resource type="Gradient" id="Gradient_qlvxx"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 0, 1, 0)
+offsets = PackedFloat32Array(0, 0.259459, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_jbyp4"]
 gradient = SubResource("Gradient_qlvxx")
@@ -22,6 +23,7 @@ emission_shape_scale = Vector3(1, 50, 1)
 angle_min = -720.0
 angle_max = -641.6
 direction = Vector3(-1, 0, 0)
+spread = 74.577
 initial_velocity_min = 59.17
 initial_velocity_max = 121.3
 gravity = Vector3(0, 0, 0)
@@ -65,6 +67,59 @@ _data = {
 "engine": SubResource("Animation_1gffx")
 }
 
+[sub_resource type="Curve" id="Curve_w70ob"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_omcxh"]
+curve = SubResource("Curve_w70ob")
+
+[sub_resource type="Gradient" id="Gradient_2ahxp"]
+interpolation_mode = 2
+interpolation_color_space = 2
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_72yhm"]
+gradient = SubResource("Gradient_2ahxp")
+
+[sub_resource type="Curve" id="Curve_bs8eb"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0, 25), 0.0, 0.0, 0, 0, Vector2(0.356784, 110), 0.0, 0.0, 0, 0, Vector2(1, -145), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_kof4l"]
+curve = SubResource("Curve_bs8eb")
+
+[sub_resource type="Curve" id="Curve_pb2d2"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.487437, 0.95), 0.0, 0.0, 0, 0, Vector2(1, 0.475), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_jsxyk"]
+curve = SubResource("Curve_pb2d2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2auk4"]
+lifetime_randomness = 0.06
+particle_flag_disable_z = true
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+direction = Vector3(-1, 0, 0)
+spread = 180.0
+flatness = 0.399
+initial_velocity_min = 205.12
+initial_velocity_max = 341.06
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 82.05
+linear_accel_max = 82.05
+linear_accel_curve = SubResource("CurveTexture_kof4l")
+damping_min = 23.077
+damping_max = 23.077
+scale_min = 20.0
+scale_max = 25.0
+scale_curve = SubResource("CurveTexture_jsxyk")
+color_ramp = SubResource("GradientTexture1D_72yhm")
+alpha_curve = SubResource("CurveTexture_omcxh")
+
 [node name="player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_mtrrm")
 
@@ -80,6 +135,7 @@ unique_name_in_owner = true
 physics_interpolation_mode = 2
 auto_translate_mode = 2
 show_behind_parent = true
+emitting = false
 amount = 100
 process_material = SubResource("ParticleProcessMaterial_uchif")
 
@@ -117,5 +173,20 @@ text = "
 label_settings = ExtResource("5_xcdjw")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="deathBoom" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(26, 0)
+emitting = false
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_2auk4")
+lifetime = 0.3
+one_shot = true
+preprocess = 0.1
+explosiveness = 0.8
+randomness = 0.25
+trail_enabled = true
+trail_lifetime = 0.08
+trail_section_subdivisions = 128
 
 [connection signal="animation_finished" from="engineSound" to="." method="loop_engine_sound"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4dhkurg2octb"]
+[gd_scene load_steps=5 format=3 uid="uid://b4dhkurg2octb"]
 
 [ext_resource type="Script" path="res://victory.gd" id="1_60kmv"]
-[ext_resource type="Theme" uid="uid://cx8v3o7umtucr" path="res://assets/themes/secondary_menu_buttons.tres" id="3_tjlbp"]
-[ext_resource type="LabelSettings" uid="uid://b2tnpbg4unqoy" path="res://assets/themes/button_highlight.tres" id="4_wyxuo"]
+[ext_resource type="Theme" uid="uid://cx8v3o7umtucr" path="res://build/windows/assets/themes/secondary_menu_buttons.tres" id="3_tjlbp"]
+[ext_resource type="PackedScene" uid="uid://d0qtowtusfaqh" path="res://highlight.tscn" id="4_nkec6"]
+[ext_resource type="LabelSettings" uid="uid://b2tnpbg4unqoy" path="res://build/windows/assets/themes/button_highlight.tres" id="5_555g2"]
 
 [node name="victory" type="Control"]
 process_mode = 3
@@ -40,13 +41,14 @@ alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "FINISHED"
-label_settings = ExtResource("4_wyxuo")
+text = "[FINISHED]"
+label_settings = ExtResource("5_555g2")
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(520, 0)
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
@@ -54,40 +56,38 @@ layout_mode = 2
 
 [node name="Improve" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer" groups=["button"]]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(500, 80)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("3_tjlbp")
 text = "IMPROVE"
 flat = true
 alignment = 0
 
-[node name="Highlight" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "<"
-label_settings = ExtResource("4_wyxuo")
-
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="Play_another" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer2" groups=["button"]]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(500, 80)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("3_tjlbp")
-text = "PLAY ANOTHER"
+text = "TRACK SELECT"
 flat = true
 alignment = 0
+
+[node name="Highlight" parent="VBoxContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("4_nkec6")]
+unique_name_in_owner = true
+layout_mode = 2
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="Play_next" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer3" groups=["button"]]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(500, 80)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("3_tjlbp")
-text = "PLAY NEXT"
+text = "NEXT TRACK"
 flat = true
 alignment = 0
 
@@ -96,7 +96,7 @@ layout_mode = 2
 
 [node name="Save_game" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer4" groups=["button"]]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(500, 80)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("3_tjlbp")
 text = "SAVE GAME"

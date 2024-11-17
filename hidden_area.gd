@@ -1,8 +1,8 @@
-extends ColorRect
+extends TextureRect
 
 
 
 func _on_triggered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		%anim.play("reveal")
-		get_child(0).queue_free()
+		%cover_an.play("show")
+		%trigger.queue_free()

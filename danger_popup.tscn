@@ -1,22 +1,22 @@
 [gd_scene load_steps=10 format=3 uid="uid://cvtnm7p6wo08h"]
 
 [ext_resource type="Script" path="res://danger_popup.gd" id="1_voqdr"]
-[ext_resource type="LabelSettings" uid="uid://b2tnpbg4unqoy" path="res://assets/themes/button_highlight.tres" id="2_qbv6o"]
-[ext_resource type="FontFile" uid="uid://epkkuh4ygf40" path="res://assets/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Regular.ttf" id="3_5hxlr"]
+[ext_resource type="LabelSettings" uid="uid://b2tnpbg4unqoy" path="res://build/windows/assets/themes/button_highlight.tres" id="2_qbv6o"]
+[ext_resource type="FontFile" uid="uid://epkkuh4ygf40" path="res://build/windows/assets/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Regular.ttf" id="3_5hxlr"]
 [ext_resource type="PackedScene" uid="uid://d0qtowtusfaqh" path="res://highlight.tscn" id="3_ktwcb"]
-[ext_resource type="FontFile" uid="uid://dvdc01i1ernmo" path="res://assets/fonts/Orbitron/static/Orbitron-Regular.ttf" id="4_lt6bi"]
-[ext_resource type="Theme" uid="uid://cx8v3o7umtucr" path="res://assets/themes/secondary_menu_buttons.tres" id="4_ox5r8"]
+[ext_resource type="FontFile" uid="uid://dvdc01i1ernmo" path="res://build/windows/assets/fonts/Orbitron/static/Orbitron-Regular.ttf" id="4_lt6bi"]
+[ext_resource type="Theme" uid="uid://cx8v3o7umtucr" path="res://build/windows/assets/themes/secondary_menu_buttons.tres" id="4_ox5r8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n54lt"]
 content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
-bg_color = Color(0.137255, 0.145098, 0.14902, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+bg_color = Color(0, 0, 0, 0.92549)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 shadow_size = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_x0phj"]
@@ -140,4 +140,4 @@ size_flags_horizontal = 3
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer2/no" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer3/save_exit" to="." method="_on_save_exit"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer/exit" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer/exit" to="." method="_on_exit_pressed"]

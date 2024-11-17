@@ -2,6 +2,8 @@ extends Area2D
 
 @export_range(0, 100) var boost_amount : float
 
+func _ready() -> void:
+	modulate = Colorizer.get_color("track")
 
 func delete() -> void:
 	set_deferred("monitoring", false)

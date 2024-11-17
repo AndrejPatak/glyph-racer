@@ -14,10 +14,13 @@ var boostAmount : float = 0
 
 var track : Node = null
 
+signal player_died
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	%exhaust.modulate = Colorizer.get_color("player")
 	%Pointer.modulate = Colorizer.get_color("track")
+	%deathBoom.modulate = Colorizer.get_color("danger")
 
 func get_angle_to_mouse() -> float:
 	var x := get_global_mouse_position().x - self.global_position.x
@@ -87,3 +90,14 @@ func stop_exhaust() -> void:
 func add_boost(amount : float) -> void:
 	if boostAmount != 100:
 		boostAmount += amount
+
+func die():
+	%deathBoom.emitting = true
+	world.started = false
+	$Sprite.modulate = Color.TRANSPARENT
+	player_died.emit()
+	pass
+
+func launch(strength : float) -> void:
+	velocity.x += self.get_relative_mouse_position().normalized().x * strength * 10
+	velocity.y += self.get_relative_mouse_position().normalized().y * strength * 10

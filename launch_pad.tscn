@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c38cekxbgvkpb"]
+
+[ext_resource type="Script" path="res://launcher.gd" id="1_32rnc"]
+[ext_resource type="Texture2D" uid="uid://g5yuxbi53c0e" path="res://assets/launch_pad.svg" id="2_gqkgn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0bw7j"]
+radius = 38.0132
+
+[node name="launcher" type="Area2D"]
+script = ExtResource("1_32rnc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0bw7j")
+
+[node name="LaunchPad" type="Sprite2D" parent="."]
+position = Vector2(-3.8147e-06, -4.76837e-07)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_gqkgn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

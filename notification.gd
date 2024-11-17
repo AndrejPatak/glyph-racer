@@ -5,6 +5,7 @@ var message : String
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	%messege.text = message
+	modulate = Colorizer.get_color("track")
 
 func showSelf() -> void:
 	%animation.play("show_notification")

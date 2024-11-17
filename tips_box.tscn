@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://ba3jqke53gums"]
+
+[ext_resource type="Theme" uid="uid://mcvp8aaoeu18" path="res://popup.tres" id="1_omyw7"]
+[ext_resource type="Script" path="res://panel_container.gd" id="2_3bqmb"]
+[ext_resource type="FontFile" uid="uid://dvdc01i1ernmo" path="res://build/windows/assets/fonts/Orbitron/static/Orbitron-Regular.ttf" id="3_mvrfw"]
+[ext_resource type="FontFile" uid="uid://dodlcl4g17cgo" path="res://build/windows/assets/fonts/Orbitron/Orbitron-VariableFont_wght.ttf" id="4_wsk8g"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lkf0w"]
+font = ExtResource("3_mvrfw")
+font_size = 23
+
+[sub_resource type="LabelSettings" id="LabelSettings_igeqf"]
+font = ExtResource("4_wsk8g")
+font_size = 25
+
+[node name="tipsBox" type="PanelContainer"]
+offset_left = 92.0
+offset_top = 501.0
+offset_right = 486.0
+offset_bottom = 688.0
+theme = ExtResource("1_omyw7")
+script = ExtResource("2_3bqmb")
+messges = Array[String](["The easiest path is not always the best path.", "Keys can unlock locked areas only in the next layer.", "If a wall seems different, try slamming into it", "Nothing bad can come from trying again.", "You can add your own music to the game. Just make sure it's an .mp3", "Don't forget to take breaks. ", "I like pidgeons. They're cute and cool.", "If you see this, run."])
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "TIPS:"
+label_settings = SubResource("LabelSettings_lkf0w")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="message" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 2
+size_flags_vertical = 1
+text = "You can add your own music to the game. Just make sure it's an .mp3"
+label_settings = SubResource("LabelSettings_igeqf")
+autowrap_mode = 3

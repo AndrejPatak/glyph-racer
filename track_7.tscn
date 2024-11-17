@@ -1,0 +1,336 @@
+[gd_scene load_steps=25 format=3 uid="uid://dopmpbbqmy1ls"]
+
+[ext_resource type="PackedScene" uid="uid://cn56ji7fpcno2" path="res://sprite.tscn" id="1_1xfip"]
+[ext_resource type="PackedScene" uid="uid://h2unij4vwkl5" path="res://smasher.tscn" id="1_aj0bk"]
+[ext_resource type="PackedScene" uid="uid://cf2alrn8w11c8" path="res://cog.tscn" id="1_f2iwi"]
+[ext_resource type="Texture2D" uid="uid://p80yepyxd8y3" path="res://assets/track_7.svg" id="2_3ftcl"]
+[ext_resource type="PackedScene" uid="uid://d0u6tnybbwkxi" path="res://smasher_trigger.tscn" id="2_jcy6r"]
+[ext_resource type="Texture2D" uid="uid://b637qxc4wuq6f" path="res://assets/fin_patern.svg" id="4_p8vbw"]
+[ext_resource type="PackedScene" uid="uid://ygcprweq5pph" path="res://spike.tscn" id="4_xf5bs"]
+[ext_resource type="PackedScene" uid="uid://c38cekxbgvkpb" path="res://launch_pad.tscn" id="5_pk478"]
+[ext_resource type="Script" path="res://player/sprite.gd" id="6_p7nyr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7yatr"]
+size = Vector2(298.5, 732.31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0k75m"]
+size = Vector2(697.207, 301.227)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6t50"]
+size = Vector2(1500.58, 96.267)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7qvl"]
+size = Vector2(324.245, 44.309)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_maynt"]
+size = Vector2(26.2635, 1512.6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxhh0"]
+size = Vector2(89.7523, 704.985)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_seyfk"]
+size = Vector2(1606.17, 67.5287)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y71mv"]
+size = Vector2(89.9998, 891)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jkkc5"]
+size = Vector2(89.7523, 968)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibjmi"]
+size = Vector2(607.405, 166.523)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dje0p"]
+size = Vector2(89.7523, 589)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kqs2f"]
+size = Vector2(994.546, 114.374)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80ca2"]
+size = Vector2(791.303, 96.267)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbs2t"]
+size = Vector2(70.1041, 1097.53)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i716s"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+
+[node name="track_7" type="Node2D"]
+scale = Vector2(2, 2)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-672.5, 799)
+rotation = -0.785398
+
+[node name="smash_enable" type="Area2D" parent="Node2D"]
+position = Vector2(904.39, 415.779)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/smash_enable"]
+position = Vector2(139.25, 356.155)
+shape = SubResource("RectangleShape2D_7yatr")
+
+[node name="ColorRect" type="ColorRect" parent="Node2D"]
+clip_children = 1
+offset_left = 894.0
+offset_top = 540.0
+offset_right = 1197.0
+offset_bottom = 968.0
+
+[node name="smasher" parent="Node2D/ColorRect" node_paths=PackedStringArray("next_smasher") instance=ExtResource("1_aj0bk")]
+show_behind_parent = true
+position = Vector2(-204.571, 34.8777)
+next_smasher = NodePath("../smasher2")
+distance = 300.0
+first = true
+
+[node name="smasher2" parent="Node2D/ColorRect" node_paths=PackedStringArray("next_smasher") instance=ExtResource("1_aj0bk")]
+show_behind_parent = true
+position = Vector2(-195.732, 129.277)
+next_smasher = NodePath("../smasher3")
+distance = 300.0
+smashIndex = 1
+
+[node name="smasher3" parent="Node2D/ColorRect" node_paths=PackedStringArray("next_smasher") instance=ExtResource("1_aj0bk")]
+show_behind_parent = true
+position = Vector2(-194.318, 216.251)
+next_smasher = NodePath("../smasher4")
+distance = 300.0
+smashIndex = 2
+
+[node name="smasher4" parent="Node2D/ColorRect" node_paths=PackedStringArray("next_smasher") instance=ExtResource("1_aj0bk")]
+show_behind_parent = true
+position = Vector2(-193.964, 315.599)
+next_smasher = NodePath("../smasher5")
+distance = 300.0
+smashIndex = 3
+
+[node name="smasher5" parent="Node2D/ColorRect" instance=ExtResource("1_aj0bk")]
+show_behind_parent = true
+position = Vector2(-193.257, 397.623)
+distance = 300.0
+smashIndex = 4
+
+[node name="smasher_trigger" parent="Node2D" instance=ExtResource("2_jcy6r")]
+position = Vector2(907.218, 239.709)
+
+[node name="CollisionShape2D" parent="Node2D/smasher_trigger" index="0"]
+position = Vector2(134.527, -22.1474)
+scale = Vector2(1.30504, -1.45873)
+
+[node name="smash_disable" type="Area2D" parent="Node2D"]
+position = Vector2(866.206, 1512.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/smash_disable"]
+position = Vector2(-20.5061, 7.07104)
+shape = SubResource("RectangleShape2D_0k75m")
+
+[node name="cog2" parent="." instance=ExtResource("1_f2iwi")]
+position = Vector2(0, 1890)
+
+[node name="sprite" parent="." instance=ExtResource("1_1xfip")]
+position = Vector2(814, -376)
+rotation = 0.785398
+spriteName = "track"
+
+[node name="Sprite2D" parent="sprite" index="0"]
+position = Vector2(898, 638)
+rotation = 0.0
+scale = Vector2(1, 1)
+texture = ExtResource("2_3ftcl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(100, 72)
+rotation = 0.785398
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(585.434, 217.032)
+shape = SubResource("RectangleShape2D_w6t50")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(741.755, -184.908)
+rotation = -3.14159
+scale = Vector2(5.63949, 2.18632)
+shape = SubResource("RectangleShape2D_m7qvl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-178.898, -579.12)
+shape = SubResource("RectangleShape2D_maynt")
+debug_color = Color(0.923293, 0.134734, 0.596931, 0.42)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(89.4742, 617.658)
+shape = SubResource("RectangleShape2D_sxhh0")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(929.845, 1000.56)
+shape = SubResource("RectangleShape2D_seyfk")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2065.46, 702.157)
+rotation = 0.788889
+shape = SubResource("RectangleShape2D_y71mv")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2380.83, 21.9203)
+rotation = -0.00872665
+shape = SubResource("RectangleShape2D_sxhh0")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2054.85, -675.994)
+rotation = -0.785398
+shape = SubResource("RectangleShape2D_jkkc5")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1441.08, -1016.82)
+shape = SubResource("RectangleShape2D_ibjmi")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(960.605, -1173.44)
+rotation = -0.785398
+shape = SubResource("RectangleShape2D_dje0p")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(255.266, -1390.88)
+shape = SubResource("RectangleShape2D_kqs2f")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(831.179, 615.89)
+shape = SubResource("RectangleShape2D_80ca2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(1784.74, -62.2254)
+polygon = PackedVector2Array(-148.492, -72.1249, -148.492, 726.906, 255.266, 328.805, 251.023, -171.827, -149.199, -572.049, -649.124, -571.342, -1050.76, -169.706)
+
+[node name="Finish" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
+position = Vector2(563.679, -573.25)
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_sbs2t")
+debug_color = Color(0.514482, 0.576507, 3.85046e-07, 0.42)
+
+[node name="Panel" type="Panel" parent="Finish"]
+offset_left = 146.0
+offset_top = -209.0
+offset_right = 1251.0
+offset_bottom = -133.0
+rotation = -0.785398
+theme_override_styles/panel = SubResource("StyleBoxFlat_i716s")
+
+[node name="TextureRect" type="TextureRect" parent="Finish/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_p8vbw")
+stretch_mode = 1
+
+[node name="cog" parent="." instance=ExtResource("1_f2iwi")]
+position = Vector2(2031, -79)
+
+[node name="spike" parent="." instance=ExtResource("4_xf5bs")]
+position = Vector2(478, 117)
+rotation = -0.785398
+
+[node name="spike2" parent="." instance=ExtResource("4_xf5bs")]
+position = Vector2(563, 203)
+rotation = -0.785398
+
+[node name="spike3" parent="." instance=ExtResource("4_xf5bs")]
+position = Vector2(642, 282)
+rotation = -0.785398
+
+[node name="spike4" parent="." instance=ExtResource("4_xf5bs")]
+position = Vector2(717, 356)
+rotation = -0.785398
+
+[node name="spike5" parent="." instance=ExtResource("4_xf5bs")]
+position = Vector2(394, 35)
+rotation = -0.785398
+
+[node name="spike6" parent="." instance=ExtResource("4_xf5bs")]
+position = Vector2(933, -67)
+rotation = -4.11025
+
+[node name="spike7" parent="." instance=ExtResource("4_xf5bs")]
+position = Vector2(811, 425)
+rotation = -1.5708
+
+[node name="spike8" parent="." instance=ExtResource("4_xf5bs")]
+position = Vector2(1040, 427)
+rotation = -1.5708
+
+[node name="spike9" parent="." instance=ExtResource("4_xf5bs")]
+position = Vector2(1148, 427)
+rotation = -1.5708
+
+[node name="spike10" parent="." instance=ExtResource("4_xf5bs")]
+position = Vector2(924, 427)
+rotation = -1.5708
+
+[node name="spike11" parent="." instance=ExtResource("4_xf5bs")]
+position = Vector2(1262, 150)
+rotation = -4.11025
+
+[node name="spike12" parent="." instance=ExtResource("4_xf5bs")]
+position = Vector2(1181, 99)
+rotation = -4.11025
+
+[node name="spike13" parent="." instance=ExtResource("4_xf5bs")]
+position = Vector2(1104, 46)
+rotation = -4.11025
+
+[node name="spike14" parent="." instance=ExtResource("4_xf5bs")]
+position = Vector2(1022, -10)
+rotation = -4.11025
+
+[node name="launcher" parent="." instance=ExtResource("5_pk478")]
+position = Vector2(1134, 256)
+rotation = 1.8326
+
+[node name="launcher2" parent="." instance=ExtResource("5_pk478")]
+position = Vector2(735, 74)
+rotation = 2.35619
+
+[node name="launcher3" parent="." instance=ExtResource("5_pk478")]
+position = Vector2(931, 200)
+rotation = 2.0944
+
+[node name="split" type="StaticBody2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1084, 0)
+script = ExtResource("6_p7nyr")
+spriteName = "track"
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="split"]
+polygon = PackedVector2Array(-71, -279, -237, -122, 230, 187)
+
+[node name="Polygon2D" type="Polygon2D" parent="split"]
+position = Vector2(0, -79)
+polygon = PackedVector2Array(-71, -200, -236, -44, 229, 265, 192.593, 208.568)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(562.5, 799)
+zoom = Vector2(0.2, 0.2)
+
+[connection signal="body_entered" from="Node2D/smash_enable" to="Node2D/ColorRect/smasher" method="enable_death"]
+[connection signal="body_entered" from="Node2D/smash_enable" to="Node2D/ColorRect/smasher2" method="enable_death"]
+[connection signal="body_entered" from="Node2D/smash_enable" to="Node2D/ColorRect/smasher3" method="enable_death"]
+[connection signal="body_entered" from="Node2D/smash_enable" to="Node2D/ColorRect/smasher4" method="enable_death"]
+[connection signal="body_entered" from="Node2D/smash_enable" to="Node2D/ColorRect/smasher5" method="enable_death"]
+[connection signal="body_entered" from="Node2D/smash_disable" to="Node2D/ColorRect/smasher" method="disable_death"]
+[connection signal="body_entered" from="Node2D/smash_disable" to="Node2D/ColorRect/smasher2" method="disable_death"]
+[connection signal="body_entered" from="Node2D/smash_disable" to="Node2D/ColorRect/smasher3" method="disable_death"]
+[connection signal="body_entered" from="Node2D/smash_disable" to="Node2D/ColorRect/smasher4" method="disable_death"]
+[connection signal="body_entered" from="Node2D/smash_disable" to="Node2D/ColorRect/smasher5" method="disable_death"]
+
+[editable path="Node2D/smasher_trigger"]
+[editable path="sprite"]

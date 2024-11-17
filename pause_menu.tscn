@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bna2n5pcf4a8o"]
+[gd_scene load_steps=7 format=3 uid="uid://bna2n5pcf4a8o"]
 
 [ext_resource type="Script" path="res://pause_menu.gd" id="1_g85tm"]
-[ext_resource type="Theme" uid="uid://cx8v3o7umtucr" path="res://assets/themes/secondary_menu_buttons.tres" id="3_sd1dm"]
-[ext_resource type="LabelSettings" uid="uid://b2tnpbg4unqoy" path="res://assets/themes/button_highlight.tres" id="3_uno0r"]
+[ext_resource type="PackedScene" uid="uid://d0qtowtusfaqh" path="res://highlight.tscn" id="4_nhpc7"]
+[ext_resource type="LabelSettings" uid="uid://b2tnpbg4unqoy" path="res://build/windows/assets/themes/button_highlight.tres" id="5_imr6u"]
+[ext_resource type="PackedScene" uid="uid://c5fwts0rfoyru" path="res://music_panel.tscn" id="5_wtreb"]
+[ext_resource type="PackedScene" uid="uid://ba3jqke53gums" path="res://tips_box.tscn" id="6_f0nfd"]
+[ext_resource type="Theme" uid="uid://cx8v3o7umtucr" path="res://build/windows/assets/themes/secondary_menu_buttons.tres" id="6_w51v2"]
 
 [node name="pauseMenu" type="Control"]
 process_mode = 3
@@ -43,7 +46,7 @@ alignment = 1
 layout_mode = 2
 size_flags_vertical = 6
 text = "PAUSED"
-label_settings = ExtResource("3_uno0r")
+label_settings = ExtResource("5_imr6u")
 
 [node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -58,27 +61,24 @@ layout_mode = 2
 
 [node name="Continue" type="Button" parent="HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer4" groups=["button"]]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(350, 80)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-theme = ExtResource("3_sd1dm")
+theme = ExtResource("6_w51v2")
 text = "Continue race"
 flat = true
 alignment = 0
 
-[node name="Highlight" type="Label" parent="HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer4"]
+[node name="Highlight" parent="HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer4" instance=ExtResource("4_nhpc7")]
 unique_name_in_owner = true
 layout_mode = 2
-text = "  <"
-label_settings = ExtResource("3_uno0r")
-vertical_alignment = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 
 [node name="Restart" type="Button" parent="HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer2" groups=["button"]]
-custom_minimum_size = Vector2(350, 80)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-theme = ExtResource("3_sd1dm")
+theme = ExtResource("6_w51v2")
 text = "Restart race"
 flat = true
 alignment = 0
@@ -87,9 +87,9 @@ alignment = 0
 layout_mode = 2
 
 [node name="Save" type="Button" parent="HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer" groups=["button"]]
-custom_minimum_size = Vector2(350, 80)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-theme = ExtResource("3_sd1dm")
+theme = ExtResource("6_w51v2")
 text = "Save game"
 flat = true
 alignment = 0
@@ -98,9 +98,9 @@ alignment = 0
 layout_mode = 2
 
 [node name="ExitRace" type="Button" parent="HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer3" groups=["button"]]
-custom_minimum_size = Vector2(350, 80)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-theme = ExtResource("3_sd1dm")
+theme = ExtResource("6_w51v2")
 text = "Exit race"
 flat = true
 alignment = 0
@@ -109,15 +109,54 @@ alignment = 0
 layout_mode = 2
 
 [node name="Quit" type="Button" parent="HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer5" groups=["button"]]
-custom_minimum_size = Vector2(350, 80)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-theme = ExtResource("3_sd1dm")
+theme = ExtResource("6_w51v2")
 text = "Quit"
 flat = true
 alignment = 0
+
+[node name="MusicPanel" parent="." instance=ExtResource("5_wtreb")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -159.0
+offset_right = -159.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="PanelContainer" parent="MusicPanel" index="0"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -408.0
+offset_top = -225.5
+offset_right = 0.0
+offset_bottom = 225.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="tipsBox" parent="." instance=ExtResource("6_f0nfd")]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 152.0
+offset_top = -93.5
+offset_right = 546.0
+offset_bottom = 93.5
+grow_vertical = 2
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer4/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer2/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer3/ExitRace" to="." method="_on_exit_race_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer2/VBoxContainer/HBoxContainer5/Quit" to="." method="_on_quit_pressed"]
+
+[editable path="MusicPanel"]

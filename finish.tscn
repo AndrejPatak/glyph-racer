@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://deyrgwkrds8vg"]
+
+[ext_resource type="Texture2D" uid="uid://b637qxc4wuq6f" path="res://assets/fin_patern.svg" id="1_1n8uk"]
+[ext_resource type="Script" path="res://player/sprite.gd" id="1_4cg4a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qiymr"]
+size = Vector2(94, 477)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gh3df"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+
+[node name="Finish" type="Area2D"]
+script = ExtResource("1_4cg4a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(52, 241.5)
+shape = SubResource("RectangleShape2D_qiymr")
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0.831373, 0.831373, 0.831373, 1)
+offset_right = 104.0
+offset_bottom = 483.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gh3df")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1n8uk")
+stretch_mode = 1

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:export>
+      <bx:file format="svg"/>
+    </bx:export>
+    <bx:grid x="0" y="0" width="50" height="49.913"/>
+    <bx:guide x="250" y="46.122" angle="180"/>
+    <bx:guide x="494.178" y="294.878" angle="90"/>
+    <bx:guide x="502.186" y="199.586" angle="90"/>
+    <bx:guide x="470.956" y="117.907" angle="90"/>
+  </defs>
+  <polyline style="fill: none; stroke: rgb(255, 255, 255); transform-origin: 210.655px 216.599px; stroke-width: 25px;" points="100 192.507 249.947 307.493 400 192.507"/>
+  <polyline style="fill: none; stroke: rgb(255, 255, 255); transform-origin: 210.655px 291.468px; stroke-width: 25px;" points="100 267.378 249.947 382.361 400 267.378"/>
+  <polyline style="fill: none; stroke: rgb(255, 255, 255); transform-origin: 210.655px 141.729px; stroke-width: 25px;" points="100 117.638 249.947 232.623 400 117.638"/>
+</svg>

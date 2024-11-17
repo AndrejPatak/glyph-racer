@@ -1,7 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://dtoff4d070guu"]
+[gd_scene load_steps=14 format=3 uid="uid://dtoff4d070guu"]
 
 [ext_resource type="PackedScene" uid="uid://cn56ji7fpcno2" path="res://sprite.tscn" id="1_rvxxx"]
-[ext_resource type="Texture2D" uid="uid://cj0btnap2s30a" path="res://assets/race_1.svg" id="2_j5v6l"]
+[ext_resource type="Texture2D" uid="uid://cj0btnap2s30a" path="res://assets/race_1.svg" id="2_13q6d"]
+[ext_resource type="PackedScene" uid="uid://ygcprweq5pph" path="res://spike.tscn" id="3_1xt1l"]
+[ext_resource type="PackedScene" uid="uid://deyrgwkrds8vg" path="res://finish.tscn" id="3_tvpc3"]
+[ext_resource type="PackedScene" uid="uid://cf2alrn8w11c8" path="res://cog.tscn" id="5_6ddc7"]
+
+[sub_resource type="Gradient" id="Gradient_cplbk"]
+colors = PackedColorArray(0.0745098, 0, 0, 1, 0.00325321, 0, 0.0899944, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d3vk5"]
+gradient = SubResource("Gradient_cplbk")
+width = 128
+height = 128
+fill_to = Vector2(0.384615, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3e3cc"]
 size = Vector2(234, 75.9)
@@ -18,17 +30,24 @@ size = Vector2(49.9, 373.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1hcif"]
 size = Vector2(36.375, 48)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpvh8"]
-size = Vector2(93, 13)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epag2"]
+size = Vector2(114, 932)
 
 [node name="track3" type="Node2D"]
+
+[node name="ColorRect" type="TextureRect" parent="."]
+offset_left = -2633.0
+offset_top = -3224.0
+offset_right = 6117.0
+offset_bottom = 4292.0
+texture = SubResource("GradientTexture2D_d3vk5")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(1812, -1086)
 scale = Vector2(10, 10)
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(26, -69)
+position = Vector2(26, -49.7)
 shape = SubResource("RectangleShape2D_3e3cc")
 debug_color = Color(0.952477, 8.66354e-07, 0.558445, 0.42)
 
@@ -43,7 +62,7 @@ shape = SubResource("RectangleShape2D_qxjmf")
 debug_color = Color(0.95865, 1.92523e-07, 0.525973, 0.42)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-137, 28)
+position = Vector2(-126.1, 28)
 shape = SubResource("RectangleShape2D_w0q16")
 debug_color = Color(0.952477, 8.66354e-07, 0.558445, 0.42)
 
@@ -78,15 +97,66 @@ spriteName = "track"
 [node name="Sprite2D" parent="sprite" index="0"]
 rotation = 0.0
 scale = Vector2(1, 1)
-texture = ExtResource("2_j5v6l")
+texture = ExtResource("2_13q6d")
 
-[node name="Finish" type="Area2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(2362, 2304)
-scale = Vector2(10, 10)
+[node name="Finish" parent="." instance=ExtResource("3_tvpc3")]
+position = Vector2(2263, 2335)
+rotation = -1.5708
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
-position = Vector2(36.8, -3.5)
-shape = SubResource("RectangleShape2D_mpvh8")
+[node name="CollisionShape2D" parent="Finish" index="0"]
+position = Vector2(62, 469)
+shape = SubResource("RectangleShape2D_epag2")
+
+[node name="Panel" parent="Finish" index="1"]
+offset_right = 124.0
+offset_bottom = 937.0
+
+[node name="spike" parent="." instance=ExtResource("3_1xt1l")]
+position = Vector2(1447, -1202)
+rotation = 1.5708
+
+[node name="spike2" parent="." instance=ExtResource("3_1xt1l")]
+position = Vector2(1575, -1203)
+rotation = 1.5708
+
+[node name="spike3" parent="." instance=ExtResource("3_1xt1l")]
+position = Vector2(1715, -1203)
+rotation = 1.5708
+
+[node name="spike4" parent="." instance=ExtResource("3_1xt1l")]
+position = Vector2(1853, -1203)
+rotation = 1.5708
+
+[node name="spike5" parent="." instance=ExtResource("3_1xt1l")]
+position = Vector2(1998, -1205)
+rotation = 1.5708
+
+[node name="spike6" parent="." instance=ExtResource("3_1xt1l")]
+position = Vector2(2126, -1205)
+rotation = 1.5708
+
+[node name="spike7" parent="." instance=ExtResource("3_1xt1l")]
+position = Vector2(2256, -1205)
+rotation = 1.5708
+
+[node name="spike8" parent="." instance=ExtResource("3_1xt1l")]
+position = Vector2(2384, -1205)
+rotation = 1.5708
+
+[node name="spike9" parent="." instance=ExtResource("3_1xt1l")]
+position = Vector2(2514, -1205)
+rotation = 1.5708
+
+[node name="spike10" parent="." instance=ExtResource("3_1xt1l")]
+position = Vector2(2643, -1205)
+rotation = 1.5708
+
+[node name="spike11" parent="." instance=ExtResource("3_1xt1l")]
+position = Vector2(2772, -1205)
+rotation = 1.5708
+
+[node name="cog" parent="." instance=ExtResource("5_6ddc7")]
+position = Vector2(653, -629)
 
 [editable path="sprite"]
+[editable path="Finish"]

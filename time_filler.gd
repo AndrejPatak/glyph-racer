@@ -10,6 +10,9 @@ var canContinue : bool = false
 
 var currentTrack : String = "track_1"
 var curTrackID : int = 1
+
+var loopTracks : Array[String] = ["track_6"]
+
 var currentTime : float = 0
 var savedTime : int = 0
 

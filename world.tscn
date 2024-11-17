@@ -1,30 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://jduxdeebiby7"]
+[gd_scene load_steps=5 format=3 uid="uid://jduxdeebiby7"]
 
 [ext_resource type="PackedScene" uid="uid://btlv6hnynahk0" path="res://player/player.tscn" id="1_dfuub"]
 [ext_resource type="Script" path="res://world.gd" id="1_qoebp"]
 [ext_resource type="PackedScene" uid="uid://c4lkeqc08fnsn" path="res://ui.tscn" id="3_r806t"]
-[ext_resource type="LabelSettings" uid="uid://b2tnpbg4unqoy" path="res://assets/themes/button_highlight.tres" id="4_uy3dw"]
-
-[sub_resource type="Environment" id="Environment_kbm4l"]
-background_mode = 3
-background_canvas_max_layer = 10
-glow_enabled = true
-glow_intensity = 0.3
-glow_strength = 0.79
-glow_bloom = 1.0
-glow_blend_mode = 0
-glow_hdr_threshold = 0.2
-glow_hdr_scale = 4.0
-glow_hdr_luminance_cap = 256.0
-glow_map_strength = 1.0
+[ext_resource type="LabelSettings" uid="uid://b2tnpbg4unqoy" path="res://build/windows/assets/themes/button_highlight.tres" id="4_uy3dw"]
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_qoebp")
-
-[node name="debug" type="Label" parent="."]
-unique_name_in_owner = true
-offset_right = 40.0
-offset_bottom = 23.0
 
 [node name="player" parent="." instance=ExtResource("1_dfuub")]
 unique_name_in_owner = true
@@ -100,8 +82,5 @@ text = "3"
 label_settings = ExtResource("4_uy3dw")
 horizontal_alignment = 1
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-unique_name_in_owner = true
-environment = SubResource("Environment_kbm4l")
-
+[connection signal="player_died" from="player" to="." method="_on_player_player_died"]
 [connection signal="timeout" from="player/Camera2D/ui_layer/RaceStart/startTimer" to="." method="_on_start_timer_timeout"]

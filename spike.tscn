@@ -6,9 +6,12 @@
 script = ExtResource("1_mch4s")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(0, 0, 0, 12, 7, 6)
+scale = Vector2(2.2, 6.58333)
+polygon = PackedVector2Array(0, 0, 0, 15.1899, 40.4545, 7.59494)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(0, 1, 0, 11, 5, 6)
+position = Vector2(7.21875, 8.375)
+scale = Vector2(5.8125, 5.1875)
+polygon = PackedVector2Array(-1.24194, 0.120482, -1.24194, 15.7349, 9.94086, 7.83133)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

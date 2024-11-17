@@ -1,0 +1,238 @@
+[gd_scene load_steps=21 format=3 uid="uid://h5ctqsx3gnk5"]
+
+[ext_resource type="PackedScene" uid="uid://deyrgwkrds8vg" path="res://finish.tscn" id="1_2eyg0"]
+[ext_resource type="PackedScene" uid="uid://cn56ji7fpcno2" path="res://sprite.tscn" id="1_46exc"]
+[ext_resource type="PackedScene" uid="uid://bahmjm8ogmdkg" path="res://unlockable.tscn" id="3_0ibem"]
+[ext_resource type="Texture2D" uid="uid://bxqo1h23ugxcr" path="res://assets/track_5.svg" id="3_d3v1p"]
+[ext_resource type="PackedScene" uid="uid://dqp43w4n2jc0l" path="res://boost_pickup.tscn" id="4_g7s4l"]
+[ext_resource type="PackedScene" uid="uid://ygcprweq5pph" path="res://spike.tscn" id="5_rgbbx"]
+[ext_resource type="Texture2D" uid="uid://dhdbxq4382dqb" path="res://assets/hide2.png" id="7_4sn58"]
+
+[sub_resource type="Gradient" id="Gradient_iya1n"]
+colors = PackedColorArray(0.0745098, 0, 0, 1, 0.00325321, 0, 0.0899944, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rn3q4"]
+gradient = SubResource("Gradient_iya1n")
+width = 128
+height = 128
+fill = 2
+fill_from = Vector2(0.67094, 0.487179)
+fill_to = Vector2(0.5, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcavp"]
+size = Vector2(89.5, 405)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1tppf"]
+size = Vector2(374.944, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cd8n8"]
+size = Vector2(107.5, 2716)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tr5cd"]
+size = Vector2(2509, 139)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4plx8"]
+size = Vector2(175, 3031.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fs867"]
+size = Vector2(2607.55, 175)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ykipc"]
+size = Vector2(214, 1009.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3h7h8"]
+size = Vector2(220, 197)
+
+[sub_resource type="Animation" id="Animation_q2fmm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.833333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vtpu6"]
+resource_name = "hide"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_msmjo"]
+_data = {
+"RESET": SubResource("Animation_q2fmm"),
+"hide": SubResource("Animation_vtpu6")
+}
+
+[node name="track" type="Node2D"]
+metadata/_edit_vertical_guides_ = [2517.0, 3164.0]
+metadata/_edit_horizontal_guides_ = [1029.0, 1296.0]
+
+[node name="ColorRect" type="TextureRect" parent="."]
+offset_left = -3148.0
+offset_top = -2277.0
+offset_right = 6798.0
+offset_bottom = 5817.0
+texture = SubResource("GradientTexture2D_rn3q4")
+
+[node name="Finish" parent="." instance=ExtResource("1_2eyg0")]
+position = Vector2(549, 2701)
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" parent="Finish" index="0"]
+position = Vector2(49.75, 205.5)
+shape = SubResource("RectangleShape2D_rcavp")
+
+[node name="Panel" parent="Finish" index="1"]
+offset_right = 95.0
+offset_bottom = 410.0
+
+[node name="track_5" parent="." instance=ExtResource("1_46exc")]
+position = Vector2(619, 648)
+spriteName = "track"
+
+[node name="Sprite2D" parent="track_5" index="0"]
+position = Vector2(929, 960)
+rotation = 0.0
+scale = Vector2(2, 2)
+texture = ExtResource("3_d3v1p")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1546.71, -375)
+scale = Vector2(8.65887, -7.31416)
+shape = SubResource("RectangleShape2D_1tppf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-124.25, 982)
+shape = SubResource("RectangleShape2D_cd8n8")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1175.5, 388.5)
+shape = SubResource("RectangleShape2D_tr5cd")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3252, 1183.25)
+shape = SubResource("RectangleShape2D_4plx8")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1976, 3190)
+rotation = -0.329246
+shape = SubResource("RectangleShape2D_fs867")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(441, 3105)
+shape = SubResource("RectangleShape2D_ykipc")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(640, 3619)
+shape = SubResource("RectangleShape2D_3h7h8")
+
+[node name="CollisionShape2D8" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(933, 2387)
+polygon = PackedVector2Array(-200, 313, -1017, -54, -379, -54, 468, -552, 1497, -539, 1497, -359)
+
+[node name="CollisionShape2D9" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(869, 1403)
+polygon = PackedVector2Array(-319, 245, -320, -300, 1646, -300, 1646, -192, 533, -192)
+
+[node name="unlockable" parent="." instance=ExtResource("3_0ibem")]
+position = Vector2(2839, 957)
+
+[node name="CollisionShape2D" parent="unlockable/trigger" index="0"]
+position = Vector2(0, 83.125)
+
+[node name="boost" parent="." instance=ExtResource("4_g7s4l")]
+position = Vector2(242, 1606)
+
+[node name="boost2" parent="." instance=ExtResource("4_g7s4l")]
+position = Vector2(269, 1862)
+
+[node name="boost3" parent="." instance=ExtResource("4_g7s4l")]
+position = Vector2(493, 1990)
+
+[node name="boost4" parent="." instance=ExtResource("4_g7s4l")]
+position = Vector2(792, 1894)
+
+[node name="spike" parent="." instance=ExtResource("5_rgbbx")]
+position = Vector2(-66, 461)
+
+[node name="spike2" parent="." instance=ExtResource("5_rgbbx")]
+position = Vector2(-65, 564)
+
+[node name="spike3" parent="." instance=ExtResource("5_rgbbx")]
+position = Vector2(-66, 665)
+
+[node name="spike4" parent="." instance=ExtResource("5_rgbbx")]
+position = Vector2(3163, 1861)
+scale = Vector2(-1, 1)
+
+[node name="spike5" parent="." instance=ExtResource("5_rgbbx")]
+position = Vector2(2975, -303)
+rotation = 1.5708
+
+[node name="spike6" parent="." instance=ExtResource("5_rgbbx")]
+position = Vector2(3163, 331)
+scale = Vector2(-1, 1)
+
+[node name="hideLock" type="TextureRect" parent="."]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 2517.0
+offset_top = 1045.0
+offset_right = 3734.0
+offset_bottom = 1547.0
+scale = Vector2(0.53, 0.53)
+texture = ExtResource("7_4sn58")
+expand_mode = 1
+
+[node name="lock" type="AnimationPlayer" parent="hideLock"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_msmjo")
+}
+
+[editable path="Finish"]
+[editable path="track_5"]
+[editable path="unlockable"]
