@@ -140,6 +140,7 @@ texture = ExtResource("3_wru8u")
 
 [node name="Finish" type="Area2D" parent="."]
 unique_name_in_owner = true
+modulate = Color(0.819608, 0, 0.858824, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
 position = Vector2(13, 0.5)

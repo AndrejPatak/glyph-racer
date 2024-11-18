@@ -4,7 +4,7 @@ extends StaticBody2D
 
 func _on_trigger_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		print("Keys: ", TimeTracker.collectedKeys)
+		#print("Keys: ", TimeTracker.collectedKeys)
 		if TimeTracker.currentTrack in TimeTracker.collectedKeys:
 			if lockAnim:
 				lockAnim.play("hide")

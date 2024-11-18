@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://dtoff4d070guu"]
 
 [ext_resource type="PackedScene" uid="uid://cn56ji7fpcno2" path="res://sprite.tscn" id="1_rvxxx"]
-[ext_resource type="Texture2D" uid="uid://cj0btnap2s30a" path="res://assets/race_1.svg" id="2_13q6d"]
+[ext_resource type="Texture2D" uid="uid://cj0btnap2s30a" path="res://build/windows/assets/race_1.svg" id="2_13q6d"]
 [ext_resource type="PackedScene" uid="uid://ygcprweq5pph" path="res://spike.tscn" id="3_1xt1l"]
 [ext_resource type="PackedScene" uid="uid://deyrgwkrds8vg" path="res://finish.tscn" id="3_tvpc3"]
 [ext_resource type="PackedScene" uid="uid://cf2alrn8w11c8" path="res://cog.tscn" id="5_6ddc7"]

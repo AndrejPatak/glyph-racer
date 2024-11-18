@@ -39,10 +39,17 @@ func _ready() -> void:
 			loops_amount = 3
 		"track_7":
 			track_node = preload("res://track_7.tscn")
+		"track_8":
+			track_node = preload("res://finale.tscn")
+			
 		_:
 			
 			track_node = preload("res://tutorialTrack.tscn")
 			TimeTracker.notify("WARNING: " + TimeTracker.currentTrack + " not found!!")
+	
+	if TimeTracker.currentTrack == "track_8":
+		%Camera2D.drag_horizontal_enabled = false
+	
 	trackInstance = track_node.instantiate()
 	
 	add_child(trackInstance)

@@ -15,6 +15,9 @@ func _ready() -> void:
 	
 	modulate = Colorizer.get_color("player")
 	
+	if TimeTracker.currentTrack == "track_8":
+		triggerDialogue(["You did it!!", "You escaped!", "I guess we won't see eachother again.", "Farewell, then... let the cyberspace be kind to you."])
+	
 
 func handle_button(button) -> void:
 	match button:
@@ -39,6 +42,9 @@ func handle_button(button) -> void:
 		"track_7_button":
 			TimeTracker.currentTrack = "track_7"
 			TimeTracker.curTrackID = 7
+		"track_8_button":
+			TimeTracker.currentTrack = "track_8"
+			TimeTracker.curTrackID = 8
 		_:
 			print("ntn happen: ", button)
 	#print(TimeTracker.currentTrack)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dopmpbbqmy1ls"]
+[gd_scene load_steps=26 format=3 uid="uid://dopmpbbqmy1ls"]
 
 [ext_resource type="PackedScene" uid="uid://cn56ji7fpcno2" path="res://sprite.tscn" id="1_1xfip"]
 [ext_resource type="PackedScene" uid="uid://h2unij4vwkl5" path="res://smasher.tscn" id="1_aj0bk"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ygcprweq5pph" path="res://spike.tscn" id="4_xf5bs"]
 [ext_resource type="PackedScene" uid="uid://c38cekxbgvkpb" path="res://launch_pad.tscn" id="5_pk478"]
 [ext_resource type="Script" path="res://player/sprite.gd" id="6_p7nyr"]
+[ext_resource type="PackedScene" uid="uid://bahmjm8ogmdkg" path="res://unlockable.tscn" id="7_do667"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7yatr"]
 size = Vector2(298.5, 732.31)
@@ -120,7 +121,6 @@ position = Vector2(907.218, 239.709)
 
 [node name="CollisionShape2D" parent="Node2D/smasher_trigger" index="0"]
 position = Vector2(134.527, -22.1474)
-scale = Vector2(1.30504, -1.45873)
 
 [node name="smash_disable" type="Area2D" parent="Node2D"]
 position = Vector2(866.206, 1512.5)
@@ -208,6 +208,7 @@ polygon = PackedVector2Array(-148.492, -72.1249, -148.492, 726.906, 255.266, 328
 
 [node name="Finish" type="Area2D" parent="."]
 unique_name_in_owner = true
+modulate = Color(0.819608, 0, 0.858824, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
 position = Vector2(563.679, -573.25)
@@ -232,6 +233,16 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_p8vbw")
 stretch_mode = 1
+
+[node name="unlockable" parent="Finish" instance=ExtResource("7_do667")]
+position = Vector2(815.5, 1369.5)
+rotation = 0.785397
+
+[node name="CollisionShape2D" parent="Finish/unlockable/trigger" index="0"]
+position = Vector2(6.94629, 89.449)
+
+[node name="CollisionShape2D" parent="Finish/unlockable" index="1"]
+position = Vector2(6.71729, 206.532)
 
 [node name="cog" parent="." instance=ExtResource("1_f2iwi")]
 position = Vector2(2031, -79)
@@ -334,3 +345,4 @@ zoom = Vector2(0.2, 0.2)
 
 [editable path="Node2D/smasher_trigger"]
 [editable path="sprite"]
+[editable path="Finish/unlockable"]

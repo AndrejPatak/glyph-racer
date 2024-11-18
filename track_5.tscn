@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://deyrgwkrds8vg" path="res://finish.tscn" id="1_2eyg0"]
 [ext_resource type="PackedScene" uid="uid://cn56ji7fpcno2" path="res://sprite.tscn" id="1_46exc"]
 [ext_resource type="PackedScene" uid="uid://bahmjm8ogmdkg" path="res://unlockable.tscn" id="3_0ibem"]
-[ext_resource type="Texture2D" uid="uid://bxqo1h23ugxcr" path="res://assets/track_5.svg" id="3_d3v1p"]
+[ext_resource type="Texture2D" uid="uid://bxqo1h23ugxcr" path="res://build/windows/assets/track_5.svg" id="3_d3v1p"]
 [ext_resource type="PackedScene" uid="uid://dqp43w4n2jc0l" path="res://boost_pickup.tscn" id="4_g7s4l"]
 [ext_resource type="PackedScene" uid="uid://ygcprweq5pph" path="res://spike.tscn" id="5_rgbbx"]
 [ext_resource type="Texture2D" uid="uid://dhdbxq4382dqb" path="res://assets/hide2.png" id="7_4sn58"]

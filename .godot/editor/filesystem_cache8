@@ -1,13 +1,16 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1731885590
+::res://::1731952658
+anti_virus.gd::GDScript::-1::1731951996::0::1::::<>Node2D<>::
+anti_virus_trigger.gd::GDScript::-1::1731952015::0::1::::<>Area2D<>::
+beam.gd::GDScript::-1::1731948204::0::1::::<>ColorRect<>::
 beginning.tres::Resource/DialogueData::5022744718265908133::1731602843::0::1::::<><>::res://addons/dialogue_nodes/objects/DialogueData.gd
-BLOOM.gdshader::Shader::-1::1731885590::0::1::::<><>::
+BLOOM.gdshader::Shader::-1::1731952330::0::1::::<><>::
 boost.gd::GDScript::-1::1731863206::0::1::::<>Area2D<>::
 boost_pickup.tscn::PackedScene::8315061211558412221::1731754511::0::1::::<><>::res://boost.gd<>uid://45siu5jx63ic::::res://assets/boost-icon.svg<>uid://bns2xmyb48j52::::res://assets/sounds/boost_pickup.wav
 cog.gd::GDScript::-1::1731854195::0::1::::<>StaticBody2D<>::
 cog.tscn::PackedScene::5179544343178162141::1731868987::0::1::::<><>::res://cog.gd<>uid://c388jqvy4hmyd::::res://assets/cog.svg
-colorizer.gd::GDScript::-1::1731091064::0::1::::<>Node<>::
-colorizer.tscn::PackedScene::9089432174211736459::1731884842::0::1::::<><>::res://colorizer.gd
+colorizer.gd::GDScript::-1::1731952015::0::1::::<>Node<>::
+colorizer.tscn::PackedScene::9089432174211736459::1731951891::0::1::::<><>::res://colorizer.gd
 colors_demo.gd::GDScript::-1::1731439480::0::1::::<>Node<>::
 colors_demo.gdshader::Shader::-1::1731439480::0::1::::<><>::
 danger_popup.gd::GDScript::-1::1731758691::0::1::::<>Control<>::
@@ -17,10 +20,11 @@ death_screen.tscn::PackedScene::6000813197248382549::1731868986::0::1::::<><>::r
 dialogue.gd::GDScript::-1::1731793177::0::1::::<>Control<>::
 dialogue.tscn::PackedScene::834943024350481996::1731868986::0::1::::<><>::uid://mcvp8aaoeu18::::res://popup.tres<>res://dialogue.gd<>uid://dmejnegdnrn06::::res://build/windows/assets/fonts/Orbitron/static/Orbitron-SemiBold.ttf<>uid://dvdc01i1ernmo::::res://build/windows/assets/fonts/Orbitron/static/Orbitron-Regular.ttf<>uid://cx8v3o7umtucr::::res://build/windows/assets/themes/secondary_menu_buttons.tres
 export_presets.cfg::TextFile::-1::1731768870::0::1::::<><>::
-finish.tscn::PackedScene::7490606567108231476::1731884842::0::1::::<><>::uid://b637qxc4wuq6f::::res://assets/fin_patern.svg<>res://player/sprite.gd
+finale.tscn::PackedScene::6096645558412206176::1731951892::0::1::::<><>::res://anti_virus.gd<>uid://dnrjl2244byq::::res://build/windows/assets/warning.svg<>uid://ygcprweq5pph::::res://spike.tscn<>uid://dqp43w4n2jc0l::::res://boost_pickup.tscn<>res://anti_virus_trigger.gd<>uid://h2unij4vwkl5::::res://smasher.tscn<>uid://deyrgwkrds8vg::::res://finish.tscn<>uid://cf2alrn8w11c8::::res://cog.tscn
+finish.tscn::PackedScene::7490606567108231476::1731951891::0::1::::<><>::uid://b637qxc4wuq6f::::res://assets/fin_patern.svg<>res://player/sprite.gd
 general_settings.gd::GDScript::-1::1731862471::0::1::::<>Node2D<>::
-general_settings.tscn::PackedScene::1438309403319243794::1731884842::0::1::::<><>::res://general_settings.gd<>uid://dvlyoy2mu3311::::res://glow.tres
-glow.tres::Environment::8657419434556912734::1731879009::0::1::::<><>::
+general_settings.tscn::PackedScene::1438309403319243794::1731951891::0::1::::<><>::res://general_settings.gd<>uid://dvlyoy2mu3311::::res://glow.tres
+glow.tres::Environment::8657419434556912734::1731950905::0::1::::<><>::
 hidden_area.gd::GDScript::-1::1731881473::0::1::::<>TextureRect<>::
 hidden_room.gd::GDScript::-1::1731859361::0::1::::<>AnimationPlayer<>::
 hide_lock.gd::GDScript::-1::1731765205::0::1::::<>ColorRect<>::
@@ -29,12 +33,13 @@ highlight.tscn::PackedScene::8948192995870247215::1731868986::0::1::::<><>::uid:
 icon.svg::CompressedTexture2D::1106646732083403000::1729944943::1729944955::1::::<><>::
 key.gd::GDScript::-1::1731762599::0::1::::<>Area2D<>::
 key.tscn::PackedScene::1370920558153822915::1731754510::0::1::::<><>::uid://cbxtqnqrjnfnb::::res://assets/KEY.svg<>res://key.gd<>uid://b27uo0mpfxmdt::::res://assets/sounds/pickup.wav
+laser_anim.tres::AnimationNodeStateMachinePlayback::5812706752855321043::1731948516::0::1::::<><>::
 launcher.gd::GDScript::-1::1731802150::0::1::::<>Area2D<>::
 launch_pad.tscn::PackedScene::6806382593114527887::1731868987::0::1::::<><>::res://launcher.gd<>uid://g5yuxbi53c0e::::res://assets/launch_pad.svg
 main_menu.tscn::PackedScene::3853072144754097079::1731868986::0::1::::<><>::res://main_menu_button_handler.gd<>uid://d2k441xoyms78::::res://build/windows/assets/fonts/Orbitron/static/Orbitron-ExtraBold.ttf<>uid://cx8v3o7umtucr::::res://build/windows/assets/themes/secondary_menu_buttons.tres<>uid://d0qtowtusfaqh::::res://highlight.tscn
 main_menu_button_handler.gd::GDScript::-1::1731588676::0::1::::<>Control<>::
-music.gd::GDScript::-1::1731805720::0::1::::<>Node<>::
-music.tscn::PackedScene::4280622810501517936::1731754510::0::1::::<><>::res://music.gd
+music.gd::GDScript::-1::1731952330::0::1::::<>Node<>::
+music.tscn::PackedScene::4280622810501517936::1731952330::0::1::::<><>::res://music.gd
 music_panel.gd::GDScript::-1::1731804941::0::1::::<>Control<>::
 music_panel.tscn::PackedScene::6890199254042603222::1731868987::0::1::::<><>::res://music_panel.gd<>uid://mcvp8aaoeu18::::res://popup.tres<>uid://dvdc01i1ernmo::::res://build/windows/assets/fonts/Orbitron/static/Orbitron-Regular.ttf<>uid://cx8v3o7umtucr::::res://build/windows/assets/themes/secondary_menu_buttons.tres
 notification.gd::GDScript::-1::1731805752::0::1::::<>Control<>::
@@ -43,46 +48,46 @@ panel_container.gd::GDScript::-1::1731762974::0::1::::<>PanelContainer<>::
 pause_menu.gd::GDScript::-1::1731759291::0::1::::<>Control<>::
 pause_menu.tscn::PackedScene::3300539824084244264::1731868986::0::1::::<><>::res://pause_menu.gd<>uid://d0qtowtusfaqh::::res://highlight.tscn<>uid://b2tnpbg4unqoy::::res://build/windows/assets/themes/button_highlight.tres<>uid://c5fwts0rfoyru::::res://music_panel.tscn<>uid://ba3jqke53gums::::res://tips_box.tscn<>uid://cx8v3o7umtucr::::res://build/windows/assets/themes/secondary_menu_buttons.tres
 pointer.gd::GDScript::-1::1731625567::0::1::::<>Node2D<>::
-popup.tres::Theme::847698456210622053::1731879009::0::1::::<><>::
-progress_bar.gd::GDScript::-1::1731623067::0::1::::<>ProgressBar<>::
+popup.tres::Theme::847698456210622053::1731950905::0::1::::<><>::
+progress_bar.gd::GDScript::-1::1731952287::0::1::::<>ProgressBar<>::
 settings.gd::GDScript::-1::1731862531::0::1::::<>Control<>::
 settings.tscn::PackedScene::5960333209375451160::1731868987::0::1::::<><>::res://settings.gd<>uid://b2tnpbg4unqoy::::res://build/windows/assets/themes/button_highlight.tres<>uid://cx8v3o7umtucr::::res://build/windows/assets/themes/secondary_menu_buttons.tres
-smasher.gd::GDScript::-1::1731884816::0::1::::<>Node2D<>::
-smasher.tscn::PackedScene::548298095438541468::1731884963::0::1::::<><>::res://smasher.gd<>uid://cn56ji7fpcno2::::res://sprite.tscn<>uid://dnrjl2244byq::::res://build/windows/assets/warning.svg
+smasher.gd::GDScript::-1::1731887195::0::1::::<>Node2D<>::
+smasher.tscn::PackedScene::548298095438541468::1731951891::0::1::::<><>::res://smasher.gd<>uid://cn56ji7fpcno2::::res://sprite.tscn<>uid://dnrjl2244byq::::res://build/windows/assets/warning.svg
 smasher_trigger.tscn::PackedScene::8957187573897768350::1731439823::0::1::::<><>::
-spike.gd::GDScript::-1::1731668328::0::1::::<>Area2D<>::
-spike.tscn::PackedScene::1697067661818211889::1731884842::0::1::::<><>::res://spike.gd
+spike.gd::GDScript::-1::1731948076::0::1::::<>Area2D<>::
+spike.tscn::PackedScene::1697067661818211889::1731951891::0::1::::<><>::res://spike.gd
 sprite.tscn::PackedScene::5749126436091179595::1730047505::0::1::::<><>::res://player/sprite.gd<>uid://deylra00k7kfm::::res://assets/racer.png
 timer_handler.gd::GDScript::-1::1731144892::0::1::::<>Node<>::
 time_filler.gd::GDScript::-1::1731857781::0::1::::<>Node<>::
-time_tracker.tscn::PackedScene::5673870349258555120::1731884841::0::1::::<><>::res://time_filler.gd
+time_tracker.tscn::PackedScene::5673870349258555120::1731951890::0::1::::<><>::res://time_filler.gd
 tips_box.tscn::PackedScene::2444798819257609898::1731805400::0::1::::<><>::uid://mcvp8aaoeu18::::res://popup.tres<>res://panel_container.gd<>uid://dvdc01i1ernmo::::res://build/windows/assets/fonts/Orbitron/static/Orbitron-Regular.ttf<>uid://dodlcl4g17cgo::::res://build/windows/assets/fonts/Orbitron/Orbitron-VariableFont_wght.ttf
-track_2.gd::GDScript::-1::1731870861::0::1::::<>Node2D<>::
-track_2.tscn::PackedScene::6181492082550399521::1731884841::0::1::::<><>::uid://cn56ji7fpcno2::::res://sprite.tscn<>res://track_2.gd<>uid://bqiml61mnlvm4::::res://build/windows/assets/tutorial track2.svg<>uid://deyrgwkrds8vg::::res://finish.tscn
-track_3.tscn::PackedScene::8522065411683318140::1731884842::0::1::::<><>::uid://cn56ji7fpcno2::::res://sprite.tscn<>uid://cj0btnap2s30a::::res://build/windows/assets/race_1.svg<>uid://ygcprweq5pph::::res://spike.tscn<>uid://deyrgwkrds8vg::::res://finish.tscn
-track_4.tscn::PackedScene::7589139765345943513::1731885485::0::1::::<><>::uid://cn56ji7fpcno2::::res://sprite.tscn<>res://hidden_area.gd<>uid://djeg5aqia68ao::::res://assets/race_2.svg<>uid://tsc4jwqt4j1t::::res://key.tscn<>uid://c4blxggtueynl::::res://assets/hiding.png<>uid://ygcprweq5pph::::res://spike.tscn<>uid://c38cekxbgvkpb::::res://launch_pad.tscn<>uid://deyrgwkrds8vg::::res://finish.tscn
-track_5.tscn::PackedScene::553409471420511094::1731885590::0::1::::<><>::uid://deyrgwkrds8vg::::res://finish.tscn<>uid://cn56ji7fpcno2::::res://sprite.tscn<>uid://bahmjm8ogmdkg::::res://unlockable.tscn<>uid://bxqo1h23ugxcr::::res://assets/track_5.svg<>uid://dqp43w4n2jc0l::::res://boost_pickup.tscn<>uid://ygcprweq5pph::::res://spike.tscn<>uid://dhdbxq4382dqb::::res://assets/hide2.png
+track_2.gd::GDScript::-1::1731885961::0::1::::<>Node2D<>::
+track_2.tscn::PackedScene::6181492082550399521::1731951891::0::1::::<><>::uid://cn56ji7fpcno2::::res://sprite.tscn<>res://track_2.gd<>uid://bqiml61mnlvm4::::res://build/windows/assets/tutorial track2.svg<>uid://deyrgwkrds8vg::::res://finish.tscn
+track_3.tscn::PackedScene::8522065411683318140::1731951891::0::1::::<><>::uid://cn56ji7fpcno2::::res://sprite.tscn<>uid://cj0btnap2s30a::::res://build/windows/assets/race_1.svg<>uid://ygcprweq5pph::::res://spike.tscn<>uid://deyrgwkrds8vg::::res://finish.tscn<>uid://cf2alrn8w11c8::::res://cog.tscn
+track_4.tscn::PackedScene::7589139765345943513::1731951891::0::1::::<><>::uid://cn56ji7fpcno2::::res://sprite.tscn<>res://hidden_area.gd<>uid://djeg5aqia68ao::::res://assets/race_2.svg<>uid://tsc4jwqt4j1t::::res://key.tscn<>uid://c4blxggtueynl::::res://assets/hiding.png<>uid://ygcprweq5pph::::res://spike.tscn<>uid://c38cekxbgvkpb::::res://launch_pad.tscn<>uid://deyrgwkrds8vg::::res://finish.tscn
+track_5.tscn::PackedScene::553409471420511094::1731951891::0::1::::<><>::uid://deyrgwkrds8vg::::res://finish.tscn<>uid://cn56ji7fpcno2::::res://sprite.tscn<>uid://bahmjm8ogmdkg::::res://unlockable.tscn<>uid://bxqo1h23ugxcr::::res://build/windows/assets/track_5.svg<>uid://dqp43w4n2jc0l::::res://boost_pickup.tscn<>uid://ygcprweq5pph::::res://spike.tscn<>uid://dhdbxq4382dqb::::res://assets/hide2.png
 track_6.gd::GDScript::-1::1731857734::0::1::::<>RefCounted<>::
-track_6.tscn::PackedScene::2554878583632922488::1731885048::0::1::::<><>::uid://cn56ji7fpcno2::::res://sprite.tscn<>uid://b637qxc4wuq6f::::res://assets/fin_patern.svg<>uid://cf2alrn8w11c8::::res://cog.tscn<>uid://beoe8h0vymx0y::::res://assets/track_6.svg<>uid://tsc4jwqt4j1t::::res://key.tscn<>res://hidden_room.gd<>uid://ygcprweq5pph::::res://spike.tscn<>uid://u6j56tdbf7e3::::res://assets/hidden_room1.svg<>uid://dqp43w4n2jc0l::::res://boost_pickup.tscn
-track_7.tscn::PackedScene::8173626973956555312::1731884842::0::1::::<><>::uid://cn56ji7fpcno2::::res://sprite.tscn<>uid://h2unij4vwkl5::::res://smasher.tscn<>uid://cf2alrn8w11c8::::res://cog.tscn<>uid://p80yepyxd8y3::::res://assets/track_7.svg<>uid://d0u6tnybbwkxi::::res://smasher_trigger.tscn<>uid://b637qxc4wuq6f::::res://assets/fin_patern.svg<>uid://ygcprweq5pph::::res://spike.tscn<>uid://c38cekxbgvkpb::::res://launch_pad.tscn<>res://player/sprite.gd
-track_select.gd::GDScript::-1::1731870314::0::1::::<>Control<>::
-track_select.tscn::PackedScene::3503956762116102201::1731884841::0::1::::<><>::res://track_select.gd<>uid://b7qt8cpyeutjv::::res://build/windows/assets/themes/menu_title.tres<>uid://cm3p2y64gjteu::::res://time_tracker.tscn<>uid://buv88ph3qdiwe::::res://build/windows/assets/themes/track_box.tres<>uid://b8c237wj3n2h6::::res://build/windows/assets/themes/Track_button.tres<>uid://cnonj37wvdwwj::::res://build/windows/assets/fonts/Kode_Mono/KodeMono-VariableFont_wght.ttf<>uid://d0qtowtusfaqh::::res://highlight.tscn<>uid://ba3jqke53gums::::res://tips_box.tscn<>uid://cx8v3o7umtucr::::res://build/windows/assets/themes/secondary_menu_buttons.tres<>uid://c5fwts0rfoyru::::res://music_panel.tscn
-tutorialTrack.tscn::PackedScene::3948871985919400396::1731884841::0::1::::<><>::res://tutorial_track.gd<>uid://dqp43w4n2jc0l::::res://boost_pickup.tscn<>uid://deyrgwkrds8vg::::res://finish.tscn<>uid://ygcprweq5pph::::res://spike.tscn
+track_6.tscn::PackedScene::2554878583632922488::1731951891::0::1::::<><>::uid://cn56ji7fpcno2::::res://sprite.tscn<>uid://b637qxc4wuq6f::::res://assets/fin_patern.svg<>uid://cf2alrn8w11c8::::res://cog.tscn<>uid://beoe8h0vymx0y::::res://assets/track_6.svg<>uid://tsc4jwqt4j1t::::res://key.tscn<>res://hidden_room.gd<>uid://ygcprweq5pph::::res://spike.tscn<>uid://u6j56tdbf7e3::::res://assets/hidden_room1.svg<>uid://dqp43w4n2jc0l::::res://boost_pickup.tscn
+track_7.tscn::PackedScene::8173626973956555312::1731952015::0::1::::<><>::uid://cn56ji7fpcno2::::res://sprite.tscn<>uid://h2unij4vwkl5::::res://smasher.tscn<>uid://cf2alrn8w11c8::::res://cog.tscn<>uid://p80yepyxd8y3::::res://assets/track_7.svg<>uid://d0u6tnybbwkxi::::res://smasher_trigger.tscn<>uid://b637qxc4wuq6f::::res://assets/fin_patern.svg<>uid://ygcprweq5pph::::res://spike.tscn<>uid://c38cekxbgvkpb::::res://launch_pad.tscn<>res://player/sprite.gd<>uid://bahmjm8ogmdkg::::res://unlockable.tscn
+track_select.gd::GDScript::-1::1731952226::0::1::::<>Control<>::
+track_select.tscn::PackedScene::3503956762116102201::1731952226::0::1::::<><>::res://track_select.gd<>uid://b7qt8cpyeutjv::::res://build/windows/assets/themes/menu_title.tres<>uid://cm3p2y64gjteu::::res://time_tracker.tscn<>uid://buv88ph3qdiwe::::res://build/windows/assets/themes/track_box.tres<>uid://b8c237wj3n2h6::::res://build/windows/assets/themes/Track_button.tres<>uid://cnonj37wvdwwj::::res://build/windows/assets/fonts/Kode_Mono/KodeMono-VariableFont_wght.ttf<>uid://d0qtowtusfaqh::::res://highlight.tscn<>uid://ba3jqke53gums::::res://tips_box.tscn<>uid://cx8v3o7umtucr::::res://build/windows/assets/themes/secondary_menu_buttons.tres<>uid://c5fwts0rfoyru::::res://music_panel.tscn
+tutorialTrack.tscn::PackedScene::3948871985919400396::1731951891::0::1::::<><>::res://tutorial_track.gd<>uid://dqp43w4n2jc0l::::res://boost_pickup.tscn<>uid://deyrgwkrds8vg::::res://finish.tscn<>uid://ygcprweq5pph::::res://spike.tscn
 tutorial_track.gd::GDScript::-1::1731864400::0::1::::<>Node2D<>::
-ui.tscn::PackedScene::6831641145930491005::1731868987::0::1::::<><>::res://timer_handler.gd<>uid://cmtvsgmf6d3jb::::res://build/windows/assets/fonts/Kode_Mono/static/KodeMono-Regular.ttf<>res://progress_bar.gd<>uid://b2tnpbg4unqoy::::res://build/windows/assets/themes/button_highlight.tres
-unlockable.gd::GDScript::-1::1731882235::0::1::::<>StaticBody2D<>::
+ui.tscn::PackedScene::6831641145930491005::1731952287::0::1::::<><>::res://timer_handler.gd<>uid://cmtvsgmf6d3jb::::res://build/windows/assets/fonts/Kode_Mono/static/KodeMono-Regular.ttf<>res://progress_bar.gd<>uid://b2tnpbg4unqoy::::res://build/windows/assets/themes/button_highlight.tres
+unlockable.gd::GDScript::-1::1731951996::0::1::::<>StaticBody2D<>::
 unlockable.tscn::PackedScene::2401616685933197990::1731868986::0::1::::<><>::res://unlockable.gd
-victory.gd::GDScript::-1::1731760673::0::1::::<>Control<>::
-victory.tscn::PackedScene::4428534236384558511::1731868986::0::1::::<><>::res://victory.gd<>uid://cx8v3o7umtucr::::res://build/windows/assets/themes/secondary_menu_buttons.tres<>uid://d0qtowtusfaqh::::res://highlight.tscn<>uid://b2tnpbg4unqoy::::res://build/windows/assets/themes/button_highlight.tres
-world.gd::GDScript::-1::1731868511::0::1::::<>Node2D<>::
-world.tscn::PackedScene::639148303052275236::1731884842::0::1::::<><>::uid://btlv6hnynahk0::::res://player/player.tscn<>res://world.gd<>uid://c4lkeqc08fnsn::::res://ui.tscn<>uid://b2tnpbg4unqoy::::res://build/windows/assets/themes/button_highlight.tres
+victory.gd::GDScript::-1::1731952134::0::1::::<>Control<>::
+victory.tscn::PackedScene::4428534236384558511::1731952134::0::1::::<><>::res://victory.gd<>uid://cx8v3o7umtucr::::res://build/windows/assets/themes/secondary_menu_buttons.tres<>uid://d0qtowtusfaqh::::res://highlight.tscn<>uid://b2tnpbg4unqoy::::res://build/windows/assets/themes/button_highlight.tres
+world.gd::GDScript::-1::1731947404::0::1::::<>Node2D<>::
+world.tscn::PackedScene::639148303052275236::1731951891::0::1::::<><>::uid://btlv6hnynahk0::::res://player/player.tscn<>res://world.gd<>uid://c4lkeqc08fnsn::::res://ui.tscn<>uid://b2tnpbg4unqoy::::res://build/windows/assets/themes/button_highlight.tres
 ::res://addons/::1731619594
 ::res://addons/ColorPreview/::1731439480
 ColorHelper.gd::GDScript::-1::1731439479::0::1::::ColorHelper<>RefCounted<>::
 ColorPreview.gd::GDScript::-1::1731439479::0::1::::<>EditorPlugin<>::
 Picker.tscn::PackedScene::7946079549344240257::1731439479::0::1::::<><>::
 plugin.cfg::TextFile::-1::1731439480::0::1::::<><>::
-::res://assets/::1731885578
+::res://assets/::1731952480
 boost-icon.svg::CompressedTexture2D::2098516087597808906::1731670256::1731670257::1::::<><>::
 cog.svg::CompressedTexture2D::6808274061985507627::1731853998::1731853999::1::::<><>::
 fin_patern.svg::CompressedTexture2D::4622050142531278339::1731868889::1731868968::1::::<><>::
@@ -90,6 +95,8 @@ hidden_room1.svg::CompressedTexture2D::1468374267601560444::1731883199::17318832
 hide2.png::CompressedTexture2D::7656879766550574805::1731881610::1731881612::1::::<><>::
 hide3.png::CompressedTexture2D::7339159518340190441::1731882682::1731882684::1::::<><>::
 hiding.png::CompressedTexture2D::6811091496122557285::1731881022::1731881024::1::::<><>::
+icon.png::CompressedTexture2D::5534211164029342585::1731952477::1731952480::1::::<><>::
+icon.svg::CompressedTexture2D::5638763102234227530::1731952435::1731952480::1::::<><>::
 KEY.svg::CompressedTexture2D::4891693803238019431::1731448521::1731448523::1::::<><>::
 launch_pad.svg::CompressedTexture2D::484558528141015518::1731805810::1731851452::1::::<><>::
 racer1.png::CompressedTexture2D::489554758781054564::1729946447::1729946450::1::::<><>::
@@ -138,9 +145,9 @@ SixtyfourConvergence-Regular-VariableFont_BLED,SCAN,XELA,YELA.ttf::FontFile::109
 ::res://assets/fonts/Sixtyfour_Convergence/static/::1731098611
 SixtyfourConvergence-Regular.ttf::FontFile::1348312993797453661::1727709108::1731098611::1::::<><>::
 ::res://assets/music/::1731158353
-::res://assets/music/background/::1731878993
- Jeremy Blake - Powerup!.mp3::AudioStreamMP3::5695160533199187124::1731160195::1731878993::1::::<><>::
- Jorge Hernandez - Chopsticks.mp3::AudioStreamMP3::8582371901123876829::1731160210::1731878993::1::::<><>::
+::res://assets/music/background/::1731950671
+ Jeremy Blake - Powerup!.mp3::AudioStreamMP3::5695160533199187124::1731160195::1731950671::1::::<><>::
+ Jorge Hernandez - Chopsticks.mp3::AudioStreamMP3::8582371901123876829::1731160210::1731950671::1::::<><>::
 AdhesiveWombat - Night Shade.mp3::AudioStreamMP3::7696037779361085546::1731160171::1731161367::1::::<><>::
 Density & Time - MAZE.mp3::AudioStreamMP3::8425687295844879591::1731160183::1731161367::1::::<><>::
 Eric Skiff - A Night Of Dizzy Spells.mp3::AudioStreamMP3::815271413923394183::1731160187::1731161367::1::::<><>::
@@ -171,94 +178,199 @@ menu_title.tres::LabelSettings::4666706407551888563::1731758379::0::1::::<><>::
 secondary_menu_buttons.tres::Theme::6456635081708510205::1731854110::0::1::::<><>::uid://dvdc01i1ernmo::::res://build/windows/assets/fonts/Orbitron/static/Orbitron-Regular.ttf
 track_box.tres::Theme::3835612881206743144::1731758379::0::1::::<><>::
 Track_button.tres::Theme::4708472355470101313::1731758379::0::1::::<><>::uid://dvdc01i1ernmo::::res://assets/fonts/Orbitron/static/Orbitron-Regular.ttf
-::res://build/::1731768857
+::res://build/::1731952699
+::res://build/linux/::1731952668
+::res://build/linux/assets/::1731952575
+boost-icon.svg::CompressedTexture2D::2098516087597808906::1731670256::1731953338::1::::<><>::
+cog.svg::CompressedTexture2D::6808274061985507627::1731853998::1731953339::1::::<><>::
+fin_patern.svg::CompressedTexture2D::4622050142531278339::1731868889::1731953338::1::::<><>::
+hidden_room1.svg::CompressedTexture2D::1468374267601560444::1731883199::1731953338::1::::<><>::
+hide2.png::CompressedTexture2D::7656879766550574805::1731881610::1731953338::1::::<><>::
+hide3.png::CompressedTexture2D::7339159518340190441::1731882682::1731953338::1::::<><>::
+hiding.png::CompressedTexture2D::6811091496122557285::1731881022::1731953338::1::::<><>::
+icon.png::CompressedTexture2D::5534211164029342585::1731952477::1731953338::1::::<><>::
+icon.svg::CompressedTexture2D::5638763102234227530::1731952435::1731953338::1::::<><>::
+KEY.svg::CompressedTexture2D::4891693803238019431::1731448521::1731953338::1::::<><>::
+launch_pad.svg::CompressedTexture2D::484558528141015518::1731805810::1731953338::1::::<><>::
+racer1.png::CompressedTexture2D::489554758781054564::1729946447::1731953338::1::::<><>::
+racer.png::CompressedTexture2D::7490260776916310494::1730047418::1731953338::1::::<><>::
+racer.svg::CompressedTexture2D::1183451009406903278::1730047406::1731953338::1::::<><>::
+race_1.svg::CompressedTexture2D::5456245734578852450::1731885732::1731953340::1::::<><>::
+race_2.svg::CompressedTexture2D::7799637055693190026::1731885458::1731953338::1::::<><>::
+race_2.svg.svg::CompressedTexture2D::7311065210814294542::1731885379::1731953339::1::::<><>::
+track_5.svg::CompressedTexture2D::4034691010645411425::1731885573::1731953339::1::::<><>::
+track_6.svg::CompressedTexture2D::2696379553242271366::1731885529::1731953341::1::::<><>::
+track_7.svg::CompressedTexture2D::1122518138714147096::1731868059::1731953339::1::::<><>::
+tutorial track1.svg::CompressedTexture2D::3244999774965103088::1730049146::1731953338::1::::<><>::
+tutorial track2.svg::CompressedTexture2D::3526707120532072625::1730052219::1731953338::1::::<><>::
+warning.svg::CompressedTexture2D::238452323472271004::1731441558::1731953338::1::::<><>::
+::res://build/linux/assets/fonts/::1731144578
+::res://build/linux/assets/fonts/Atkinson_Hyperlegible/::1731952572
+AtkinsonHyperlegible-Bold.ttf::FontFile::3851341682688216975::1725491480::1731953338::1::::<><>::
+AtkinsonHyperlegible-BoldItalic.ttf::FontFile::694542295455686739::1725491480::1731953338::1::::<><>::
+AtkinsonHyperlegible-Italic.ttf::FontFile::1489023504294609585::1725491480::1731953338::1::::<><>::
+AtkinsonHyperlegible-Regular.ttf::FontFile::312347131360315543::1725491480::1731953338::1::::<><>::
+OFL.txt::TextFile::-1::1731098568::0::1::::<><>::
+::res://build/linux/assets/fonts/Kode_Mono/::1731952572
+KodeMono-VariableFont_wght.ttf::FontFile::5715004537403899893::1725491480::1731953338::1::::<><>::
+OFL.txt::TextFile::-1::1731144552::0::1::::<><>::
+README.txt::TextFile::-1::1731144552::0::1::::<><>::
+::res://build/linux/assets/fonts/Kode_Mono/static/::1731952572
+KodeMono-Bold.ttf::FontFile::6315288351346474644::1725491480::1731953338::1::::<><>::
+KodeMono-Medium.ttf::FontFile::718918489658339941::1725491480::1731953338::1::::<><>::
+KodeMono-Regular.ttf::FontFile::5655638203454618315::1725491480::1731953338::1::::<><>::
+KodeMono-SemiBold.ttf::FontFile::6150408682165166356::1725491480::1731953338::1::::<><>::
+::res://build/linux/assets/fonts/Orbitron/::1731952572
+OFL.txt::TextFile::-1::1731098568::0::1::::<><>::
+Orbitron-VariableFont_wght.ttf::FontFile::8148771076646973954::1725491480::1731953338::1::::<><>::
+README.txt::TextFile::-1::1731098568::0::1::::<><>::
+::res://build/linux/assets/fonts/Orbitron/static/::1731952572
+Orbitron-Black.ttf::FontFile::3780446094256245808::1725491480::1731953338::1::::<><>::
+Orbitron-Bold.ttf::FontFile::7174794738651960718::1725491480::1731953338::1::::<><>::
+Orbitron-ExtraBold.ttf::FontFile::9076818589466511625::1725491480::1731953338::1::::<><>::
+Orbitron-Medium.ttf::FontFile::6886797784880594374::1725491480::1731953338::1::::<><>::
+Orbitron-Regular.ttf::FontFile::8639588358726206946::1725491480::1731953338::1::::<><>::
+Orbitron-SemiBold.ttf::FontFile::8010355573524182493::1725491480::1731953338::1::::<><>::
+::res://build/linux/assets/fonts/Sixtyfour_Convergence/::1731952572
+OFL.txt::TextFile::-1::1731098568::0::1::::<><>::
+README.txt::TextFile::-1::1731098568::0::1::::<><>::
+SixtyfourConvergence-Regular-VariableFont_BLED,SCAN,XELA,YELA.ttf::FontFile::1091375240739733536::1727709108::1731953338::1::::<><>::
+::res://build/linux/assets/fonts/Sixtyfour_Convergence/static/::1731952572
+SixtyfourConvergence-Regular.ttf::FontFile::1348312993797453661::1727709108::1731953338::1::::<><>::
+::res://build/linux/assets/music/::1731158353
+::res://build/linux/assets/music/background/::1731952572
+ Jeremy Blake - Powerup!.mp3::AudioStreamMP3::5695160533199187124::1731160195::1731953338::1::::<><>::
+ Jorge Hernandez - Chopsticks.mp3::AudioStreamMP3::8582371901123876829::1731160210::1731953338::1::::<><>::
+AdhesiveWombat - Night Shade.mp3::AudioStreamMP3::7696037779361085546::1731160171::1731953338::1::::<><>::
+Density & Time - MAZE.mp3::AudioStreamMP3::8425687295844879591::1731160183::1731953338::1::::<><>::
+Eric Skiff - A Night Of Dizzy Spells.mp3::AudioStreamMP3::815271413923394183::1731160187::1731953338::1::::<><>::
+Eric Skiff - Underclocked.mp3::AudioStreamMP3::4784235479836017103::1731160177::1731953338::1::::<><>::
+Jeremy Korpas - Sour Rock.mp3::AudioStreamMP3::2184016651425021006::1731160199::1731953338::1::::<><>::
+Jimmy Fontanez - Dub Hub.mp3::AudioStreamMP3::8392631838823804910::1731160202::1731953338::1::::<><>::
+Joshua McLean - Mountain Trials.mp3::AudioStreamMP3::6331321943613595491::1731160205::1731953338::1::::<><>::
+Kevin MacLeod - 8bit Dungeon Boss.mp3::AudioStreamMP3::7329965940530243728::1731160216::1731953338::1::::<><>::
+Kevin MacLeod - 8bit Dungeon Level.mp3::AudioStreamMP3::6315146229119686919::1731160223::1731953338::1::::<><>::
+Kevin MacLeod - Itty Bitty 8 Bit.mp3::AudioStreamMP3::4767235826358624985::1731160229::1731953338::1::::<><>::
+Kevin MacLeod - Pixelland.mp3::AudioStreamMP3::2951275614297883916::1731160236::1731953338::1::::<><>::
+Krayzius & Brainstorm - Virtual Boy.mp3::AudioStreamMP3::6314384687374628848::1731160249::1731953338::1::::<><>::
+Monplaisir - Soundtrack .mp3::AudioStreamMP3::7710728081287887508::1731160262::1731953338::1::::<><>::
+Quincas Moreira - Robot City.mp3::AudioStreamMP3::2641529883234399564::1731160282::1731953338::1::::<><>::
+The Grand Affair - Coupe.mp3::AudioStreamMP3::1246207776176844885::1731160271::1731953338::1::::<><>::
+The Whole Other - 8-Bit Dreamscape.mp3::AudioStreamMP3::5827966976177040643::1731160275::1731953338::1::::<><>::
+Vibe Mountain - Operatic 3.mp3::AudioStreamMP3::4178294639757270788::1731160289::1731953338::1::::<><>::
+William Rosati - Floating Also.mp3::AudioStreamMP3::3981752799898413249::1731160295::1731953338::1::::<><>::
+::res://build/linux/assets/sounds/::1731952575
+boost_pickup.wav::AudioStreamWAV::3337715550066110515::1731697698::1731953341::1::::<><>::
+pickup.wav::AudioStreamWAV::4348820223330423697::1731531364::1731953341::1::::<><>::
+running engine.wav::AudioStreamWAV::5250927885713159263::1730232275::1731953341::1::::<><>::
+startEngine.wav::AudioStreamWAV::210268579434697604::1730232132::1731953341::1::::<><>::
+::res://build/linux/assets/themes/::1731952526
+button_highlight.tres::LabelSettings::4321558810198709244::1731857557::0::1::::<><>::uid://dvdc01i1ernmo::::res://build/windows/assets/fonts/Orbitron/static/Orbitron-Regular.ttf
+main_menu_buttons.tres::Theme::6779305340475409270::1731760468::0::1::::<><>::uid://bu4vbgi18t13h::::res://assets/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Bold.ttf
+menu_title.tres::LabelSettings::4666706407551888563::1731758379::0::1::::<><>::
+secondary_menu_buttons.tres::Theme::6456635081708510205::1731854110::0::1::::<><>::uid://dvdc01i1ernmo::::res://build/windows/assets/fonts/Orbitron/static/Orbitron-Regular.ttf
+track_box.tres::Theme::3835612881206743144::1731758379::0::1::::<><>::
+Track_button.tres::Theme::4708472355470101313::1731758379::0::1::::<><>::uid://dvdc01i1ernmo::::res://assets/fonts/Orbitron/static/Orbitron-Regular.ttf
+::res://build/linux/saves/::1731952526
 ::res://build/web/::1730376338
 game.apple-touch-icon.png::CompressedTexture2D::4446042252931138091::1730285465::1730376338::1::::<><>::
 game.icon.png::CompressedTexture2D::6045912975178261512::1730285465::1730376338::1::::<><>::
 game.png::CompressedTexture2D::178434793832611153::1730285465::1730376338::1::::<><>::
-::res://build/windows/::1731768969
-::res://build/windows/assets/::1731768932
-boost-icon.svg::CompressedTexture2D::2098516087597808906::1731670256::1731768930::1::::<><>::
-KEY.svg::CompressedTexture2D::4891693803238019431::1731448521::1731768930::1::::<><>::
-racer1.png::CompressedTexture2D::489554758781054564::1729946447::1731768930::1::::<><>::
-racer.png::CompressedTexture2D::7490260776916310494::1730047418::1731768930::1::::<><>::
-racer.svg::CompressedTexture2D::1183451009406903278::1730047406::1731768930::1::::<><>::
-race_1.svg::CompressedTexture2D::5456245734578852450::1731418464::1731768932::1::::<><>::
-race_2.svg.svg::CompressedTexture2D::7311065210814294542::1731446345::1731768930::1::::<><>::
-track_5.svg::CompressedTexture2D::4034691010645411425::1731761079::1731768930::1::::<><>::
-tutorial track1.svg::CompressedTexture2D::3244999774965103088::1730049146::1731768930::1::::<><>::
-tutorial track2.svg::CompressedTexture2D::3526707120532072625::1730052219::1731768930::1::::<><>::
-warning.svg::CompressedTexture2D::238452323472271004::1731441558::1731768930::1::::<><>::
+::res://build/windows/::1731952643
+::res://build/windows/assets/::1731952575
+boost-icon.svg::CompressedTexture2D::2098516087597808906::1731670256::1731952572::1::::<><>::
+cog.svg::CompressedTexture2D::6808274061985507627::1731853998::1731952573::1::::<><>::
+fin_patern.svg::CompressedTexture2D::4622050142531278339::1731868889::1731952572::1::::<><>::
+hidden_room1.svg::CompressedTexture2D::1468374267601560444::1731883199::1731952572::1::::<><>::
+hide2.png::CompressedTexture2D::7656879766550574805::1731881610::1731952572::1::::<><>::
+hide3.png::CompressedTexture2D::7339159518340190441::1731882682::1731952572::1::::<><>::
+hiding.png::CompressedTexture2D::6811091496122557285::1731881022::1731952572::1::::<><>::
+icon.png::CompressedTexture2D::5534211164029342585::1731952477::1731952572::1::::<><>::
+icon.svg::CompressedTexture2D::5638763102234227530::1731952435::1731952572::1::::<><>::
+KEY.svg::CompressedTexture2D::4891693803238019431::1731448521::1731952572::1::::<><>::
+launch_pad.svg::CompressedTexture2D::484558528141015518::1731805810::1731952573::1::::<><>::
+racer1.png::CompressedTexture2D::489554758781054564::1729946447::1731952572::1::::<><>::
+racer.png::CompressedTexture2D::7490260776916310494::1730047418::1731952572::1::::<><>::
+racer.svg::CompressedTexture2D::1183451009406903278::1730047406::1731952572::1::::<><>::
+race_1.svg::CompressedTexture2D::5456245734578852450::1731885732::1731952575::1::::<><>::
+race_2.svg::CompressedTexture2D::7799637055693190026::1731885458::1731952573::1::::<><>::
+race_2.svg.svg::CompressedTexture2D::7311065210814294542::1731885379::1731952573::1::::<><>::
+track_5.svg::CompressedTexture2D::4034691010645411425::1731885573::1731952573::1::::<><>::
+track_6.svg::CompressedTexture2D::2696379553242271366::1731885529::1731952575::1::::<><>::
+track_7.svg::CompressedTexture2D::1122518138714147096::1731868059::1731952574::1::::<><>::
+tutorial track1.svg::CompressedTexture2D::3244999774965103088::1730049146::1731952573::1::::<><>::
+tutorial track2.svg::CompressedTexture2D::3526707120532072625::1730052219::1731952573::1::::<><>::
+warning.svg::CompressedTexture2D::238452323472271004::1731441558::1731952573::1::::<><>::
 ::res://build/windows/assets/fonts/::1731144578
-::res://build/windows/assets/fonts/Atkinson_Hyperlegible/::1731768929
-AtkinsonHyperlegible-Bold.ttf::FontFile::3851341682688216975::1725491480::1731768929::1::::<><>::
-AtkinsonHyperlegible-BoldItalic.ttf::FontFile::694542295455686739::1725491480::1731768929::1::::<><>::
-AtkinsonHyperlegible-Italic.ttf::FontFile::1489023504294609585::1725491480::1731768929::1::::<><>::
-AtkinsonHyperlegible-Regular.ttf::FontFile::312347131360315543::1725491480::1731768929::1::::<><>::
+::res://build/windows/assets/fonts/Atkinson_Hyperlegible/::1731952572
+AtkinsonHyperlegible-Bold.ttf::FontFile::3851341682688216975::1725491480::1731952572::1::::<><>::
+AtkinsonHyperlegible-BoldItalic.ttf::FontFile::694542295455686739::1725491480::1731952572::1::::<><>::
+AtkinsonHyperlegible-Italic.ttf::FontFile::1489023504294609585::1725491480::1731952572::1::::<><>::
+AtkinsonHyperlegible-Regular.ttf::FontFile::312347131360315543::1725491480::1731952572::1::::<><>::
 OFL.txt::TextFile::-1::1731098568::0::1::::<><>::
-::res://build/windows/assets/fonts/Kode_Mono/::1731768929
-KodeMono-VariableFont_wght.ttf::FontFile::5715004537403899893::1725491480::1731768929::1::::<><>::
+::res://build/windows/assets/fonts/Kode_Mono/::1731952572
+KodeMono-VariableFont_wght.ttf::FontFile::5715004537403899893::1725491480::1731952572::1::::<><>::
 OFL.txt::TextFile::-1::1731144552::0::1::::<><>::
 README.txt::TextFile::-1::1731144552::0::1::::<><>::
-::res://build/windows/assets/fonts/Kode_Mono/static/::1731768929
-KodeMono-Bold.ttf::FontFile::6315288351346474644::1725491480::1731768929::1::::<><>::
-KodeMono-Medium.ttf::FontFile::718918489658339941::1725491480::1731768929::1::::<><>::
-KodeMono-Regular.ttf::FontFile::5655638203454618315::1725491480::1731768929::1::::<><>::
-KodeMono-SemiBold.ttf::FontFile::6150408682165166356::1725491480::1731768929::1::::<><>::
-::res://build/windows/assets/fonts/Orbitron/::1731768929
+::res://build/windows/assets/fonts/Kode_Mono/static/::1731952572
+KodeMono-Bold.ttf::FontFile::6315288351346474644::1725491480::1731952572::1::::<><>::
+KodeMono-Medium.ttf::FontFile::718918489658339941::1725491480::1731952572::1::::<><>::
+KodeMono-Regular.ttf::FontFile::5655638203454618315::1725491480::1731952572::1::::<><>::
+KodeMono-SemiBold.ttf::FontFile::6150408682165166356::1725491480::1731952572::1::::<><>::
+::res://build/windows/assets/fonts/Orbitron/::1731952572
 OFL.txt::TextFile::-1::1731098568::0::1::::<><>::
-Orbitron-VariableFont_wght.ttf::FontFile::8148771076646973954::1725491480::1731768929::1::::<><>::
+Orbitron-VariableFont_wght.ttf::FontFile::8148771076646973954::1725491480::1731952572::1::::<><>::
 README.txt::TextFile::-1::1731098568::0::1::::<><>::
-::res://build/windows/assets/fonts/Orbitron/static/::1731768929
-Orbitron-Black.ttf::FontFile::3780446094256245808::1725491480::1731768929::1::::<><>::
-Orbitron-Bold.ttf::FontFile::7174794738651960718::1725491480::1731768929::1::::<><>::
-Orbitron-ExtraBold.ttf::FontFile::9076818589466511625::1725491480::1731768929::1::::<><>::
-Orbitron-Medium.ttf::FontFile::6886797784880594374::1725491480::1731768929::1::::<><>::
-Orbitron-Regular.ttf::FontFile::8639588358726206946::1725491480::1731768929::1::::<><>::
-Orbitron-SemiBold.ttf::FontFile::8010355573524182493::1725491480::1731768929::1::::<><>::
-::res://build/windows/assets/fonts/Sixtyfour_Convergence/::1731768929
+::res://build/windows/assets/fonts/Orbitron/static/::1731952572
+Orbitron-Black.ttf::FontFile::3780446094256245808::1725491480::1731952572::1::::<><>::
+Orbitron-Bold.ttf::FontFile::7174794738651960718::1725491480::1731952572::1::::<><>::
+Orbitron-ExtraBold.ttf::FontFile::9076818589466511625::1725491480::1731952572::1::::<><>::
+Orbitron-Medium.ttf::FontFile::6886797784880594374::1725491480::1731952572::1::::<><>::
+Orbitron-Regular.ttf::FontFile::8639588358726206946::1725491480::1731952572::1::::<><>::
+Orbitron-SemiBold.ttf::FontFile::8010355573524182493::1725491480::1731952572::1::::<><>::
+::res://build/windows/assets/fonts/Sixtyfour_Convergence/::1731952572
 OFL.txt::TextFile::-1::1731098568::0::1::::<><>::
 README.txt::TextFile::-1::1731098568::0::1::::<><>::
-SixtyfourConvergence-Regular-VariableFont_BLED,SCAN,XELA,YELA.ttf::FontFile::1091375240739733536::1727709108::1731768929::1::::<><>::
-::res://build/windows/assets/fonts/Sixtyfour_Convergence/static/::1731768929
-SixtyfourConvergence-Regular.ttf::FontFile::1348312993797453661::1727709108::1731768929::1::::<><>::
+SixtyfourConvergence-Regular-VariableFont_BLED,SCAN,XELA,YELA.ttf::FontFile::1091375240739733536::1727709108::1731952572::1::::<><>::
+::res://build/windows/assets/fonts/Sixtyfour_Convergence/static/::1731952572
+SixtyfourConvergence-Regular.ttf::FontFile::1348312993797453661::1727709108::1731952572::1::::<><>::
 ::res://build/windows/assets/music/::1731158353
-::res://build/windows/assets/music/background/::1731878993
- Jeremy Blake - Powerup!.mp3::AudioStreamMP3::5695160533199187124::1731160195::1731878993::1::::<><>::
- Jorge Hernandez - Chopsticks.mp3::AudioStreamMP3::8582371901123876829::1731160210::1731878993::1::::<><>::
-AdhesiveWombat - Night Shade.mp3::AudioStreamMP3::7696037779361085546::1731160171::1731768929::1::::<><>::
-Density & Time - MAZE.mp3::AudioStreamMP3::8425687295844879591::1731160183::1731768929::1::::<><>::
-Eric Skiff - A Night Of Dizzy Spells.mp3::AudioStreamMP3::815271413923394183::1731160187::1731768929::1::::<><>::
-Eric Skiff - Underclocked.mp3::AudioStreamMP3::4784235479836017103::1731160177::1731768929::1::::<><>::
-Jeremy Korpas - Sour Rock.mp3::AudioStreamMP3::2184016651425021006::1731160199::1731768929::1::::<><>::
-Jimmy Fontanez - Dub Hub.mp3::AudioStreamMP3::8392631838823804910::1731160202::1731768929::1::::<><>::
-Joshua McLean - Mountain Trials.mp3::AudioStreamMP3::6331321943613595491::1731160205::1731768929::1::::<><>::
-Kevin MacLeod - 8bit Dungeon Boss.mp3::AudioStreamMP3::7329965940530243728::1731160216::1731768930::1::::<><>::
-Kevin MacLeod - 8bit Dungeon Level.mp3::AudioStreamMP3::6315146229119686919::1731160223::1731768929::1::::<><>::
-Kevin MacLeod - Itty Bitty 8 Bit.mp3::AudioStreamMP3::4767235826358624985::1731160229::1731768929::1::::<><>::
-Kevin MacLeod - Pixelland.mp3::AudioStreamMP3::2951275614297883916::1731160236::1731768929::1::::<><>::
-Krayzius & Brainstorm - Virtual Boy.mp3::AudioStreamMP3::6314384687374628848::1731160249::1731768929::1::::<><>::
-Monplaisir - Soundtrack .mp3::AudioStreamMP3::7710728081287887508::1731160262::1731768929::1::::<><>::
-Quincas Moreira - Robot City.mp3::AudioStreamMP3::2641529883234399564::1731160282::1731768929::1::::<><>::
-The Grand Affair - Coupe.mp3::AudioStreamMP3::1246207776176844885::1731160271::1731768929::1::::<><>::
-The Whole Other - 8-Bit Dreamscape.mp3::AudioStreamMP3::5827966976177040643::1731160275::1731768929::1::::<><>::
-Vibe Mountain - Operatic 3.mp3::AudioStreamMP3::4178294639757270788::1731160289::1731768929::1::::<><>::
-William Rosati - Floating Also.mp3::AudioStreamMP3::3981752799898413249::1731160295::1731768929::1::::<><>::
-::res://build/windows/assets/sounds/::1731768932
-boost_pickup.wav::AudioStreamWAV::3337715550066110515::1731697698::1731768932::1::::<><>::
-pickup.wav::AudioStreamWAV::4348820223330423697::1731531364::1731768932::1::::<><>::
-running engine.wav::AudioStreamWAV::5250927885713159263::1730232275::1731768932::1::::<><>::
-startEngine.wav::AudioStreamWAV::210268579434697604::1730232132::1731768932::1::::<><>::
-::res://build/windows/assets/themes/::1731879009
-button_highlight.tres::LabelSettings::4321558810198709244::1731758379::0::1::::<><>::uid://dvdc01i1ernmo::::res://assets/fonts/Orbitron/static/Orbitron-Regular.ttf
+::res://build/windows/assets/music/background/::1731952572
+ Jeremy Blake - Powerup!.mp3::AudioStreamMP3::5695160533199187124::1731160195::1731950671::1::::<><>::
+ Jorge Hernandez - Chopsticks.mp3::AudioStreamMP3::8582371901123876829::1731160210::1731950671::1::::<><>::
+AdhesiveWombat - Night Shade.mp3::AudioStreamMP3::7696037779361085546::1731160171::1731952572::1::::<><>::
+Density & Time - MAZE.mp3::AudioStreamMP3::8425687295844879591::1731160183::1731952572::1::::<><>::
+Eric Skiff - A Night Of Dizzy Spells.mp3::AudioStreamMP3::815271413923394183::1731160187::1731952572::1::::<><>::
+Eric Skiff - Underclocked.mp3::AudioStreamMP3::4784235479836017103::1731160177::1731952572::1::::<><>::
+Jeremy Korpas - Sour Rock.mp3::AudioStreamMP3::2184016651425021006::1731160199::1731952572::1::::<><>::
+Jimmy Fontanez - Dub Hub.mp3::AudioStreamMP3::8392631838823804910::1731160202::1731952572::1::::<><>::
+Joshua McLean - Mountain Trials.mp3::AudioStreamMP3::6331321943613595491::1731160205::1731952572::1::::<><>::
+Kevin MacLeod - 8bit Dungeon Boss.mp3::AudioStreamMP3::7329965940530243728::1731160216::1731952572::1::::<><>::
+Kevin MacLeod - 8bit Dungeon Level.mp3::AudioStreamMP3::6315146229119686919::1731160223::1731952572::1::::<><>::
+Kevin MacLeod - Itty Bitty 8 Bit.mp3::AudioStreamMP3::4767235826358624985::1731160229::1731952572::1::::<><>::
+Kevin MacLeod - Pixelland.mp3::AudioStreamMP3::2951275614297883916::1731160236::1731952572::1::::<><>::
+Krayzius & Brainstorm - Virtual Boy.mp3::AudioStreamMP3::6314384687374628848::1731160249::1731952572::1::::<><>::
+Monplaisir - Soundtrack .mp3::AudioStreamMP3::7710728081287887508::1731160262::1731952572::1::::<><>::
+Quincas Moreira - Robot City.mp3::AudioStreamMP3::2641529883234399564::1731160282::1731952572::1::::<><>::
+The Grand Affair - Coupe.mp3::AudioStreamMP3::1246207776176844885::1731160271::1731952572::1::::<><>::
+The Whole Other - 8-Bit Dreamscape.mp3::AudioStreamMP3::5827966976177040643::1731160275::1731952572::1::::<><>::
+Vibe Mountain - Operatic 3.mp3::AudioStreamMP3::4178294639757270788::1731160289::1731952572::1::::<><>::
+William Rosati - Floating Also.mp3::AudioStreamMP3::3981752799898413249::1731160295::1731952572::1::::<><>::
+::res://build/windows/assets/sounds/::1731952575
+boost_pickup.wav::AudioStreamWAV::3337715550066110515::1731697698::1731952575::1::::<><>::
+pickup.wav::AudioStreamWAV::4348820223330423697::1731531364::1731952575::1::::<><>::
+running engine.wav::AudioStreamWAV::5250927885713159263::1730232275::1731952575::1::::<><>::
+startEngine.wav::AudioStreamWAV::210268579434697604::1730232132::1731952575::1::::<><>::
+::res://build/windows/assets/themes/::1731952526
+button_highlight.tres::LabelSettings::4321558810198709244::1731857557::0::1::::<><>::uid://dvdc01i1ernmo::::res://assets/fonts/Orbitron/static/Orbitron-Regular.ttf
 main_menu_buttons.tres::Theme::6779305340475409270::1731760468::0::1::::<><>::uid://bu4vbgi18t13h::::res://assets/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Bold.ttf
 menu_title.tres::LabelSettings::4666706407551888563::1731758379::0::1::::<><>::
-secondary_menu_buttons.tres::Theme::6456635081708510205::1731879009::0::1::::<><>::uid://dvdc01i1ernmo::::res://build/windows/assets/fonts/Orbitron/static/Orbitron-Regular.ttf
-track_box.tres::Theme::3835612881206743144::1731879001::0::1::::<><>::
-Track_button.tres::Theme::4708472355470101313::1731879001::0::1::::<><>::uid://dvdc01i1ernmo::::res://build/windows/assets/fonts/Orbitron/static/Orbitron-Regular.ttf
-::res://build/windows/saves/::1731768982
-::res://player/::1731884963
+secondary_menu_buttons.tres::Theme::6456635081708510205::1731854110::0::1::::<><>::uid://dvdc01i1ernmo::::res://build/windows/assets/fonts/Orbitron/static/Orbitron-Regular.ttf
+track_box.tres::Theme::3835612881206743144::1731758379::0::1::::<><>::
+Track_button.tres::Theme::4708472355470101313::1731758379::0::1::::<><>::uid://dvdc01i1ernmo::::res://build/windows/assets/fonts/Orbitron/static/Orbitron-Regular.ttf
+::res://build/windows/saves/::1731952526
+::res://player/::1731951891
 player.gd::GDScript::-1::1731872562::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::3744047673423260825::1731884841::0::1::::<><>::res://player/player.gd<>uid://cn56ji7fpcno2::::res://sprite.tscn<>uid://c84dfiy20py7::::res://build/windows/assets/sounds/startEngine.wav<>res://pointer.gd<>uid://b2tnpbg4unqoy::::res://build/windows/assets/themes/button_highlight.tres
+player.tscn::PackedScene::3744047673423260825::1731951891::0::1::::<><>::res://player/player.gd<>uid://cn56ji7fpcno2::::res://sprite.tscn<>uid://c84dfiy20py7::::res://build/windows/assets/sounds/startEngine.wav<>res://pointer.gd<>uid://b2tnpbg4unqoy::::res://build/windows/assets/themes/button_highlight.tres
 sprite.gd::GDScript::-1::1731884963::0::1::::<>Node2D<>::
-::res://saves/::1731584082
+::res://saves/::1731951832

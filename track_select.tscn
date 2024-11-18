@@ -353,8 +353,8 @@ mouse_filter = 0
 [node name="track_7_button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer7/track_7/HBoxContainer" groups=["button", "track_button"]]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-focus_neighbor_bottom = NodePath("../../../../../../buttons/HBoxContainer/HBoxContainer/mainMenu")
-focus_next = NodePath("../../../../../../buttons/HBoxContainer/HBoxContainer/mainMenu")
+focus_neighbor_bottom = NodePath("../../../track_8/HBoxContainer/track_8_button")
+focus_next = NodePath("../../../track_8/HBoxContainer/track_8")
 theme = ExtResource("4_f51sk")
 text = "Tutorial_track_4"
 flat = true
@@ -366,6 +366,35 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="track_7" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer7/track_7/HBoxContainer" groups=["track_label"]]
+layout_mode = 2
+mouse_filter = 0
+text = "00:00.00"
+label_settings = SubResource("LabelSettings_jcjgi")
+
+[node name="track_8" type="PanelContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer7"]
+layout_mode = 2
+theme = ExtResource("3_rbmjg")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer7/track_8"]
+layout_mode = 2
+mouse_filter = 0
+
+[node name="track_8_button" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer7/track_8/HBoxContainer" groups=["button", "track_button"]]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../../../../../../buttons/HBoxContainer/HBoxContainer/mainMenu")
+focus_next = NodePath("../../../../../../buttons/HBoxContainer/HBoxContainer/mainMenu")
+theme = ExtResource("4_f51sk")
+text = "Finale"
+flat = true
+alignment = 0
+
+[node name="HSeperator" type="HSeparator" parent="VBoxContainer/ScrollContainer/VBoxContainer7/track_8/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="track_8" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer7/track_8/HBoxContainer" groups=["track_label"]]
 layout_mode = 2
 mouse_filter = 0
 text = "00:00.00"

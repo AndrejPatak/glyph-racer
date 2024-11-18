@@ -34,10 +34,14 @@ func _on_play_another_pressed() -> void:
 	get_tree().change_scene_to_file("res://track_select.tscn")
 
 func _on_play_next_pressed() -> void:
-	TimeTracker.curTrackID += 1
-	TimeTracker.currentTrack = "track_" + str(TimeTracker.curTrackID)
-	TimeTracker.unpause()
-	get_tree().change_scene_to_file("res://world.tscn")
+	if TimeTracker.currentTrack == "track_9":
+		TimeTracker.curTrackID += 1
+		TimeTracker.currentTrack = "track_" + str(TimeTracker.curTrackID)
+		TimeTracker.unpause()
+		get_tree().change_scene_to_file("res://world.tscn")
+	else:
+		get_tree().change_scene_to_file("res://track_select.tscn")
+		
 
 func _on_save_game_pressed() -> void:
 	TimeTracker.save_times()

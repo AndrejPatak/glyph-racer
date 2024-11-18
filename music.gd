@@ -67,26 +67,7 @@ func setVolume(volume) -> void:
 	var db : float = -50 / (volume * 5) + 10
 	%audioStream.volume_db = db
 	pass
-	
 
-func _unhandled_input(_event: InputEvent) -> void:
-	if controlable:
-		if Input.is_action_just_pressed("dbg_next_song"):
-			nextSong()
-		if Input.is_action_just_pressed("dbg_prev_song"):
-			prevSong()
-		if Input.is_action_just_pressed("dbg_music_play_pause"):
-			if musicPlaying:
-				pauseMusic()
-			else:
-				startMusic()
-				notifySong("Now playing: " + get_song_filename())
-
-func enable_controls() -> void:
-	controlable = true
-
-func disable_controls() -> void:
-	controlable = false
 
 func get_song_filename() -> String:
 	return %audioStream.stream.resource_path.get_file().replace(".mp3", "")

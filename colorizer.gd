@@ -16,5 +16,5 @@ func get_color(spriteName) -> Color:
 		"background":
 			return backgroundColor
 		_:
-			print("Unknown sprite: ", spriteName)
+			#print("Unknown sprite: ", spriteName)
 			return Color.MAGENTA

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://player/sprite.gd" id="1_4cg4a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qiymr"]
-size = Vector2(94, 477)
+size = Vector2(94, 827)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gh3df"]
 draw_center = false
